@@ -1111,6 +1111,7 @@ let claSheets = [];
 let claDataByPlayer = {};
 let buffScoreByPlayerDate = {}; // normalized name -> { normalizedDate -> pct }
 let latestGearIssuesByPlayer = {}; // normalized name -> { label, issues[] }
+let claSheetDates = {}; // label -> Date object parsed from buff tab C3
 let classMap = {}; // normalized name -> class (e.g. 'Warrior')
 let glossaryData = []; // array of { raid, boss, item, eligibleClasses[] }
 let lootSortCol = 'priority';
@@ -2284,14 +2285,14 @@ async function fetchAllClaData() {
   claDataByPlayer = {};
   buffScoreByPlayerDate = {};
   latestGearIssuesByPlayer = {};
+  claSheetDates = {};
 
-  // Fetch all CLA sheets in parallel (both gear and buffs for each sheet simultaneously)
+  // Fetch all CLA sheets in parallel, collecting raw gear results first
+  const gearResults = []; // { label, text } in fetch-completion order
+
   await Promise.all(claSheets.flatMap(sheet => [
     fetchSheet(sheet.sheetId, sheet.gearGid)
-      .then(text => {
-        try { parseGearIssues(text, sheet.label); }
-        catch(e) { addError(`CLA "${sheet.label}" — Gear Issues (gid: ${sheet.gearGid})`, `Parse error: ${e.message}`); }
-      })
+      .then(text => gearResults.push({ label: sheet.label, text }))
       .catch(e => addError(`CLA "${sheet.label}" — Gear Issues (gid: ${sheet.gearGid})`, e.message)),
     fetchSheet(sheet.sheetId, sheet.buffGid)
       .then(text => {
@@ -2300,6 +2301,12 @@ async function fetchAllClaData() {
       })
       .catch(e => addError(`CLA "${sheet.label}" — Buff Consumables (gid: ${sheet.buffGid})`, e.message)),
   ]));
+
+  // Now that claSheetDates is fully populated, parse gear issues with correct recency
+  for (const { label, text } of gearResults) {
+    try { parseGearIssues(text, label); }
+    catch(e) { addError(`CLA "${label}" — Gear Issues`, `Parse error: ${e.message}`); }
+  }
 }
 
 
@@ -2317,13 +2324,34 @@ function parseGearIssues(text, label) {
     if (!claDataByPlayer[key]) claDataByPlayer[key] = { gearIssues: [], buffConsumables: [] };
     // Store all for expand panel (now removed, but keep structure)
     if (issues.length) claDataByPlayer[key].gearIssues.push({ label, issues });
-    // Always overwrite with this CLA's issues — last CLA fetched = most recent
-    latestGearIssuesByPlayer[key] = { label, issues };
+    // Only overwrite if this sheet is more recent than what we have
+    // Use C3 date from buff tab if available, otherwise fall back to claSheets array order
+    const thisDate = claSheetDates[label] || null;
+    const existingLabel = latestGearIssuesByPlayer[key]?.label;
+    const existingDate = existingLabel ? (claSheetDates[existingLabel] || null) : null;
+    let isNewer;
+    if (thisDate && existingDate) {
+      isNewer = thisDate >= existingDate;
+    } else {
+      // Fall back to array index order
+      const sheetIdx = claSheets.findIndex(s => s.label === label);
+      const existingIdx = existingLabel ? claSheets.findIndex(s => s.label === existingLabel) : -1;
+      isNewer = sheetIdx >= existingIdx;
+    }
+    if (isNewer) {
+      latestGearIssuesByPlayer[key] = { label, issues };
+    }
   }
 }
 
 function parseBuffConsumables(text, label) {
   const rows = parseCsvRows(text);
+  // C3 (row index 2, col index 2) contains the raid date for this CLA
+  const dateStr = rows[2]?.[2]?.trim();
+  if (dateStr) {
+    const parsed = new Date(dateStr);
+    if (!isNaN(parsed)) claSheetDates[label] = parsed;
+  }
   // Header row is row index 4 (0-based), data starts at row 5
   const headers = rows[4]?.slice(2) || []; // col C onwards
   const normLabel = normalizeDate(label);

@@ -1689,7 +1689,7 @@ async function fetchWclAllStars(realm) {
     await Promise.all(players.map(async p => {
       const charQuery = `{
         characterData {
-          character(name: "${p.name}", serverSlug: "${realm}", serverRegion: "${WCL_REGION}") {
+          character(name: "${p.name}", serverSlug: "${realm}", serverRegion: "${WCL_REGION}", gameVersion: Classic) {
             zoneRankings(zoneID: ${zone.id})
           }
         }

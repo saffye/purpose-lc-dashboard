@@ -375,13 +375,13 @@
     text-align: right;
   }
 
-  .att-pct.high { color: #b5c225; }
-  .att-pct.mid { color: #e0a820; }
+  .att-pct.high { color: #8abf50; }
+  .att-pct.mid { color: #d4c84a; }
   .att-pct.low { color: #c94c4c; }
   .att-pct.exact100 { color: #4caa6e; }
   .att-bar-fill.exact100 { background: #4caa6e; }
-  .att-bar-fill.high { background: #b5c225; }
-  .att-bar-fill.mid { background: #e0a820; }
+  .att-bar-fill.high { background: #8abf50; }
+  .att-bar-fill.mid { background: #d4c84a; }
   .att-bar-fill.low { background: #c94c4c; }
   .att-pct.na { color: var(--text-dim); font-weight: 400; font-family: 'Crimson Pro', serif; font-style: italic; }
 
@@ -1205,11 +1205,11 @@ function classColor(playerName) {
 }
 
 // ── Shared 5-band colour palette ────────────────────────────────
-const C1 = '#4caa6e'; // green
-const C2 = '#b5c225'; // yellow-green
-const C3 = '#e0a820'; // yellow
+const C1 = '#4caa6e'; // green  (best)
+const C2 = '#8abf50'; // yellow-green
+const C3 = '#d4c84a'; // yellow
 const C4 = '#e07830'; // orange
-const C5 = '#c94c4c'; // red
+const C5 = '#c94c4c'; // red    (worst)
 let groupingMode = 'role'; // 'role' | 't45' | 't6'
 
 async function fetchGlossary() {
@@ -1521,7 +1521,7 @@ async function saveClaSheetsToGitHub() {
 }
 
 const APPS_SCRIPT = 'https://script.google.com/macros/s/AKfycbwewgQ14fY_34nK0HpKRt2YuVy2FLQZmfu-FrjraGQa55I5oKmYk7p_X3zsswxZAPU4/exec';
-const ICON_SCRIPT = 'https://script.google.com/macros/s/AKfycbz2KeGr4dM1lhddDgYarQNMrsV2SpvX6UMe5BOmS5QGVj_EVTEmcB6tHMAeuUdx-j5W/exec';
+const ICON_SCRIPT = 'https://script.google.com/macros/s/AKfycbxMFJ-uhIb7zGj4foau4i6c2MLXM2y9L5joCP1rcw1aeKLCY9jHESlbtPeWnW8Mg0GH/exec';
 
 // Fetch a Google Sheet tab via Apps Script proxy
 async function fetchSheet(sheetId, gid) {
@@ -1796,7 +1796,7 @@ function pctColor(pct) {
 }
 
 function gearColor(count) {
-  // 1 / 2 / 3 / 4 / 5+
+  // 0=none, 1 / 2 / 3-4 / 5+
   if (count <= 0) return C1;
   if (count === 1) return C2;
   if (count === 2) return C3;
@@ -1943,7 +1943,7 @@ function getRoleRowsHtml(sorted, dates, bottom20threshold, top20threshold, point
             const minNzP = nzP.length > 0 ? nzP[0] : null;
             const hi  = pointValues.length > 0 && pts === maxP && pts > 0;
             const hasZerosInRole = nzP.length < pointValues.length;
-    const zlo = pts === 0 || (!hasZerosInRole && minNzP !== null && pts === minNzP);
+            const zlo = pts === 0 || (!hasZerosInRole && minNzP !== null && pts === minNzP);
             const t20 = !hi && !zlo && pts >= top20threshold && pointValues.length > 0;
             const b20 = !hi && !zlo && pts <= bottom20threshold && pointValues.length > 0;
             const col = hi ? C5 : t20 ? C4 : b20 ? C2 : zlo ? C1 : C3;
@@ -2777,7 +2777,8 @@ function onItemChange() {
     const nzP = eligThreshPts.filter(v => v > 0);
     const minNzP = nzP.length ? nzP[0] : null;
     const hiPts = eligThreshPts.length && pts === maxP && pts > 0;
-    const zloPts = pts === 0 || (minNzP !== null && pts === minNzP);
+    const hasZerosElig = nzP.length < eligThreshPts.length;
+    const zloPts = pts === 0 || (!hasZerosElig && minNzP !== null && pts === minNzP);
     const t20pts = !hiPts && !zloPts && pts >= eligTop20 && eligThreshPts.length > 0;
     const b20pts = !hiPts && !zloPts && pts <= eligBottom20 && eligThreshPts.length > 0;
     const ptsCol = hiPts ? C5 : t20pts ? C4 : b20pts ? C2 : zloPts ? C1 : C3;
@@ -2846,7 +2847,7 @@ function onItemChange() {
       <td class="att-count" style="text-align:right;">${p.attended}</td>
       <td>
         <div class="att-cell">
-          <div class="att-bar-bg"><div class="att-bar-fill ${attCol === '#4caa6e' ? 'exact100' : attCol === '#b5c225' ? 'high' : attCol === '#e0a820' ? 'mid' : 'low'}" style="width:${barW}%"></div></div>
+          <div class="att-bar-bg"><div class="att-bar-fill ${attCol === '#4caa6e' ? 'exact100' : attCol === '#8abf50' ? 'high' : attCol === '#d4c84a' ? 'mid' : 'low'}" style="width:${barW}%"></div></div>
           <span class="att-pct" style="color:${attCol};">${pctStr}</span>
         </div>
       </td>

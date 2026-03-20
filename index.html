@@ -1088,6 +1088,7 @@
         <input class="cla-input wide" id="claUrl" placeholder="Google Sheet URL" />
         <input class="cla-input" id="claGearGid" placeholder="Gear Issues GID" />
         <input class="cla-input" id="claBuffGid" placeholder="Buff Consumables GID" />
+        <input class="cla-input" id="claGearListingGid" placeholder="Gear Listing GID (optional)" />
         <input class="cla-input wide" id="claToken" type="password" placeholder="GitHub Token (optional — saves to repo)" />
         <button class="btn" onclick="addCla()">+ Add</button>
       </div>
@@ -1313,58 +1314,10 @@ function parseClasses(text) {
   return map;
 }
 
-const ITEM_IDS = {
-  'aegisofthevindicator': 29458,
-  'aldorilegacydefender': 28825,
-  'axeofthegronnlords': 28794,
-  'beltofdivineinsipration': 28799,
-  'beltofdivineinspiration': 28799,
-  'bladespirewarbands': 28795,
-  'bloodmawmagusblade': 28802,
-  'brutecloakoftheogremagi': 28797,
-  'chestgaurdofthefalledhero': 29755,
-  'chestgaurdofthefallenchampion': 29754,
-  'chestgaurdofthefallendefender': 29753,
-  'chestguardofthefallenchampion': 29754,
-  'chestguardofthefallendefender': 29753,
-  'chestguardofthefallenhero': 29755,
-  'cloakofthepitstalker': 28777,
-  'collarofchogall': 28804,
-  'cowlofnaturesbreath': 28803,
-  'crystalheartpulsestaff': 28782,
-  'dragonspinetrophy': 28830,
-  'eredarwandofobliteration': 28783,
-  'eyeofgruul': 28823,
-  'eyeofmagtheridon': 28789,
-  'gauntletsofmartialperfection': 28824,
-  'gauntletsofthedragonslayer': 28827,
-  'girdleoftheendlesspit': 28779,
-  'glaiveofthepit': 28774,
-  'gronnstitchedgirdle': 28828,
-  'hammerofthenaaru': 28800,
-  'karaboriantalisman': 28781,
-  'leggingsofthefallenchampion': 29766,
-  'leggingsofthefallendefender': 29767,
-  'leggingsofthefallenhero': 29765,
-  'liarstonguegloves': 28776,
-  'magtheridonshead': 32385,
-  'maleficmaskoftheshadows': 28796,
-  'maleficmastoftheshadows': 28796,
-  'maulgarswarhelm': 28801,
-  'pauldronsofthefallenchampion': 29763,
-  'pauldronsofthefallendefender': 29764,
-  'pauldronsofthefallenhero': 29762,
-  'pitlordssatchel': 34845,
-  'shurikenofnegation': 28826,
-  'souleatershandwraps': 28780,
-  'teethofgruul': 28822,
-  'terrorpitgirdle': 28778,
-  'thunderinggreathelm': 28775,
-  'windshearboots': 28810,
-};
+// Item IDs loaded from gear-item-ids.json into gearItemIds map
 
 async function fetchItemIcons() {
-  const ids = [...new Set(Object.values(ITEM_IDS))];
+  const ids = [...new Set(Object.values(gearItemIds).filter(v => typeof v === 'number'))];
   await Promise.all(ids.map(async id => {
     if (itemIcons[id]) return; // already fetched
     try {
@@ -1377,7 +1330,7 @@ async function fetchItemIcons() {
 }
 
 function fetchItemMap() {
-  // ITEM_IDS already uses pre-normalized keys — getItemId reads directly from it
+  // gearItemIds uses pre-normalized keys — getItemId reads directly from it
   // No async work needed; this is a no-op placeholder for future sheet lookup
 }
 
@@ -1404,7 +1357,7 @@ function lootValueColor(value) {
 
 function getItemId(itemName) {
   const key = normalizeName(itemName);
-  return itemMap[key]?.id || ITEM_IDS[key] || null;
+  return itemMap[key]?.id || gearItemIds[key] || null;
 }
 
 function itemIconImg(id, size = 18) {
@@ -1606,6 +1559,8 @@ let wclData = {}; // normalized name -> { points, rank, outOf }
 
 const GITHUB_REPO = 'bunzosteele/dbs-lc';
 const GITHUB_FILE = 'cla-sheets.json';
+const GEAR_IDS_FILE = 'gear-item-ids.json';
+let gearItemIds = {}; // item name (lowercase) -> wowhead item ID
 let githubToken = sessionStorage.getItem('ghToken') || '';
 
 async function saveWclConfigToGitHub(password, clientId, clientSecret, realm) {
@@ -1841,7 +1796,7 @@ async function saveClaSheetsToGitHub() {
   }
 }
 
-const APPS_SCRIPT = 'https://script.google.com/macros/s/AKfycbxhg6A1-cpFOz8Bw4HLK_n14PQUKnM_WIYPu-9yVsW3bkDHxLbW6fpxfl9SVfgxLmRR/exec';
+const APPS_SCRIPT = 'https://script.google.com/macros/s/AKfycbxX6nN2hLc2RAGyJVug1gF1HGP-92_G9hX6YKKdPPCs3a1eG5BCtxA-ckcHCoTpJQ/exec';
 const ICON_SCRIPT = 'https://script.google.com/macros/s/AKfycbyBs6sgRoX6Zy3a3lq9q6fR4o0spLHRfKc-G63Vy8JUBTQa2HFWhnP8MxFGm8JxjNo/exec';
 
 // Fetch a Google Sheet tab via Apps Script proxy
@@ -2610,11 +2565,129 @@ function renderClaList() {
   `).join('');
 }
 
+// Gear listing slot columns (matches CSV header row)
+const GEAR_LISTING_SLOTS = ['Head','Neck','Shoulders','Cloak','Chest','Bracers','Hands','Waist','Legs','Feet','Ring1','Ring2','Trinket1','Trinket2','Weapon','Off-Hand','Wand/Idol/Relic etc.'];
+
+// Parse gear listing CSV -> { playerName: { Head: 'itemname', Neck: 'itemname', ... } }
+function parseGearListing(csvText) {
+  const rows = csvText.split('
+').map(r => {
+    const cols = [];
+    let cur = '', inQ = false;
+    for (const ch of r) {
+      if (ch === '"') { inQ = !inQ; }
+      else if (ch === ',' && !inQ) { cols.push(cur.trim()); cur = ''; }
+      else cur += ch;
+    }
+    cols.push(cur.trim());
+    return cols;
+  });
+  // Find header row (contains 'Head')
+  const headerIdx = rows.findIndex(r => r.some(c => c === 'Head'));
+  if (headerIdx === -1) return {};
+  const slotCols = rows[headerIdx]; // col 0=empty, col 1=empty, col 2=Head, ...
+  const result = {};
+  for (let i = headerIdx + 1; i < rows.length; i++) {
+    const row = rows[i];
+    const name = row[1]?.trim();
+    if (!name) continue;
+    const gear = {};
+    for (let s = 0; s < GEAR_LISTING_SLOTS.length; s++) {
+      const itemName = row[s + 2]?.trim();
+      if (itemName) gear[GEAR_LISTING_SLOTS[s]] = itemName;
+    }
+    result[name] = gear;
+  }
+  return result;
+}
+
+// Look up a single item name via Apps Script -> Wowhead search XML
+async function lookupItemId(itemName) {
+  try {
+    const rawUrl = APPS_SCRIPT + '?action=itemLookup&name=' + encodeURIComponent(itemName);
+    const text = await proxyFetch(rawUrl);
+    const data = JSON.parse(text);
+    return data.id || null;
+  } catch(e) {
+    return null;
+  }
+}
+
+// Save gear-item-ids.json to GitHub
+async function saveGearItemIdsToGitHub() {
+  if (!githubToken) return;
+  try {
+    const apiUrl = `https://api.github.com/repos/${GITHUB_REPO}/contents/${GEAR_IDS_FILE}`;
+    let sha = null;
+    try {
+      const getRes = await fetch(apiUrl, {
+        headers: { Authorization: `token ${githubToken}`, Accept: 'application/vnd.github.v3+json' }
+      });
+      if (getRes.ok) sha = (await getRes.json()).sha;
+    } catch(e) {}
+
+    const body = {
+      message: `Update gear item IDs - ${new Date().toLocaleDateString()}`,
+      content: btoa(unescape(encodeURIComponent(JSON.stringify(gearItemIds, null, 2)))),
+      ...(sha ? { sha } : {})
+    };
+    await fetch(apiUrl, {
+      method: 'PUT',
+      headers: { Authorization: `token ${githubToken}`, Accept: 'application/vnd.github.v3+json', 'Content-Type': 'application/json' },
+      body: JSON.stringify(body)
+    });
+    console.log('Saved gear-item-ids.json to GitHub');
+  } catch(e) {
+    console.warn('Failed to save gear-item-ids.json:', e.message);
+  }
+}
+
+// Fetch gear listing tab, find unknown item names, look them up, save to repo
+async function processGearListingForItemIds(sheetId, gearListingGid) {
+  setHint('Looking up gear item IDs...', '');
+  try {
+    const text = await fetchSheet(sheetId, gearListingGid);
+    const gearData = parseGearListing(text);
+    const allItems = new Set();
+    Object.values(gearData).forEach(slots => Object.values(slots).forEach(name => allItems.add(name)));
+
+    const unknown = [...allItems].filter(name => !gearItemIds[name.toLowerCase()]);
+    if (!unknown.length) {
+      setHint('All gear items already in map!', 'success');
+      return;
+    }
+
+    console.log('Looking up', unknown.length, 'unknown gear items via Wowhead...');
+    setHint(`Looking up ${unknown.length} new item IDs...`, '');
+
+    // Process in small batches to avoid rate limiting
+    let found = 0;
+    for (let i = 0; i < unknown.length; i += 3) {
+      const batch = unknown.slice(i, i + 3);
+      await Promise.all(batch.map(async name => {
+        const id = await lookupItemId(name);
+        if (id) {
+          gearItemIds[name.toLowerCase()] = id;
+          found++;
+        }
+      }));
+      if (i + 3 < unknown.length) await new Promise(r => setTimeout(r, 400));
+    }
+
+    await saveGearItemIdsToGitHub();
+    setHint(`✓ Added ${found} new gear item IDs to map`, 'success');
+  } catch(e) {
+    console.warn('processGearListingForItemIds error:', e.message);
+    setHint('Gear ID lookup failed: ' + e.message, 'error');
+  }
+}
+
 function addCla() {
   const label = document.getElementById('claLabel').value.trim();
   const url = document.getElementById('claUrl').value.trim();
   const gearGid = document.getElementById('claGearGid').value.trim();
   const buffGid = document.getElementById('claBuffGid').value.trim();
+  const gearListingGid = document.getElementById('claGearListingGid').value.trim();
   const token = document.getElementById('claToken').value.trim();
   if (!label || !url || !gearGid || !buffGid) {
     alert('Please fill in all fields.');
@@ -2629,15 +2702,23 @@ function addCla() {
     try { sessionStorage.setItem('ghToken', token); } catch(e) {}
   }
 
-  claSheets.push({ label, url, sheetId, gearGid, buffGid });
+  const entry = { label, url, sheetId, gearGid, buffGid };
+  if (gearListingGid) entry.gearListingGid = gearListingGid;
+  claSheets.push(entry);
   saveClaSheets();
   renderClaList();
   saveClaSheetsToGitHub();
+
+  // If gear listing GID + GitHub token provided, gap-fill item ID map
+  if (gearListingGid && githubToken) {
+    processGearListingForItemIds(sheetId, gearListingGid);
+  }
 
   document.getElementById('claLabel').value = '';
   document.getElementById('claUrl').value = '';
   document.getElementById('claGearGid').value = '';
   document.getElementById('claBuffGid').value = '';
+  document.getElementById('claGearListingGid').value = '';
   document.getElementById('claToken').value = '';
 }
 
@@ -2780,6 +2861,19 @@ async function loadClaSheetsFromRepo() {
     // Not on GitHub Pages or file missing — ignore
   }
 }
+async function loadGearItemIdsFromRepo() {
+  try {
+    const res = await fetch('./gear-item-ids.json?t=' + Date.now());
+    if (!res.ok) return;
+    const data = await res.json();
+    if (typeof data === 'object' && data !== null) {
+      gearItemIds = data;
+      console.log('Loaded', Object.keys(gearItemIds).length, 'gear item IDs from repo');
+    }
+  } catch(e) {}
+}
+
+loadGearItemIdsFromRepo();
 loadClaSheetsFromRepo().then(async () => {
   // Handle PKCE callback first (page may have been redirected back from WarcraftLogs)
   const wasCallback = await handleWclCallback();

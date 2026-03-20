@@ -1673,6 +1673,7 @@ async function wclGraphQL(query, token) {
   const q = btoa(unescape(encodeURIComponent(query)));
   const rawUrl = APPS_SCRIPT + '?action=wclQuery&q=' + encodeURIComponent(q) + '&token=' + encodeURIComponent(token);
   const text = await proxyFetch(rawUrl);
+  if (text.trimStart().startsWith('<')) throw new Error('Proxy returned HTML — URL may be too long or request failed');
   return JSON.parse(text);
 }
 
@@ -1783,8 +1784,8 @@ const ICON_SCRIPT = 'https://script.google.com/macros/s/AKfycbyBs6sgRoX6Zy3a3lq9
 // Fetch a Google Sheet tab via Apps Script proxy
 async function proxyFetch(targetUrl) {
   const proxies = [
-    u => 'https://api.codetabs.com/v1/proxy?quest=' + encodeURIComponent(u),
     u => 'https://api.allorigins.win/raw?url=' + encodeURIComponent(u),
+    u => 'https://api.codetabs.com/v1/proxy?quest=' + encodeURIComponent(u),
     u => 'https://corsproxy.io/?' + encodeURIComponent(u),
   ];
   for (const proxy of proxies) {

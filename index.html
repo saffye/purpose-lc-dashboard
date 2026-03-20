@@ -1017,6 +1017,9 @@
     <button class="group-btn" data-mode="t6" onclick="setGrouping('t6')">T6</button>
     <button class="group-btn" data-mode="loot" onclick="setGrouping('loot')">Loot</button>
   </div>
+  <div class="group-btns" id="adminNav" style="justify-content:center;margin:4px auto 0;display:none;">
+    <button class="group-btn" data-mode="cla" onclick="setGrouping('cla')">CLA</button>
+  </div>
 
   <div class="controls">
     <div style="display:flex;flex-direction:column;gap:4px;align-items:flex-start;">
@@ -1065,34 +1068,43 @@
     </div>
   </div>
 
-  <div class="cla-manager" id="claManager">
-    <div class="cla-header" onclick="toggleClaManager()">
-      <span class="cla-title">⚔ CLA Sheets</span>
-      <span class="cla-count" id="claCount">0 sheets</span>
-      <span class="cla-toggle" id="claToggle">▸</span>
+  <!-- CLA Panel (shown when CLA mode active, authenticated only) -->
+  <div id="claPanel" style="display:none;">
+    <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;">
+      <span style="font-family:'Cinzel',serif;font-size:13px;letter-spacing:0.15em;color:var(--gold);">⚔ CLA Sheets</span>
+      <span id="claCount" style="font-size:12px;color:var(--text-dim);"></span>
     </div>
-    <div class="cla-body" id="claBody" style="display:none;">
-      <div id="claTokenStatus" style="margin-bottom:8px;font-size:12px;"></div>
-      <div id="claList"></div>
-      <div class="cla-io-row">
-        <button class="btn" onclick="exportCla()">↑ Export</button>
-        <button class="btn" onclick="showImport()">↓ Import</button>
-        <span class="cla-io-hint" id="claIoHint"></span>
-      </div>
-      <div id="claImportArea" style="display:none;margin-bottom:12px;">
-        <textarea class="cla-input wide" id="claImportText" rows="3" placeholder="Paste exported CLA data here..." style="width:100%;resize:vertical;"></textarea>
-        <button class="btn primary" onclick="importCla()" style="margin-top:6px;">Import</button>
-      </div>
-      <div class="cla-add-form">
+    <div id="claList"></div>
+    <div class="cla-io-row">
+      <button class="btn" onclick="exportCla()">↑ Export</button>
+      <button class="btn" onclick="showImport()">↓ Import</button>
+      <span class="cla-io-hint" id="claIoHint"></span>
+    </div>
+    <div id="claImportArea" style="display:none;margin-bottom:12px;">
+      <textarea class="cla-input wide" id="claImportText" rows="3" placeholder="Paste exported CLA data here..." style="width:100%;resize:vertical;"></textarea>
+      <button class="btn primary" onclick="importCla()" style="margin-top:6px;">Import</button>
+    </div>
+    <div class="cla-add-form">
+      <input class="cla-input" id="claLabel" placeholder="Label (e.g. 2/26)" />
+      <input class="cla-input wide" id="claUrl" placeholder="Google Sheet URL" />
+      <input class="cla-input" id="claGearGid" placeholder="Gear Issues GID" />
+      <input class="cla-input" id="claGearListingGid" placeholder="Gear Listing GID (optional)" />
+      <input class="cla-input" id="claBuffGid" placeholder="Buff Consumables GID" />
+      <button class="btn" onclick="addCla()">+ Add</button>
+    </div>
+    <div style="margin-top:16px;padding-top:12px;border-top:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;">
+      <span style="font-size:12px;color:var(--text-dim);">Authenticated via GitHub</span>
+      <button class="btn" onclick="clearGithubToken()" style="font-size:11px;padding:3px 10px;">Disconnect</button>
+    </div>
+  </div>
 
-        <input class="cla-input" id="claLabel" placeholder="Label (e.g. 2/26)" />
-        <input class="cla-input wide" id="claUrl" placeholder="Google Sheet URL" />
-        <input class="cla-input" id="claGearGid" placeholder="Gear Issues GID" />
-        <input class="cla-input" id="claGearListingGid" placeholder="Gear Listing GID (optional)" />
-        <input class="cla-input" id="claBuffGid" placeholder="Buff Consumables GID" />
-        <input class="cla-input wide" id="claToken" type="password" placeholder="GitHub Token (optional — saves to repo)" />
-        <button class="btn" onclick="addCla()">+ Add</button>
-      </div>
+  <!-- GitHub auth footer (shown when not authenticated) -->
+  <div id="githubAuthFooter" style="margin-top:32px;padding:20px;border:1px solid var(--border);border-radius:4px;background:rgba(255,255,255,0.02);display:none;">
+    <div style="font-family:'Cinzel',serif;font-size:13px;letter-spacing:0.15em;color:var(--gold);margin-bottom:8px;">GitHub Authentication</div>
+    <div style="font-size:13px;color:var(--text-dim);margin-bottom:12px;">Enter a GitHub Personal Access Token to enable CLA sheet management.</div>
+    <div style="display:flex;gap:8px;align-items:center;">
+      <input type="password" id="claToken" class="cla-input wide" placeholder="GitHub Personal Access Token" style="flex:1;" />
+      <button class="btn primary" onclick="saveGithubToken()">Save Token</button>
     </div>
   </div>
 
@@ -1167,10 +1179,14 @@ function setGrouping(mode) {
   groupingMode = mode;
   document.querySelectorAll('.group-btn').forEach(b => b.classList.toggle('active', b.dataset.mode === mode));
   const isLoot = mode === 'loot';
+  const isCla = mode === 'cla';
   document.getElementById('lootPanel').style.display = isLoot ? 'block' : 'none';
-  document.getElementById('output').style.display = isLoot ? 'none' : 'block';
+  document.getElementById('claPanel').style.display = isCla ? 'block' : 'none';
+  document.getElementById('output').style.display = (!isLoot && !isCla) ? 'block' : 'none';
   if (isLoot) {
     renderLootDropdowns();
+  } else if (isCla) {
+    renderClaList();
   } else if (lastRenderData.roles.length) {
     render(lastRenderData);
   }
@@ -2491,12 +2507,13 @@ function initWclIfSaved() {
   }
 }
 
-function toggleClaManager() {
-  const body = document.getElementById('claBody');
-  const toggle = document.getElementById('claToggle');
-  const open = body.style.display === 'none';
-  body.style.display = open ? 'block' : 'none';
-  toggle.textContent = open ? '▾' : '▸';
+function saveGithubToken() {
+  const token = document.getElementById('claToken').value.trim();
+  if (!token) return;
+  githubToken = token;
+  try { localStorage.setItem('ghToken', token); } catch(e) {}
+  document.getElementById('claToken').value = '';
+  updateAuthState();
 }
 
 function exportCla() {
@@ -2548,25 +2565,29 @@ function setHint(msg, type) {
 function clearGithubToken() {
   githubToken = '';
   try { localStorage.removeItem('ghToken'); } catch(e) {}
-  document.getElementById('claToken').value = '';
-  updateTokenStatus();
+  // If currently in CLA mode, switch back to role view
+  if (groupingMode === 'cla') setGrouping('role');
+  updateAuthState();
 }
 
-function updateTokenStatus() {
-  const el = document.getElementById('claTokenStatus');
-  if (!el) return;
-  if (githubToken) {
-    el.innerHTML = '<span style="color:var(--gold);">&#128273; GitHub token saved</span> &mdash; <a href="#" onclick="clearGithubToken();return false;" style="color:var(--text-dim);font-size:11px;text-decoration:underline;">clear</a>';
-  } else {
-    el.innerHTML = '<span style="color:var(--text-dim);font-style:italic;">No GitHub token saved</span>';
-  }
+function updateAuthState() {
+  const authed = !!githubToken;
+  const adminNav = document.getElementById('adminNav');
+  const authFooter = document.getElementById('githubAuthFooter');
+  if (adminNav) adminNav.style.display = authed ? 'flex' : 'none';
+  if (authFooter) authFooter.style.display = authed ? 'none' : 'block';
+  // If CLA panel is visible but no longer authed, hide it
+  if (!authed && groupingMode === 'cla') setGrouping('role');
 }
+
+// Keep old name as alias for renderClaList calls
+function updateTokenStatus() { updateAuthState(); }
 
 function renderClaList() {
   const list = document.getElementById('claList');
   const count = document.getElementById('claCount');
-  count.textContent = claSheets.length + ' sheet' + (claSheets.length !== 1 ? 's' : '');
-  updateTokenStatus();
+  if (count) count.textContent = claSheets.length + ' sheet' + (claSheets.length !== 1 ? 's' : '');
+  updateAuthState();
   if (!claSheets.length) {
     list.innerHTML = '<div style="color:var(--text-dim);font-size:13px;font-style:italic;padding:4px 0 10px;">No CLA sheets added yet.</div>';
     return;
@@ -2721,20 +2742,12 @@ function addCla() {
   const gearGid = document.getElementById('claGearGid').value.trim();
   const buffGid = document.getElementById('claBuffGid').value.trim();
   const gearListingGid = document.getElementById('claGearListingGid').value.trim();
-  const token = document.getElementById('claToken').value.trim();
   if (!label || !url || !gearGid || !buffGid) {
     alert('Please fill in all fields.');
     return;
   }
   const sheetId = extractSheetId(url);
   if (!sheetId) { alert('Could not parse Sheet ID from URL.'); return; }
-
-  // Store token in session if provided
-  if (token) {
-    githubToken = token;
-    try { localStorage.setItem('ghToken', token); } catch(e) {}
-    updateTokenStatus();
-  }
 
   const entry = { label, url, sheetId, gearGid, buffGid };
   if (gearListingGid) entry.gearListingGid = gearListingGid;
@@ -2920,6 +2933,7 @@ async function loadClaSheetsFromRepo() {
       claSheets = data;
       saveClaSheets();
       renderClaList();
+updateAuthState();
     }
   } catch(e) {
     // Not on GitHub Pages or file missing — ignore
@@ -3497,7 +3511,7 @@ function onItemChange() {
       <thead>
         <tr style="border-bottom:1px solid var(--border);">
           ${thS('Player','player','left')}
-          ${relevantSlots ? '<th style=\"padding:6px 12px;font-family:\'Cinzel\',serif;font-size:10px;letter-spacing:0.2em;color:var(--text-dim);white-space:nowrap;\">Current</th>' : ''}
+          ${relevantSlots ? '<th style=\"padding:6px 12px;font-family:\'Cinzel\',serif;font-size:10px;letter-spacing:0.2em;color:var(--text-dim);white-space:nowrap;text-align:left;\">Current</th>' : ''}
           ${thS('Prio','priority')}
           <th style="padding:6px 12px;"></th>
           ${thS('LS','points')}

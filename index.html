@@ -564,7 +564,7 @@
   }
 
   .loot-item {
-    font-size: 13px;
+    font-size: 15px;
     color: var(--gold-light);
     background: rgba(201,168,76,0.07);
     border: 1px solid var(--gold-dim);
@@ -2447,6 +2447,10 @@ function toggleLoot(td, playerName) {
 
   tr.after(lootTr);
   arrow.textContent = '▾';
+  // Ensure icons are fetched for any newly visible loot items
+  fetchItemIcons().then(() => {
+    if (typeof $WowheadPower !== 'undefined' && $WowheadPower.refreshLinks) $WowheadPower.refreshLinks();
+  });
 }
 
 // ── CLA Management ──────────────────────────────────────────────
@@ -2872,8 +2876,8 @@ async function loadGearItemIdsFromRepo() {
   } catch(e) {}
 }
 
-loadGearItemIdsFromRepo();
 loadClaSheetsFromRepo().then(async () => {
+  await loadGearItemIdsFromRepo();
   // Handle PKCE callback first (page may have been redirected back from WarcraftLogs)
   const wasCallback = await handleWclCallback();
   await fetchData();

@@ -1685,14 +1685,19 @@ async function fetchWclAllStars(realm) {
   console.log('Using hardcoded WCL zone:', zone.id, zone.name);
   try {
 
-    const players = lastRenderData.roles.flatMap(r => r.players).filter(p => p.name && p.pct !== null);
+    // Build player list with their role for metric selection
+    const players = lastRenderData.roles.flatMap(r =>
+      r.players.filter(p => p.name && p.pct !== null).map(p => ({ ...p, roleName: r.name }))
+    );
     console.log('Fetching WCL for', players.length, 'players');
     await Promise.all(players.map(async p => {
       const wclName = canonicalNames[normalizeName(p.name)] || p.name;
+      const isHealer = p.roleName === 'Healers';
+      const metric = isHealer ? 'HealingDone' : 'DPS';
       const charQuery = `{
         characterData {
           character(name: "${wclName}", serverSlug: "${realm}", serverRegion: "${WCL_REGION}") {
-            zoneRankings(zoneID: ${zone.id})
+            zoneRankings(zoneID: ${zone.id}, metric: ${metric})
           }
         }
       }`;

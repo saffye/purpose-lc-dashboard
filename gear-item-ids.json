@@ -1,560 +1,2234 @@
 {
-  "abacusofviolentodds": 28288,
-  "adalscommand": 29177,
-  "adamantinechainoftheunbroken": 29349,
-  "aegisofthevindicator": 29458,
-  "aldorilegacydefender": 28825,
-  "anchoritesrobes": 29129,
-  "ancientdraeneiwartalisman": 31617,
-  "archmagebelt": 24677,
-  "ashyensgift": 29172,
-  "auchenaideathshroud": 27878,
-  "ausleseslightchanneler": 24390,
-  "aviancloakoffeathers": 27946,
-  "axeofthegronnlords": 28794,
-  "azureshieldofcoldarra": 29266,
-  "bandofanguish": 30973,
-  "bandoftheexorcist": 28553,
-  "bandoftheinevitable": 23031,
-  "bandofunnaturalforces": 23038,
-  "bandsofsyth": 27918,
-  "beastlordcuirass": 28228,
-  "beastlordhandguards": 27474,
-  "beastlordhelm": 28275,
-  "beastlordleggings": 27874,
-  "beastlordmantle": 27801,
-  "beltofdivineinsipration": 28799,
-  "beltofdivineinspiration": 28799,
-  "bindingsoffaith": 22519,
-  "bindingsofthetimewalker": 29183,
-  "bladedshoulderpadsofthemerciless": 28755,
-  "bladeofthearchmage": 29153,
-  "bladespirewarbands": 28795,
-  "bloodknightwarcloak": 29382,
-  "bloodlustbrooch": 29383,
-  "bloodmawmagusblade": 28802,
-  "bogstrokscalecloak": 24379,
-  "bootsofetherealmanipulation": 29258,
-  "bootsofthecolossus": 27813,
-  "bootsofthegladekeeper": 28251,
-  "bootsoftherighteouspath": 29254,
-  "bracersofarcaneaccuracy": 19374,
-  "bracersofdignity": 29252,
-  "bracersofhavok": 24250,
-  "breastplateofannihilation": 21814,
-  "breastplateofthebold": 28205,
-  "brilliantpearlband": 32772,
-  "broochofheightenedpotential": 28134,
-  "brutecloakoftheogremagi": 28797,
-  "burnooseofshiftingages": 27988,
-  "charlottesivy": 31338,
-  "chestgaurdofthefalledhero": 29755,
-  "chestgaurdofthefallenchampion": 29754,
-  "chestgaurdofthefallendefender": 29753,
-  "chestguardofnoremorse": 27787,
-  "chestguardofthefallenchampion": 29754,
-  "chestguardofthefallendefender": 29753,
-  "chestguardofthefallenhero": 29755,
-  "chokerofvileintent": 29381,
-  "chromaticboots": 19387,
-  "circletoffaith": 22514,
-  "clefthoofhideleggings": 31544,
-  "cloakofhealingrays": 24459,
-  "cloakofthecraft": 31255,
-  "cloakofthedevoured": 22731,
-  "cloakoftheinciter": 27892,
-  "cloakofthenecropolis": 23050,
-  "cloakofthepitstalker": 28777,
-  "cobaltbandoftyrigosa": 29352,
-  "collarofchogall": 28804,
-  "cordofnaturessustenance": 28655,
-  "cosmiclifeband": 28259,
-  "cowlofnaarublessings": 32090,
-  "cowlofnaturesbreath": 28803,
-  "crestoftheshatar": 29176,
-  "crownoftheforestlord": 27763,
-  "cryomitts": 29327,
-  "cryptstalkergirdle": 22442,
-  "cryptstalkerlegguards": 22437,
-  "crystalbandofvalor": 27822,
-  "crystalheartpulsestaff": 28782,
-  "crystalpulseshield": 31292,
-  "curatesboots": 25792,
-  "darkcloakofthemarsh": 25540,
-  "deathforgegirdle": 27985,
-  "delicategreenponcho": 28032,
-  "doomfinger": 22821,
-  "draeneicrystalrod": 25099,
-  "dragonhawkbelt": 24798,
-  "dragonscalewand": 25294,
-  "dragonspinetrophy": 28830,
-  "drakefangtalisman": 19406,
-  "drapeofunyieldingstrength": 21394,
-  "earthenmarkofrazing": 25562,
-  "earthwarden": 29171,
-  "ebonyflamegloves": 19407,
-  "energisarmwraps": 28317,
-  "enigmaticband": 31929,
-  "eredarwandofobliteration": 28783,
-  "essenceofthemartyr": 29376,
-  "eterniumrunedblade": 23554,
-  "exorcistssilkhood": 28760,
-  "extravagantbootsofmalice": 27821,
-  "eyeofgruul": 28823,
-  "eyeofmagtheridon": 28789,
-  "eyeofthedead": 23047,
-  "faceguardofdetermination": 32083,
-  "fathomheartgauntlets": 27806,
-  "felleatherboots": 25686,
-  "felleathergloves": 25685,
-  "felstalkerbracers": 25697,
-  "fieldmarshalsplateshoulderguards": 16480,
-  "figurinedawnstonecrab": 24125,
-  "firemawsclutch": 19400,
-  "fleshhandlersgauntlets": 30341,
-  "forestheartbracers": 29263,
-  "frostfirecirclet": 22498,
-  "frostfirering": 23062,
-  "frostfiresandals": 22500,
-  "frozenshadoweaveboots": 21870,
-  "frozenshadoweaverobe": 21871,
-  "frozenshadoweaveshoulders": 21869,
-  "gauntletsofannihilation": 21581,
-  "gauntletsofmartialperfection": 28824,
-  "gauntletsofthedragonslayer": 28827,
-  "gauntletsoftherighteous": 27535,
-  "gavelofpurelight": 29175,
-  "girdleofdivineblessing": 31202,
-  "girdleofruination": 24256,
-  "girdleoftheendlesspit": 28779,
-  "girdleoftheimmovable": 27672,
-  "girdleofthementor": 23219,
-  "glaiveofthepit": 28774,
-  "glovesofenforcement": 21672,
-  "glovesoffaith": 22517,
-  "glovesofpandemonium": 31149,
-  "glovesofpreservation": 25791,
-  "gnomereganautododger600": 29387,
-  "goldenvinewraps": 28029,
-  "grandmarshalsclaymore": 18876,
-  "grandmarshalshandaxe": 18827,
-  "gressildawnofruin": 23054,
-  "gronnstitchedgirdle": 28828,
-  "hallowedgarments": 28230,
-  "hallowedpauldrons": 27775,
-  "hallowedtrousers": 27875,
-  "hammerofthenaaru": 28800,
-  "hammerofthepenitent": 28257,
-  "haramadsbargain": 29119,
-  "harnessofthedeepcurrents": 27912,
-  "heavyclefthoofboots": 25691,
-  "heavyclefthoofleggings": 25690,
-  "heavyclefthoofvest": 25689,
-  "hellforgedhalberd": 29166,
-  "helmoftheclaw": 28182,
-  "holyhealingband": 25713,
-  "hoodofoblivion": 28415,
-  "hoodofprimallife": 29505,
-  "hourglassoftheunraveller": 28034,
-  "iblisbladeofthefallenseraph": 23014,
-  "iconofthesilvercrescent": 29370,
-  "iconofunyieldingcourage": 28121,
-  "idolofbrutality": 23198,
-  "idoloftheemeraldqueen": 27886,
-  "ironbandoftheunbreakable": 27436,
-  "jadeskullbreastplate": 28262,
-  "jeweledbootsofsanctification": 27525,
-  "jindosevileye": 19885,
-  "karaboriantalisman": 28781,
-  "kaylaanssignet": 30860,
-  "keepersringofpiety": 29322,
-  "khadgarskiltofabjuration": 28185,
-  "khadgarsknapsack": 29273,
-  "kiltoflivinggrowth": 31335,
-  "kissofthespider": 22954,
-  "lampofpeacefulradiance": 28412,
-  "latrosshiftingsword": 28189,
-  "leggingsofpolarity": 23070,
-  "leggingsofthefallenchampion": 29766,
-  "leggingsofthefallendefender": 29767,
-  "leggingsofthefallenhero": 29765,
-  "liarstonguegloves": 28776,
-  "libramofavengement": 27484,
-  "libramofrepentance": 29388,
-  "libramofthelightbringer": 28296,
-  "lightbearersfaithshield": 29267,
-  "lightswornhammer": 27538,
-  "lightwovenslippers": 27919,
-  "lionheartchampion": 28429,
-  "lionhearthelm": 12640,
-  "lolaseve": 31339,
-  "lowercityprayerbook": 30841,
-  "luciddreambracers": 27827,
-  "magtheridonshead": 32385,
-  "maleficmaskoftheshadows": 28796,
-  "maleficmastoftheshadows": 28796,
-  "manaetchedcrown": 28193,
-  "manaetchedgloves": 27465,
-  "manaetchedspaulders": 27796,
-  "manimalscinch": 30942,
-  "mantleofautumn": 28340,
-  "markofthechampion": 23206,
-  "markoftheravenguard": 29336,
-  "marshalsleatherbracers": 28988,
-  "marshalsplatebelt": 28995,
-  "marshalsplategreaves": 28997,
-  "marshalsplatelegguards": 16479,
-  "marshalssilkcuffs": 29002,
-  "maskofthedeceiver": 32087,
-  "masterdragonslayersring": 19384,
-  "maulgarswarhelm": 28801,
-  "medallionofthelightbearer": 29123,
-  "moongladeshoulders": 27737,
-  "myrmidonsheaddress": 28180,
-  "naarubeltofprecision": 31464,
-  "natashasguardiancord": 31691,
-  "necklaceofthejuggernaut": 29386,
-  "neltharionstear": 19379,
-  "nethekursesrodoftorment": 25806,
-  "nethercorescontrolrod": 28386,
-  "nexusprincesringofbalance": 31919,
-  "ogreslayersband": 25775,
-  "ogreslayerscover": 25777,
-  "orbofthesouleater": 29272,
-  "pathfindersband": 31277,
-  "pauldronsofthefallenchampion": 29763,
-  "pauldronsofthefallendefender": 29764,
-  "pauldronsofthefallenhero": 29762,
-  "pendantofbattlelust": 24385,
-  "pitlordssatchel": 34845,
-  "plagueheartbelt": 22510,
-  "plagueheartcirclet": 22506,
-  "plagueheartrobe": 22504,
-  "platedabominationribcage": 23000,
-  "pontifexkilt": 30543,
-  "primalmoonclothbelt": 21873,
-  "primalmoonclothrobe": 21875,
-  "primalmoonclothshoulders": 21874,
-  "primalstrikebracers": 29527,
-  "primalstrikevest": 29525,
-  "primalsurgebracers": 28194,
-  "princelyreignleggings": 24359,
-  "prismaticmittensofmending": 28304,
-  "quagmirranseye": 27683,
-  "ragesteelbreastplate": 23522,
-  "ragesteelshoulders": 33173,
-  "ravenclawband": 27925,
-  "rimecoveredmantle": 22983,
-  "ringofconvalescence": 29169,
-  "ringofcrypticdreams": 29367,
-  "ringoffaith": 23061,
-  "ringofthefallengod": 21709,
-  "ringofthemartyr": 21620,
-  "robeoffaith": 22512,
-  "robeofoblivion": 28232,
-  "royalscepterofveklor": 21597,
-  "rubyslippers": 28585,
-  "runeengravedbelt": 25789,
-  "runesongdagger": 27868,
-  "ryngosbandofingenuity": 28394,
-  "sapphironslefteye": 23049,
-  "sashofarcanevisions": 29257,
-  "sashofserpentra": 27795,
-  "scaraboftheinfinitecycle": 28190,
-  "scintillatingcoralband": 27784,
-  "sealofthedamned": 23025,
-  "sealoftheexorcist": 28555,
-  "sethekkoraclecloak": 27981,
-  "sethekkoraclesfocus": 29334,
-  "shadowcloakofdalaran": 28570,
-  "shapeshifterssignet": 30834,
-  "shatarivindicatorswaistguard": 31460,
-  "shatariwroughtarmguards": 28167,
-  "shattrathjumpers": 28179,
-  "shattrathleggings": 30257,
-  "shattrathwraps": 28174,
-  "shawlofshiftingprobabilities": 29369,
-  "shiffarsnexushorn": 28418,
-  "shockwavetruncheon": 29353,
-  "shoulderguardsofthebold": 27803,
-  "shoulderpadsofassassination": 27776,
-  "shurikenofnegation": 28826,
-  "slayersmarkoftheredemption": 31077,
-  "sonicspear": 27903,
-  "souleatershandwraps": 28780,
-  "soulwandofthealdor": 27885,
-  "spauldersofoblivion": 27778,
-  "spauldersoftherighteous": 27739,
-  "spellfirebelt": 21846,
-  "spellfiregloves": 21847,
-  "spellfirerobe": 21848,
-  "spellstrikehood": 24266,
-  "spellstrikepants": 24262,
-  "spinesever": 34622,
-  "spymistresswristguards": 28171,
-  "starlightdagger": 27543,
-  "steamhingechainofvalor": 27792,
-  "styleensimpedingscarab": 19431,
-  "swampstonenecklace": 27766,
-  "talismanofephemeralpower": 18820,
-  "talismanofkalecgos": 29271,
-  "tarrenmilldefenderscinch": 29319,
-  "tearsofheaven": 29274,
-  "teethofgruul": 28822,
-  "terrorpitgirdle": 28778,
-  "theessencefocuser": 31304,
-  "thesagaofterokk": 27634,
-  "thesoulharvestersbindings": 23021,
-  "thesuneater": 29362,
-  "thunderinggreathelm": 28775,
-  "timewardensleggings": 29184,
-  "tomeofshadowforce": 19309,
-  "totemofhealingrains": 28523,
-  "totemofsustaining": 23200,
-  "totemoftheplains": 25645,
-  "totemofthethunderhead": 24413,
-  "trialfiretrousers": 28594,
-  "trousersofoblivion": 27948,
-  "truestrikering": 31326,
-  "tunicofassassination": 28204,
-  "unitingcharm": 25633,
-  "valanoslongbow": 31303,
-  "vermillionrobesofthedominant": 27799,
-  "vestiaspauldronsofinnergrace": 28250,
-  "veteransmusket": 29151,
-  "vindicatorsbrand": 29124,
-  "violetsignet": 29285,
-  "voidfirewand": 25939,
-  "wandofthenetherwing": 27890,
-  "warbringerhandguards": 29017,
-  "wastewalkerhelm": 28224,
-  "wastewalkerleggings": 27837,
-  "wastewalkershoulderpads": 27797,
-  "watcherscowl": 29174,
-  "whiteremedycape": 24254,
-  "windcallersorb": 29170,
-  "windchannellerstunic": 31554,
-  "windhawkbracers": 29523,
-  "windshearboots": 28810,
-  "wraithblade": 22807,
-  "wrathfirehandcannon": 27898,
-  "xavianstiletto": 28659,
-  "zierhutslosttreads": 30674,
-  "eyeofthenight": 24116,
-  "druidichelmetofsecondsight": 31110,
-  "bandofdominion": 31290,
-  "windhawkbelt": 29524,
-  "moonstriderboots": 27914,
-  "xirisgift": 29179,
-  "starkillersbauble": 30340,
-  "evokersmarkoftheredemption": 31075,
-  "thebringerofdeath": 31308,
-  "mantleofmalorne": 29100,
-  "thoriumweavecloak": 28256,
-  "marshalsleatherbelt": 28986,
-  "gauntletsofmalorne": 29097,
-  "greavesofmalorne": 29099,
-  "idolofthewild": 28064,
-  "adalssignetofdefense": 28792,
-  "adamantinefigurine": 27891,
-  "glovesofsaintlyblessings": 28508,
-  "bootsoftheincorrupt": 28663,
-  "primalstrikebelt": 29526,
-  "blackhandsbreadth": 13965,
-  "worgenclawnecklace": 28509,
-  "terokksquill": 29329,
-  "wickedwitchshat": 28586,
-  "ripflayerleggings": 28740,
-  "lurkersbelt": 30677,
-  "bootsofblasphemy": 29242,
-  "greatswordofhorriddreams": 27905,
-  "ringofrecurrence": 28753,
-  "legwrapsofthealdor": 29078,
-  "strengthoftheuntamed": 29173,
-  "justicarshoulderguards": 29070,
-  "mithrilbandoftheunscarred": 28730,
-  "girdleofvalorousdeeds": 29253,
-  "ironscalewarcloak": 27550,
-  "shiningchainoftheafterworld": 28731,
-  "wastewalkergloves": 27531,
-  "gavelofunearthedsecrets": 30832,
-  "bandsofnegation": 29240,
-  "stillwatergirdle": 27835,
-  "earthbloodchestguard": 28735,
-  "edgewalkerlongboots": 28545,
-  "grandmarshalscleaver": 28944,
-  "lightsjustice": 28771,
-  "forestwindshoulderpads": 28647,
-  "stainlesscloakofthepurehearted": 28765,
-  "boggspineknuckles": 27747,
-  "shardofthevirtuous": 28522,
-  "beltofgaleforce": 28567,
-  "pantaloonsofrepentance": 28742,
-  "voidheartcrown": 28963,
-  "voidheartrobe": 28964,
-  "aranssoothingsapphire": 28728,
-  "evokershelmetofsecondsight": 31104,
-  "rubydrapeofthemysticant": 28766,
-  "crimsonbracersofgloom": 27462,
-  "robeofthecrimsonorder": 31297,
-  "glovesofthedeadwatcher": 27493,
-  "astralaanshoulderpads": 24651,
-  "pendantoftriumph": 28244,
-  "glovesofoblivion": 27537,
-  "maleficgirdle": 28654,
-  "marshalsplatebracers": 28996,
-  "grandmarshalsplatelegguards": 28702,
-  "royalcloakofarathikings": 28529,
-  "thunder": 28440,
-  "bandofaccuria": 17063,
-  "handofjustice": 11815,
-  "warbringerchestguard": 29012,
-  "goblinrocketlauncher": 23836,
-  "amberbandsoftheaggressor": 29463,
-  "thedecapitator": 28767,
-  "bracersofmaliciousness": 28514,
-  "chestplateofadal": 30258,
-  "mamasinsurance": 30279,
-  "chestpieceofmalorne": 29091,
-  "staghelmofmalorne": 29098,
-  "ivoryidolofthemoongoddess": 27518,
-  "breastplateofmalorne": 29096,
-  "terestiansstranglestaff": 28658,
-  "emberspurtalisman": 28609,
-  "bandsofthebenevolent": 29249,
-  "earthsoulleggings": 28591,
-  "redridinghoodscloak": 28582,
-  "forestlordstriders": 28752,
-  "helmofdesolation": 28192,
-  "jaggedbarkpendant": 28343,
-  "cloakofmalice": 27519,
-  "shattrathschampionbelt": 31462,
-  "scaledgreavesofpatience": 27430,
-  "strengthofthehighchief": 34423,
-  "stormreaverwarblades": 28315,
-  "bigbadwolfspaw": 28584,
-  "adornmentofstolensouls": 28762,
-  "skyfirehawkbow": 27526,
-  "bootsoftheinfernalcoven": 28670,
-  "thelightningcapacitor": 28785,
-  "gripsofdeftness": 30644,
-  "gildedthoriumcloak": 28660,
-  "ironstridersofurgency": 28608,
-  "lightcollaroftheincarnate": 29049,
-  "arcaniumsignetbands": 27746,
-  "oshugunrelic": 25634,
-  "cordofbelief": 27542,
-  "celestialjewelring": 29814,
-  "nesingwarysafaristick": 25640,
-  "jaderingoftheeverliving": 28763,
-  "nethershardgirdle": 28565,
-  "skulkersgreaves": 28741,
-  "chestguardoftheconniver": 28601,
-  "steelspinefaceguard": 28671,
-  "expeditionscoutsepaulets": 25790,
-  "talonlordscollar": 29335,
-  "salvagershauberk": 30835,
-  "telaarihuntinggirdle": 27521,
-  "stalkerswarbands": 28454,
-  "glovesofquickening": 28519,
-  "bladefistsbreadth": 28041,
-  "fiendslayerboots": 28746,
-  "nalikosrevenge": 25804,
-  "totemofrage": 22395,
-  "fistofreckoning": 31139,
-  "whirlwindbracers": 28503,
-  "mittsofthetreemender": 28521,
-  "mendersheartring": 28661,
-  "scaledbreastplateofcarnage": 28599,
-  "foolsbane": 28657,
-  "ribbonofsacrifice": 28590,
-  "triptychshieldoftheancients": 28754,
-  "stormmastershelmet": 32086,
-  "babascloakofarcanistry": 28269,
-  "pauldronsofwildmagic": 32078,
-  "netherstrikebracers": 29521,
-  "netherstrikebreastplate": 29519,
-  "stormsongkilt": 30541,
-  "mazthorilhonorshield": 29268,
-  "netherstrikebelt": 29520,
-  "bandofcrimsonfury": 28793,
-  "nathrezimmindblade": 28770,
-  "totemofthestorm": 23199,
-  "voidheartgloves": 28968,
-  "seerssignet": 29126,
-  "plagueheartshoulderpads": 22507,
-  "sigillacedboots": 28406,
-  "tempeststouch": 29317,
-  "theblackstalk": 29350,
-  "chestguardoftheprowler": 27461,
-  "flametongueseal": 29270,
-  "warbringergauntlets": 29020,
-  "gorehowl": 28773,
-  "midnightlegguards": 30538,
-  "warbringershoulderguards": 29016,
-  "warbringergreathelm": 29011,
-  "devilsharkcape": 27804,
-  "blinkstrike": 31332,
-  "shieldofimpenetrabledarkness": 28606,
-  "cowlofdefiance": 28732,
-  "unimindheaddress": 28744,
-  "pauldronsofmalorne": 29095,
-  "broochofunquenchablefury": 28530,
-  "britchesofmalorne": 29094,
-  "girdleoftreachery": 28750,
-  "saberclawtalisman": 28674,
-  "manabinderscowl": 32089,
-  "legacy": 28587,
-  "pauldronsofthealdor": 29079,
-  "irongauntletsofthemaiden": 28518,
-  "jewelofinfinitepossibilities": 28734,
-  "justicarlegguards": 29069,
-  "pauldronsofthejusticeseeker": 28666,
-  "breastplateofthelightbinder": 28662,
-  "bootsofvaliance": 28569,
-  "pendantofthevioleteye": 28727,
-  "figurinenightseyepanther": 24128,
-  "lighttouchedstoleofaltruism": 29354,
-  "auchenaiboots": 28177,
-  "masqueradegown": 28578,
-  "cordofsanctification": 29250,
-  "ebonnetherscalebelt": 29516,
-  "drapeofthedarkreavers": 28672,
-  "scryersbloodgem": 29132,
-  "warbringerbattlehelm": 29021,
-  "warbringershoulderplates": 29023,
-  "warbringerbreastplate": 29019,
-  "terokksshadowstaff": 29355,
-  "bootsoftheshiftingsands": 28339,
-  "resoundingringofglory": 27904,
-  "steelhawkcrossbow": 28504,
-  "staffofinfinitemysteries": 28633,
-  "sunfurybowofthephoenix": 28772,
-  "redemptionheadpiece": 22428,
-  "justicarchestguard": 29066,
-  "collarofthealdor": 29076,
-  "redemptionwristguards": 22424,
-  "justicebearerspauldrons": 27539,
-  "necklaceofnecropsy": 23036,
-  "redemptionhandguards": 22426,
-  "cassockoftheloyal": 27748,
-  "redemptiongirdle": 22431,
-  "pureelementiumband": 19382,
-  "ringofredemption": 23066,
-  "rejuvenatinggem": 19395,
-  "hammerofthetwistingnether": 23056,
-  "shieldofcondemnation": 22819,
-  "libramoflight": 23006,
-  "starheartlamp": 28187,
-  "robesoftheincarnate": 29050,
-  "justicarshoulderplates": 29075,
-  "cycloneheaddress": 29028,
-  "voidheartmantle": 28967,
-  "gladiatorsslicer": 28295,
-  "wrynndynastygreaves": 28621,
-  "voidheartleggings": 28966,
-  "battlescarboots": 28747,
-  "ringofathousandmarks": 28757,
-  "romulospoisonvial": 28579,
-  "warpinfuseddrape": 28342
+  "abacusofviolentodds": {
+    "id": 28288,
+    "icon": "inv_misc_enggizmos_18"
+  },
+  "adalscommand": {
+    "id": 29177,
+    "icon": "inv_jewelry_ring_48naxxramas"
+  },
+  "adamantinechainoftheunbroken": {
+    "id": 29349,
+    "icon": "inv_jewelry_necklace_06"
+  },
+  "aegisofthevindicator": {
+    "id": 29458,
+    "icon": "inv_shield_33"
+  },
+  "aldorilegacydefender": {
+    "id": 28825,
+    "icon": "inv_shield_30"
+  },
+  "anchoritesrobes": {
+    "id": 29129,
+    "icon": "inv_chest_cloth_19"
+  },
+  "ancientdraeneiwartalisman": {
+    "id": 31617,
+    "icon": "inv_jewelry_talisman_14"
+  },
+  "archmagebelt": {
+    "id": 24677,
+    "icon": "inv_belt_02"
+  },
+  "ashyensgift": {
+    "id": 29172,
+    "icon": "inv_jewelry_ring_51naxxramas"
+  },
+  "auchenaideathshroud": {
+    "id": 27878,
+    "icon": "inv_misc_cape_21"
+  },
+  "ausleseslightchanneler": {
+    "id": 24390,
+    "icon": "inv_qiraj_jewelencased"
+  },
+  "aviancloakoffeathers": {
+    "id": 27946,
+    "icon": "inv_misc_cape_16"
+  },
+  "axeofthegronnlords": {
+    "id": 28794,
+    "icon": "inv_axe_64"
+  },
+  "azureshieldofcoldarra": {
+    "id": 29266,
+    "icon": "inv_shield_33"
+  },
+  "bandofanguish": {
+    "id": 30973,
+    "icon": "inv_jewelry_ring_44"
+  },
+  "bandoftheexorcist": {
+    "id": 28553,
+    "icon": "inv_jewelry_ring_60"
+  },
+  "bandoftheinevitable": {
+    "id": 23031,
+    "icon": "inv_jewelry_ring_53naxxramas"
+  },
+  "bandofunnaturalforces": {
+    "id": 23038,
+    "icon": "inv_jewelry_ring_48naxxramas"
+  },
+  "bandsofsyth": {
+    "id": 27918,
+    "icon": "inv_bracer_10"
+  },
+  "beastlordcuirass": {
+    "id": 28228,
+    "icon": "inv_chest_chain_03"
+  },
+  "beastlordhandguards": {
+    "id": 27474,
+    "icon": "inv_gauntlets_10"
+  },
+  "beastlordhelm": {
+    "id": 28275,
+    "icon": "inv_helmet_19"
+  },
+  "beastlordleggings": {
+    "id": 27874,
+    "icon": "inv_pants_03"
+  },
+  "beastlordmantle": {
+    "id": 27801,
+    "icon": "inv_shoulder_23"
+  },
+  "beltofdivineinsipration": {
+    "id": 28799,
+    "icon": "inv_belt_03"
+  },
+  "beltofdivineinspiration": {
+    "id": 28799,
+    "icon": "inv_belt_03"
+  },
+  "bindingsoffaith": {
+    "id": 22519,
+    "icon": "inv_bracer_13"
+  },
+  "bindingsofthetimewalker": {
+    "id": 29183,
+    "icon": "inv_bracer_10"
+  },
+  "bladedshoulderpadsofthemerciless": {
+    "id": 28755,
+    "icon": "inv_shoulder_29"
+  },
+  "bladeofthearchmage": {
+    "id": 29153,
+    "icon": "inv_weapon_shortblade_37"
+  },
+  "bladespirewarbands": {
+    "id": 28795,
+    "icon": "inv_bracer_15"
+  },
+  "bloodknightwarcloak": {
+    "id": 29382,
+    "icon": "inv_misc_cape_18"
+  },
+  "bloodlustbrooch": {
+    "id": 29383,
+    "icon": "inv_misc_monsterscales_15"
+  },
+  "bloodmawmagusblade": {
+    "id": 28802,
+    "icon": "inv_sword_65"
+  },
+  "bogstrokscalecloak": {
+    "id": 24379,
+    "icon": "inv_misc_cape_06"
+  },
+  "bootsofetherealmanipulation": {
+    "id": 29258,
+    "icon": "inv_boots_cloth_06"
+  },
+  "bootsofthecolossus": {
+    "id": 27813,
+    "icon": "inv_boots_chain_11"
+  },
+  "bootsofthegladekeeper": {
+    "id": 28251,
+    "icon": "inv_boots_05"
+  },
+  "bootsoftherighteouspath": {
+    "id": 29254,
+    "icon": "inv_boots_chain_05"
+  },
+  "bracersofarcaneaccuracy": {
+    "id": 19374,
+    "icon": "inv_bracer_07"
+  },
+  "bracersofdignity": {
+    "id": 29252,
+    "icon": "inv_bracer_02"
+  },
+  "bracersofhavok": {
+    "id": 24250,
+    "icon": "inv_bracer_10"
+  },
+  "breastplateofannihilation": {
+    "id": 21814,
+    "icon": "inv_chest_plate02"
+  },
+  "breastplateofthebold": {
+    "id": 28205,
+    "icon": "inv_chest_chain_15"
+  },
+  "brilliantpearlband": {
+    "id": 32772,
+    "icon": "inv_jewelry_ring_05"
+  },
+  "broochofheightenedpotential": {
+    "id": 28134,
+    "icon": "inv_jewelry_necklace_27"
+  },
+  "brutecloakoftheogremagi": {
+    "id": 28797,
+    "icon": "inv_misc_cape_16"
+  },
+  "burnooseofshiftingages": {
+    "id": 27988,
+    "icon": "inv_misc_cape_15"
+  },
+  "charlottesivy": {
+    "id": 31338,
+    "icon": "inv_jewelry_necklace_36"
+  },
+  "chestgaurdofthefalledhero": {
+    "id": 29755,
+    "icon": "inv_chest_chain_03"
+  },
+  "chestgaurdofthefallenchampion": {
+    "id": 29754,
+    "icon": "inv_chest_chain_03"
+  },
+  "chestgaurdofthefallendefender": {
+    "id": 29753,
+    "icon": "inv_chest_chain_03"
+  },
+  "chestguardofnoremorse": {
+    "id": 27787,
+    "icon": "inv_chest_plate11"
+  },
+  "chestguardofthefallenchampion": {
+    "id": 29754,
+    "icon": "inv_chest_chain_03"
+  },
+  "chestguardofthefallendefender": {
+    "id": 29753,
+    "icon": "inv_chest_chain_03"
+  },
+  "chestguardofthefallenhero": {
+    "id": 29755,
+    "icon": "inv_chest_chain_03"
+  },
+  "chokerofvileintent": {
+    "id": 29381,
+    "icon": "inv_jewelry_necklace_04"
+  },
+  "chromaticboots": {
+    "id": 19387,
+    "icon": "inv_boots_plate_04"
+  },
+  "circletoffaith": {
+    "id": 22514,
+    "icon": "inv_crown_01"
+  },
+  "clefthoofhideleggings": {
+    "id": 31544,
+    "icon": "inv_pants_14"
+  },
+  "cloakofhealingrays": {
+    "id": 24459,
+    "icon": "inv_misc_cape_06"
+  },
+  "cloakofthecraft": {
+    "id": 31255,
+    "icon": "inv_misc_cape_20"
+  },
+  "cloakofthedevoured": {
+    "id": 22731,
+    "icon": "inv_misc_cape_18"
+  },
+  "cloakoftheinciter": {
+    "id": 27892,
+    "icon": "inv_misc_cape_08"
+  },
+  "cloakofthenecropolis": {
+    "id": 23050,
+    "icon": "inv_misc_cape_naxxramas_03"
+  },
+  "cloakofthepitstalker": {
+    "id": 28777,
+    "icon": "inv_misc_cape_14"
+  },
+  "cobaltbandoftyrigosa": {
+    "id": 29352,
+    "icon": "inv_jewelry_ring_57"
+  },
+  "collarofchogall": {
+    "id": 28804,
+    "icon": "inv_helmet_27"
+  },
+  "cordofnaturessustenance": {
+    "id": 28655,
+    "icon": "inv_belt_22"
+  },
+  "cosmiclifeband": {
+    "id": 28259,
+    "icon": "inv_jewelry_ring_62"
+  },
+  "cowlofnaarublessings": {
+    "id": 32090,
+    "icon": "inv_helmet_30"
+  },
+  "cowlofnaturesbreath": {
+    "id": 28803,
+    "icon": "inv_helmet_15"
+  },
+  "crestoftheshatar": {
+    "id": 29176,
+    "icon": "inv_shield_30"
+  },
+  "crownoftheforestlord": {
+    "id": 27763,
+    "icon": "inv_helmet_17"
+  },
+  "cryomitts": {
+    "id": 29327,
+    "icon": "inv_gauntlets_22"
+  },
+  "cryptstalkergirdle": {
+    "id": 22442,
+    "icon": "inv_belt_22"
+  },
+  "cryptstalkerlegguards": {
+    "id": 22437,
+    "icon": "inv_pants_mail_15"
+  },
+  "crystalbandofvalor": {
+    "id": 27822,
+    "icon": "inv_jewelry_ring_54"
+  },
+  "crystalheartpulsestaff": {
+    "id": 28782,
+    "icon": "inv_staff_53"
+  },
+  "crystalpulseshield": {
+    "id": 31292,
+    "icon": "inv_shield_35"
+  },
+  "curatesboots": {
+    "id": 25792,
+    "icon": "inv_boots_05"
+  },
+  "darkcloakofthemarsh": {
+    "id": 25540,
+    "icon": "inv_misc_cape_20"
+  },
+  "deathforgegirdle": {
+    "id": 27985,
+    "icon": "inv_belt_23"
+  },
+  "delicategreenponcho": {
+    "id": 28032,
+    "icon": "inv_misc_cape_05"
+  },
+  "doomfinger": {
+    "id": 22821,
+    "icon": "inv_wand_1h_stratholme_d_02"
+  },
+  "draeneicrystalrod": {
+    "id": 25099,
+    "icon": "inv_misc_orb_01"
+  },
+  "dragonhawkbelt": {
+    "id": 24798,
+    "icon": "inv_belt_02"
+  },
+  "dragonscalewand": {
+    "id": 25294,
+    "icon": "inv_wand_06"
+  },
+  "dragonspinetrophy": {
+    "id": 28830,
+    "icon": "inv_misc_bone_03"
+  },
+  "drakefangtalisman": {
+    "id": 19406,
+    "icon": "inv_misc_bone_06"
+  },
+  "drapeofunyieldingstrength": {
+    "id": 21394,
+    "icon": "inv_misc_cape_20"
+  },
+  "earthenmarkofrazing": {
+    "id": 25562,
+    "icon": "inv_jewelry_necklace_06"
+  },
+  "earthwarden": {
+    "id": 29171,
+    "icon": "inv_hammer_10"
+  },
+  "ebonyflamegloves": {
+    "id": 19407,
+    "icon": "inv_gauntlets_27"
+  },
+  "energisarmwraps": {
+    "id": 28317,
+    "icon": "inv_gauntlets_19"
+  },
+  "enigmaticband": {
+    "id": 31929,
+    "icon": "inv_jewelry_ring_46"
+  },
+  "eredarwandofobliteration": {
+    "id": 28783,
+    "icon": "inv_wand_20"
+  },
+  "essenceofthemartyr": {
+    "id": 29376,
+    "icon": "inv_valentineperfumebottle"
+  },
+  "eterniumrunedblade": {
+    "id": 23554,
+    "icon": "inv_weapon_shortblade_05"
+  },
+  "exorcistssilkhood": {
+    "id": 28760,
+    "icon": "inv_helmet_30"
+  },
+  "extravagantbootsofmalice": {
+    "id": 27821,
+    "icon": "inv_boots_cloth_12"
+  },
+  "eyeofgruul": {
+    "id": 28823,
+    "icon": "spell_shadow_unholyfrenzy"
+  },
+  "eyeofmagtheridon": {
+    "id": 28789,
+    "icon": "inv_elemental_mote_life01"
+  },
+  "eyeofthedead": {
+    "id": 23047,
+    "icon": "inv_trinket_naxxramas01"
+  },
+  "faceguardofdetermination": {
+    "id": 32083,
+    "icon": "inv_helmet_01"
+  },
+  "fathomheartgauntlets": {
+    "id": 27806,
+    "icon": "inv_gauntlets_10"
+  },
+  "felleatherboots": {
+    "id": 25686,
+    "icon": "inv_boots_cloth_05"
+  },
+  "felleathergloves": {
+    "id": 25685,
+    "icon": "inv_gauntlets_22"
+  },
+  "felstalkerbracers": {
+    "id": 25697,
+    "icon": "inv_bracer_14"
+  },
+  "fieldmarshalsplateshoulderguards": {
+    "id": 16480,
+    "icon": "inv_shoulder_20"
+  },
+  "figurinedawnstonecrab": {
+    "id": 24125,
+    "icon": "inv_jewelcrafting_truesilvercrab"
+  },
+  "firemawsclutch": {
+    "id": 19400,
+    "icon": "inv_belt_10"
+  },
+  "fleshhandlersgauntlets": {
+    "id": 30341,
+    "icon": "inv_gauntlets_23"
+  },
+  "forestheartbracers": {
+    "id": 29263,
+    "icon": "inv_bracer_02"
+  },
+  "frostfirecirclet": {
+    "id": 22498,
+    "icon": "inv_crown_01"
+  },
+  "frostfirering": {
+    "id": 23062,
+    "icon": "inv_jewelry_ring_51naxxramas"
+  },
+  "frostfiresandals": {
+    "id": 22500,
+    "icon": "inv_boots_fabric_01"
+  },
+  "frozenshadoweaveboots": {
+    "id": 21870,
+    "icon": "inv_boots_cloth_03"
+  },
+  "frozenshadoweaverobe": {
+    "id": 21871,
+    "icon": "inv_chest_cloth_08"
+  },
+  "frozenshadoweaveshoulders": {
+    "id": 21869,
+    "icon": "inv_shoulder_25"
+  },
+  "gauntletsofannihilation": {
+    "id": 21581,
+    "icon": "inv_gauntlets_31"
+  },
+  "gauntletsofmartialperfection": {
+    "id": 28824,
+    "icon": "inv_gauntlets_31"
+  },
+  "gauntletsofthedragonslayer": {
+    "id": 28827,
+    "icon": "inv_gauntlets_25"
+  },
+  "gauntletsoftherighteous": {
+    "id": 27535,
+    "icon": "inv_gauntlets_29"
+  },
+  "gavelofpurelight": {
+    "id": 29175,
+    "icon": "inv_hammer_04"
+  },
+  "girdleofdivineblessing": {
+    "id": 31202,
+    "icon": "inv_belt_08"
+  },
+  "girdleofruination": {
+    "id": 24256,
+    "icon": "inv_belt_13"
+  },
+  "girdleoftheendlesspit": {
+    "id": 28779,
+    "icon": "inv_belt_22"
+  },
+  "girdleoftheimmovable": {
+    "id": 27672,
+    "icon": "inv_belt_26"
+  },
+  "girdleofthementor": {
+    "id": 23219,
+    "icon": "inv_belt_13"
+  },
+  "glaiveofthepit": {
+    "id": 28774,
+    "icon": "inv_weapon_halberd16"
+  },
+  "glovesofenforcement": {
+    "id": 21672,
+    "icon": "inv_gauntlets_17"
+  },
+  "glovesoffaith": {
+    "id": 22517,
+    "icon": "inv_gauntlets_17"
+  },
+  "glovesofpandemonium": {
+    "id": 31149,
+    "icon": "inv_gauntlets_15"
+  },
+  "glovesofpreservation": {
+    "id": 25791,
+    "icon": "inv_gauntlets_15"
+  },
+  "gnomereganautododger600": {
+    "id": 29387,
+    "icon": "inv_battery_02"
+  },
+  "goldenvinewraps": {
+    "id": 28029,
+    "icon": "inv_bracer_12"
+  },
+  "grandmarshalsclaymore": {
+    "id": 18876,
+    "icon": "inv_sword_39"
+  },
+  "grandmarshalshandaxe": {
+    "id": 18827,
+    "icon": "inv_axe_24"
+  },
+  "gressildawnofruin": {
+    "id": 23054,
+    "icon": "inv_sword_61"
+  },
+  "gronnstitchedgirdle": {
+    "id": 28828,
+    "icon": "inv_belt_26"
+  },
+  "hallowedgarments": {
+    "id": 28230,
+    "icon": "inv_chest_cloth_39"
+  },
+  "hallowedpauldrons": {
+    "id": 27775,
+    "icon": "inv_shoulder_22"
+  },
+  "hallowedtrousers": {
+    "id": 27875,
+    "icon": "inv_pants_cloth_18"
+  },
+  "hammerofthenaaru": {
+    "id": 28800,
+    "icon": "inv_hammer_28"
+  },
+  "hammerofthepenitent": {
+    "id": 28257,
+    "icon": "inv_mace_13"
+  },
+  "haramadsbargain": {
+    "id": 29119,
+    "icon": "inv_jewelry_necklace_29naxxramas"
+  },
+  "harnessofthedeepcurrents": {
+    "id": 27912,
+    "icon": "inv_chest_leather_05"
+  },
+  "heavyclefthoofboots": {
+    "id": 25691,
+    "icon": "inv_boots_07"
+  },
+  "heavyclefthoofleggings": {
+    "id": 25690,
+    "icon": "inv_pants_12"
+  },
+  "heavyclefthoofvest": {
+    "id": 25689,
+    "icon": "inv_chest_leather_06"
+  },
+  "hellforgedhalberd": {
+    "id": 29166,
+    "icon": "inv_weapon_halberd_12"
+  },
+  "helmoftheclaw": {
+    "id": 28182,
+    "icon": "inv_helmet_15"
+  },
+  "holyhealingband": {
+    "id": 25713,
+    "icon": "inv_jewelry_ring_35"
+  },
+  "hoodofoblivion": {
+    "id": 28415,
+    "icon": "inv_helmet_30"
+  },
+  "hoodofprimallife": {
+    "id": 29505,
+    "icon": "inv_helmet_32"
+  },
+  "hourglassoftheunraveller": {
+    "id": 28034,
+    "icon": "inv_gizmo_khoriumpowercore"
+  },
+  "iblisbladeofthefallenseraph": {
+    "id": 23014,
+    "icon": "inv_sword_07"
+  },
+  "iconofthesilvercrescent": {
+    "id": 29370,
+    "icon": "inv_weapon_shortblade_23"
+  },
+  "iconofunyieldingcourage": {
+    "id": 28121,
+    "icon": "inv_brd_banner"
+  },
+  "idolofbrutality": {
+    "id": 23198,
+    "icon": "inv_relics_idolofferocity"
+  },
+  "idoloftheemeraldqueen": {
+    "id": 27886,
+    "icon": "spell_nature_natureresistancetotem"
+  },
+  "ironbandoftheunbreakable": {
+    "id": 27436,
+    "icon": "inv_jewelry_ring_30"
+  },
+  "jadeskullbreastplate": {
+    "id": 28262,
+    "icon": "inv_chest_plate07"
+  },
+  "jeweledbootsofsanctification": {
+    "id": 27525,
+    "icon": "inv_boots_cloth_12"
+  },
+  "jindosevileye": {
+    "id": 19885,
+    "icon": "inv_jewelry_ring_45"
+  },
+  "karaboriantalisman": {
+    "id": 28781,
+    "icon": "inv_offhand_draenei_a_01"
+  },
+  "kaylaanssignet": {
+    "id": 30860,
+    "icon": "inv_jewelry_ring_34"
+  },
+  "keepersringofpiety": {
+    "id": 29322,
+    "icon": "inv_jewelry_ring_38"
+  },
+  "khadgarskiltofabjuration": {
+    "id": 28185,
+    "icon": "inv_pants_leather_05"
+  },
+  "khadgarsknapsack": {
+    "id": 29273,
+    "icon": "inv_misc_bag_10_green"
+  },
+  "kiltoflivinggrowth": {
+    "id": 31335,
+    "icon": "inv_pants_mail_08"
+  },
+  "kissofthespider": {
+    "id": 22954,
+    "icon": "inv_trinket_naxxramas04"
+  },
+  "lampofpeacefulradiance": {
+    "id": 28412,
+    "icon": "inv_offhand_outlandraid_03white"
+  },
+  "latrosshiftingsword": {
+    "id": 28189,
+    "icon": "inv_sword_76"
+  },
+  "leggingsofpolarity": {
+    "id": 23070,
+    "icon": "inv_pants_08"
+  },
+  "leggingsofthefallenchampion": {
+    "id": 29766,
+    "icon": "inv_pants_plate_17"
+  },
+  "leggingsofthefallendefender": {
+    "id": 29767,
+    "icon": "inv_pants_plate_17"
+  },
+  "leggingsofthefallenhero": {
+    "id": 29765,
+    "icon": "inv_pants_plate_17"
+  },
+  "liarstonguegloves": {
+    "id": 28776,
+    "icon": "inv_gauntlets_19"
+  },
+  "libramofavengement": {
+    "id": 27484,
+    "icon": "inv_misc_stonetablet_05"
+  },
+  "libramofrepentance": {
+    "id": 29388,
+    "icon": "inv_relics_libramofhope"
+  },
+  "libramofthelightbringer": {
+    "id": 28296,
+    "icon": "inv_misc_book_12"
+  },
+  "lightbearersfaithshield": {
+    "id": 29267,
+    "icon": "inv_shield_33"
+  },
+  "lightswornhammer": {
+    "id": 27538,
+    "icon": "inv_hammer_23"
+  },
+  "lightwovenslippers": {
+    "id": 27919,
+    "icon": "inv_boots_cloth_02"
+  },
+  "lionheartchampion": {
+    "id": 28429,
+    "icon": "inv_sword_2h_blacksmithing_02"
+  },
+  "lionhearthelm": {
+    "id": 12640,
+    "icon": "inv_helmet_36"
+  },
+  "lolaseve": {
+    "id": 31339,
+    "icon": "inv_jewelry_ring_56"
+  },
+  "lowercityprayerbook": {
+    "id": 30841,
+    "icon": "inv_misc_book_11"
+  },
+  "luciddreambracers": {
+    "id": 27827,
+    "icon": "inv_bracer_06"
+  },
+  "magtheridonshead": {
+    "id": 32385,
+    "icon": "inv_misc_head_tauren_01"
+  },
+  "maleficmaskoftheshadows": {
+    "id": 28796,
+    "icon": "inv_helmet_58"
+  },
+  "maleficmastoftheshadows": {
+    "id": 28796,
+    "icon": "inv_helmet_58"
+  },
+  "manaetchedcrown": {
+    "id": 28193,
+    "icon": "inv_jewelry_ring_56"
+  },
+  "manaetchedgloves": {
+    "id": 27465,
+    "icon": "inv_gauntlets_15"
+  },
+  "manaetchedspaulders": {
+    "id": 27796,
+    "icon": "inv_shoulder_22"
+  },
+  "manimalscinch": {
+    "id": 30942,
+    "icon": "inv_belt_17"
+  },
+  "mantleofautumn": {
+    "id": 28340,
+    "icon": "inv_shoulder_18"
+  },
+  "markofthechampion": {
+    "id": 23206,
+    "icon": "inv_misc_token_argentdawn2"
+  },
+  "markoftheravenguard": {
+    "id": 29336,
+    "icon": "inv_jewelry_necklace_34"
+  },
+  "marshalsleatherbracers": {
+    "id": 28988,
+    "icon": "inv_bracer_07"
+  },
+  "marshalsplatebelt": {
+    "id": 28995,
+    "icon": "inv_belt_14"
+  },
+  "marshalsplategreaves": {
+    "id": 28997,
+    "icon": "inv_boots_plate_04"
+  },
+  "marshalsplatelegguards": {
+    "id": 16479,
+    "icon": "inv_pants_04"
+  },
+  "marshalssilkcuffs": {
+    "id": 29002,
+    "icon": "inv_bracer_07"
+  },
+  "maskofthedeceiver": {
+    "id": 32087,
+    "icon": "inv_helmet_73"
+  },
+  "masterdragonslayersring": {
+    "id": 19384,
+    "icon": "inv_jewelry_ring_41"
+  },
+  "maulgarswarhelm": {
+    "id": 28801,
+    "icon": "inv_helmet_23"
+  },
+  "medallionofthelightbearer": {
+    "id": 29123,
+    "icon": "inv_jewelry_amulet_04"
+  },
+  "moongladeshoulders": {
+    "id": 27737,
+    "icon": "inv_shoulder_24"
+  },
+  "myrmidonsheaddress": {
+    "id": 28180,
+    "icon": "inv_helmet_25"
+  },
+  "naarubeltofprecision": {
+    "id": 31464,
+    "icon": "inv_belt_16"
+  },
+  "natashasguardiancord": {
+    "id": 31691,
+    "icon": "inv_jewelry_necklace_31"
+  },
+  "necklaceofthejuggernaut": {
+    "id": 29386,
+    "icon": "inv_jewelry_necklace_ahnqiraj_03"
+  },
+  "neltharionstear": {
+    "id": 19379,
+    "icon": "inv_stone_15"
+  },
+  "nethekursesrodoftorment": {
+    "id": 25806,
+    "icon": "inv_wand_05"
+  },
+  "nethercorescontrolrod": {
+    "id": 28386,
+    "icon": "inv_wand_17"
+  },
+  "nexusprincesringofbalance": {
+    "id": 31919,
+    "icon": "inv_jewelry_ring_53naxxramas"
+  },
+  "ogreslayersband": {
+    "id": 25775,
+    "icon": "inv_jewelry_ring_02"
+  },
+  "ogreslayerscover": {
+    "id": 25777,
+    "icon": "inv_misc_cape_16"
+  },
+  "orbofthesouleater": {
+    "id": 29272,
+    "icon": "inv_misc_orb_04"
+  },
+  "pathfindersband": {
+    "id": 31277,
+    "icon": "inv_jewelry_ring_ahnqiraj_01"
+  },
+  "pauldronsofthefallenchampion": {
+    "id": 29763,
+    "icon": "inv_shoulder_22"
+  },
+  "pauldronsofthefallendefender": {
+    "id": 29764,
+    "icon": "inv_shoulder_22"
+  },
+  "pauldronsofthefallenhero": {
+    "id": 29762,
+    "icon": "inv_shoulder_22"
+  },
+  "pendantofbattlelust": {
+    "id": 24385,
+    "icon": "inv_jewelry_necklace_17"
+  },
+  "pitlordssatchel": {
+    "id": 34845,
+    "icon": "inv_misc_bag_enchantedrunecloth"
+  },
+  "plagueheartbelt": {
+    "id": 22510,
+    "icon": "inv_belt_03"
+  },
+  "plagueheartcirclet": {
+    "id": 22506,
+    "icon": "inv_crown_01"
+  },
+  "plagueheartrobe": {
+    "id": 22504,
+    "icon": "inv_chest_cloth_43"
+  },
+  "platedabominationribcage": {
+    "id": 23000,
+    "icon": "inv_chest_chain_15"
+  },
+  "pontifexkilt": {
+    "id": 30543,
+    "icon": "inv_pants_cloth_20"
+  },
+  "primalmoonclothbelt": {
+    "id": 21873,
+    "icon": "inv_belt_31"
+  },
+  "primalmoonclothrobe": {
+    "id": 21875,
+    "icon": "inv_chest_cloth_04"
+  },
+  "primalmoonclothshoulders": {
+    "id": 21874,
+    "icon": "inv_shoulder_02"
+  },
+  "primalstrikebracers": {
+    "id": 29527,
+    "icon": "inv_bracer_07"
+  },
+  "primalstrikevest": {
+    "id": 29525,
+    "icon": "inv_chest_cloth_45"
+  },
+  "primalsurgebracers": {
+    "id": 28194,
+    "icon": "inv_bracer_12"
+  },
+  "princelyreignleggings": {
+    "id": 24359,
+    "icon": "inv_pants_cloth_16"
+  },
+  "prismaticmittensofmending": {
+    "id": 28304,
+    "icon": "inv_gauntlets_16"
+  },
+  "quagmirranseye": {
+    "id": 27683,
+    "icon": "inv_misc_gem_pearl_01"
+  },
+  "ragesteelbreastplate": {
+    "id": 23522,
+    "icon": "inv_chest_chain_16"
+  },
+  "ragesteelshoulders": {
+    "id": 33173,
+    "icon": "inv_shoulder_16"
+  },
+  "ravenclawband": {
+    "id": 27925,
+    "icon": "inv_jewelry_ring_16"
+  },
+  "rimecoveredmantle": {
+    "id": 22983,
+    "icon": "inv_shoulder_05"
+  },
+  "ringofconvalescence": {
+    "id": 29169,
+    "icon": "inv_jewelry_ring_43"
+  },
+  "ringofcrypticdreams": {
+    "id": 29367,
+    "icon": "inv_jewelry_ring_56"
+  },
+  "ringoffaith": {
+    "id": 23061,
+    "icon": "inv_jewelry_ring_51naxxramas"
+  },
+  "ringofthefallengod": {
+    "id": 21709,
+    "icon": "inv_jewelry_ring_ahnqiraj_02"
+  },
+  "ringofthemartyr": {
+    "id": 21620,
+    "icon": "inv_jewelry_ring_ahnqiraj_01"
+  },
+  "robeoffaith": {
+    "id": 22512,
+    "icon": "inv_chest_cloth_43"
+  },
+  "robeofoblivion": {
+    "id": 28232,
+    "icon": "inv_chest_cloth_29"
+  },
+  "royalscepterofveklor": {
+    "id": 21597,
+    "icon": "inv_wand_10"
+  },
+  "rubyslippers": {
+    "id": 28585,
+    "icon": "inv_boots_cloth_09"
+  },
+  "runeengravedbelt": {
+    "id": 25789,
+    "icon": "inv_belt_35"
+  },
+  "runesongdagger": {
+    "id": 27868,
+    "icon": "inv_weapon_shortblade_52"
+  },
+  "ryngosbandofingenuity": {
+    "id": 28394,
+    "icon": "inv_jewelry_ring_48naxxramas"
+  },
+  "sapphironslefteye": {
+    "id": 23049,
+    "icon": "inv_offhand_naxxramas_03"
+  },
+  "sashofarcanevisions": {
+    "id": 29257,
+    "icon": "inv_belt_03"
+  },
+  "sashofserpentra": {
+    "id": 27795,
+    "icon": "inv_belt_13"
+  },
+  "scaraboftheinfinitecycle": {
+    "id": 28190,
+    "icon": "inv_misc_ahnqirajtrinket_06"
+  },
+  "scintillatingcoralband": {
+    "id": 27784,
+    "icon": "inv_jewelry_ring_62"
+  },
+  "sealofthedamned": {
+    "id": 23025,
+    "icon": "inv_jewelry_ring_48naxxramas"
+  },
+  "sealoftheexorcist": {
+    "id": 28555,
+    "icon": "inv_jewelry_ring_60"
+  },
+  "sethekkoraclecloak": {
+    "id": 27981,
+    "icon": "inv_misc_cape_11"
+  },
+  "sethekkoraclesfocus": {
+    "id": 29334,
+    "icon": "inv_jewelry_necklace_12"
+  },
+  "shadowcloakofdalaran": {
+    "id": 28570,
+    "icon": "inv_misc_cape_20"
+  },
+  "shapeshifterssignet": {
+    "id": 30834,
+    "icon": "inv_jewelry_ring_41"
+  },
+  "shatarivindicatorswaistguard": {
+    "id": 31460,
+    "icon": "inv_belt_23"
+  },
+  "shatariwroughtarmguards": {
+    "id": 28167,
+    "icon": "inv_bracer_17"
+  },
+  "shattrathjumpers": {
+    "id": 28179,
+    "icon": "inv_boots_fabric_01"
+  },
+  "shattrathleggings": {
+    "id": 30257,
+    "icon": "inv_pants_leather_05"
+  },
+  "shattrathwraps": {
+    "id": 28174,
+    "icon": "inv_bracer_07"
+  },
+  "shawlofshiftingprobabilities": {
+    "id": 29369,
+    "icon": "inv_misc_cape_16"
+  },
+  "shiffarsnexushorn": {
+    "id": 28418,
+    "icon": "inv_gizmo_elementalblastingpowder"
+  },
+  "shockwavetruncheon": {
+    "id": 29353,
+    "icon": "inv_mace_54"
+  },
+  "shoulderguardsofthebold": {
+    "id": 27803,
+    "icon": "inv_shoulder_26"
+  },
+  "shoulderpadsofassassination": {
+    "id": 27776,
+    "icon": "inv_shoulder_24"
+  },
+  "shurikenofnegation": {
+    "id": 28826,
+    "icon": "inv_misc_ahnqirajtrinket_03"
+  },
+  "slayersmarkoftheredemption": {
+    "id": 31077,
+    "icon": "inv_jewelry_ring_39"
+  },
+  "sonicspear": {
+    "id": 27903,
+    "icon": "inv_spear_08"
+  },
+  "souleatershandwraps": {
+    "id": 28780,
+    "icon": "inv_gauntlets_15"
+  },
+  "soulwandofthealdor": {
+    "id": 27885,
+    "icon": "inv_wand_05"
+  },
+  "spauldersofoblivion": {
+    "id": 27778,
+    "icon": "inv_shoulder_18"
+  },
+  "spauldersoftherighteous": {
+    "id": 27739,
+    "icon": "inv_shoulder_10"
+  },
+  "spellfirebelt": {
+    "id": 21846,
+    "icon": "inv_belt_04"
+  },
+  "spellfiregloves": {
+    "id": 21847,
+    "icon": "inv_gauntlets_19"
+  },
+  "spellfirerobe": {
+    "id": 21848,
+    "icon": "inv_chest_cloth_02"
+  },
+  "spellstrikehood": {
+    "id": 24266,
+    "icon": "inv_helmet_27"
+  },
+  "spellstrikepants": {
+    "id": 24262,
+    "icon": "inv_pants_cloth_14"
+  },
+  "spinesever": {
+    "id": 34622,
+    "icon": "inv_weapon_shortblade_24"
+  },
+  "spymistresswristguards": {
+    "id": 28171,
+    "icon": "inv_bracer_08"
+  },
+  "starlightdagger": {
+    "id": 27543,
+    "icon": "inv_weapon_shortblade_37"
+  },
+  "steamhingechainofvalor": {
+    "id": 27792,
+    "icon": "ability_rogue_nervesofsteel"
+  },
+  "styleensimpedingscarab": {
+    "id": 19431,
+    "icon": "inv_misc_armorkit_10"
+  },
+  "swampstonenecklace": {
+    "id": 27766,
+    "icon": "inv_jewelry_necklace_29"
+  },
+  "talismanofephemeralpower": {
+    "id": 18820,
+    "icon": "inv_misc_stonetablet_11"
+  },
+  "talismanofkalecgos": {
+    "id": 29271,
+    "icon": "inv_offhand_outlandraid_02"
+  },
+  "tarrenmilldefenderscinch": {
+    "id": 29319,
+    "icon": "inv_belt_24"
+  },
+  "tearsofheaven": {
+    "id": 29274,
+    "icon": "inv_potion_75"
+  },
+  "teethofgruul": {
+    "id": 28822,
+    "icon": "inv_misc_bone_09"
+  },
+  "terrorpitgirdle": {
+    "id": 28778,
+    "icon": "inv_belt_20"
+  },
+  "theessencefocuser": {
+    "id": 31304,
+    "icon": "inv_mace_34"
+  },
+  "thesagaofterokk": {
+    "id": 27634,
+    "icon": "inv_relics_libramoftruth"
+  },
+  "thesoulharvestersbindings": {
+    "id": 23021,
+    "icon": "inv_bracer_07"
+  },
+  "thesuneater": {
+    "id": 29362,
+    "icon": "inv_sword_63"
+  },
+  "thunderinggreathelm": {
+    "id": 28775,
+    "icon": "inv_helmet_58"
+  },
+  "timewardensleggings": {
+    "id": 29184,
+    "icon": "inv_pants_plate_10"
+  },
+  "tomeofshadowforce": {
+    "id": 19309,
+    "icon": "inv_misc_book_06"
+  },
+  "totemofhealingrains": {
+    "id": 28523,
+    "icon": "spell_nature_giftofthewaterspirit"
+  },
+  "totemofsustaining": {
+    "id": 23200,
+    "icon": "inv_relics_totemoflife"
+  },
+  "totemoftheplains": {
+    "id": 25645,
+    "icon": "inv_relics_totemoflife"
+  },
+  "totemofthethunderhead": {
+    "id": 24413,
+    "icon": "spell_nature_lightning"
+  },
+  "trialfiretrousers": {
+    "id": 28594,
+    "icon": "inv_pants_cloth_05"
+  },
+  "trousersofoblivion": {
+    "id": 27948,
+    "icon": "inv_pants_08"
+  },
+  "truestrikering": {
+    "id": 31326,
+    "icon": "inv_jewelry_ring_58"
+  },
+  "tunicofassassination": {
+    "id": 28204,
+    "icon": "inv_chest_chain_17"
+  },
+  "unitingcharm": {
+    "id": 25633,
+    "icon": "inv_jewelry_talisman_04"
+  },
+  "valanoslongbow": {
+    "id": 31303,
+    "icon": "inv_weapon_bow_04"
+  },
+  "vermillionrobesofthedominant": {
+    "id": 27799,
+    "icon": "inv_chest_cloth_18"
+  },
+  "vestiaspauldronsofinnergrace": {
+    "id": 28250,
+    "icon": "inv_shoulder_35"
+  },
+  "veteransmusket": {
+    "id": 29151,
+    "icon": "inv_weapon_rifle_02"
+  },
+  "vindicatorsbrand": {
+    "id": 29124,
+    "icon": "inv_sword_draenei_01"
+  },
+  "violetsignet": {
+    "id": 29285,
+    "icon": "inv_jewelry_ring_62"
+  },
+  "voidfirewand": {
+    "id": 25939,
+    "icon": "inv_wand_06"
+  },
+  "wandofthenetherwing": {
+    "id": 27890,
+    "icon": "inv_wand_19"
+  },
+  "warbringerhandguards": {
+    "id": 29017,
+    "icon": "inv_gauntlets_28"
+  },
+  "wastewalkerhelm": {
+    "id": 28224,
+    "icon": "inv_helmet_15"
+  },
+  "wastewalkerleggings": {
+    "id": 27837,
+    "icon": "inv_pants_mail_04"
+  },
+  "wastewalkershoulderpads": {
+    "id": 27797,
+    "icon": "inv_shoulder_15"
+  },
+  "watcherscowl": {
+    "id": 29174,
+    "icon": "inv_helmet_34"
+  },
+  "whiteremedycape": {
+    "id": 24254,
+    "icon": "inv_misc_cape_11"
+  },
+  "windcallersorb": {
+    "id": 29170,
+    "icon": "inv_misc_orb_01"
+  },
+  "windchannellerstunic": {
+    "id": 31554,
+    "icon": "inv_chest_cloth_08"
+  },
+  "windhawkbracers": {
+    "id": 29523,
+    "icon": "inv_bracer_07"
+  },
+  "windshearboots": {
+    "id": 28810,
+    "icon": "inv_boots_chain_05"
+  },
+  "wraithblade": {
+    "id": 22807,
+    "icon": "inv_sword_11"
+  },
+  "wrathfirehandcannon": {
+    "id": 27898,
+    "icon": "inv_weapon_rifle_20"
+  },
+  "xavianstiletto": {
+    "id": 28659,
+    "icon": "inv_weapon_shortblade_35"
+  },
+  "zierhutslosttreads": {
+    "id": 30674,
+    "icon": "inv_boots_plate_06"
+  },
+  "eyeofthenight": {
+    "id": 24116,
+    "icon": "inv_jewelry_necklace_28"
+  },
+  "druidichelmetofsecondsight": {
+    "id": 31110,
+    "icon": "inv_helmet_04"
+  },
+  "bandofdominion": {
+    "id": 31290,
+    "icon": "inv_jewelry_ring_24"
+  },
+  "windhawkbelt": {
+    "id": 29524,
+    "icon": "inv_belt_03"
+  },
+  "moonstriderboots": {
+    "id": 27914,
+    "icon": "inv_boots_cloth_14"
+  },
+  "xirisgift": {
+    "id": 29179,
+    "icon": "inv_misc_elvencoins"
+  },
+  "starkillersbauble": {
+    "id": 30340,
+    "icon": "spell_arcane_arcaneresilience"
+  },
+  "evokersmarkoftheredemption": {
+    "id": 31075,
+    "icon": "inv_jewelry_ring_35"
+  },
+  "thebringerofdeath": {
+    "id": 31308,
+    "icon": "inv_staff_06"
+  },
+  "mantleofmalorne": {
+    "id": 29100,
+    "icon": "inv_shoulder_14"
+  },
+  "thoriumweavecloak": {
+    "id": 28256,
+    "icon": "inv_misc_cape_11"
+  },
+  "marshalsleatherbelt": {
+    "id": 28986,
+    "icon": "inv_belt_17"
+  },
+  "gauntletsofmalorne": {
+    "id": 29097,
+    "icon": "inv_gauntlets_25"
+  },
+  "greavesofmalorne": {
+    "id": 29099,
+    "icon": "inv_pants_mail_15"
+  },
+  "idolofthewild": {
+    "id": 28064,
+    "icon": "spell_nature_spiritwolf"
+  },
+  "adalssignetofdefense": {
+    "id": 28792,
+    "icon": "inv_jewelry_ring_55"
+  },
+  "adamantinefigurine": {
+    "id": 27891,
+    "icon": "inv_qirajidol_sage"
+  },
+  "glovesofsaintlyblessings": {
+    "id": 28508,
+    "icon": "inv_gauntlets_17"
+  },
+  "bootsoftheincorrupt": {
+    "id": 28663,
+    "icon": "inv_boots_fabric_01"
+  },
+  "primalstrikebelt": {
+    "id": 29526,
+    "icon": "inv_belt_03"
+  },
+  "blackhandsbreadth": {
+    "id": 13965,
+    "icon": "inv_misc_armorkit_09"
+  },
+  "worgenclawnecklace": {
+    "id": 28509,
+    "icon": "inv_jewelry_necklace_22"
+  },
+  "terokksquill": {
+    "id": 29329,
+    "icon": "inv_spear_08"
+  },
+  "wickedwitchshat": {
+    "id": 28586,
+    "icon": "inv_helmet_30"
+  },
+  "ripflayerleggings": {
+    "id": 28740,
+    "icon": "inv_pants_plate_02"
+  },
+  "lurkersbelt": {
+    "id": 30677,
+    "icon": "inv_belt_03"
+  },
+  "bootsofblasphemy": {
+    "id": 29242,
+    "icon": "inv_boots_cloth_11"
+  },
+  "greatswordofhorriddreams": {
+    "id": 27905,
+    "icon": "inv_sword_2h_blood_c_03"
+  },
+  "ringofrecurrence": {
+    "id": 28753,
+    "icon": "inv_jewelry_ring_15"
+  },
+  "legwrapsofthealdor": {
+    "id": 29078,
+    "icon": "inv_pants_cloth_05"
+  },
+  "strengthoftheuntamed": {
+    "id": 29173,
+    "icon": "inv_jewelry_necklace_06"
+  },
+  "justicarshoulderguards": {
+    "id": 29070,
+    "icon": "inv_shoulder_14"
+  },
+  "mithrilbandoftheunscarred": {
+    "id": 28730,
+    "icon": "inv_jewelry_ring_24"
+  },
+  "girdleofvalorousdeeds": {
+    "id": 29253,
+    "icon": "inv_belt_11"
+  },
+  "ironscalewarcloak": {
+    "id": 27550,
+    "icon": "inv_misc_cape_13"
+  },
+  "shiningchainoftheafterworld": {
+    "id": 28731,
+    "icon": "inv_jewelry_necklace_32"
+  },
+  "wastewalkergloves": {
+    "id": 27531,
+    "icon": "inv_gauntlets_25"
+  },
+  "gavelofunearthedsecrets": {
+    "id": 30832,
+    "icon": "inv_hammer_08"
+  },
+  "bandsofnegation": {
+    "id": 29240,
+    "icon": "inv_bracer_12"
+  },
+  "stillwatergirdle": {
+    "id": 27835,
+    "icon": "inv_belt_03"
+  },
+  "earthbloodchestguard": {
+    "id": 28735,
+    "icon": "inv_chest_plate08"
+  },
+  "edgewalkerlongboots": {
+    "id": 28545,
+    "icon": "inv_boots_plate_06"
+  },
+  "grandmarshalscleaver": {
+    "id": 28944,
+    "icon": "inv_axe_03"
+  },
+  "lightsjustice": {
+    "id": 28771,
+    "icon": "inv_mace_46"
+  },
+  "forestwindshoulderpads": {
+    "id": 28647,
+    "icon": "inv_shoulder_01"
+  },
+  "stainlesscloakofthepurehearted": {
+    "id": 28765,
+    "icon": "inv_misc_cape_06"
+  },
+  "boggspineknuckles": {
+    "id": 27747,
+    "icon": "inv_weapon_hand_11"
+  },
+  "shardofthevirtuous": {
+    "id": 28522,
+    "icon": "inv_hammer_26"
+  },
+  "beltofgaleforce": {
+    "id": 28567,
+    "icon": "inv_belt_22"
+  },
+  "pantaloonsofrepentance": {
+    "id": 28742,
+    "icon": "inv_pants_cloth_13"
+  },
+  "voidheartcrown": {
+    "id": 28963,
+    "icon": "inv_crown_01"
+  },
+  "voidheartrobe": {
+    "id": 28964,
+    "icon": "inv_chest_cloth_43"
+  },
+  "aranssoothingsapphire": {
+    "id": 28728,
+    "icon": "inv_misc_gem_sapphire_02"
+  },
+  "evokershelmetofsecondsight": {
+    "id": 31104,
+    "icon": "inv_helmet_70"
+  },
+  "rubydrapeofthemysticant": {
+    "id": 28766,
+    "icon": "inv_misc_cape_18"
+  },
+  "crimsonbracersofgloom": {
+    "id": 27462,
+    "icon": "inv_bracer_13"
+  },
+  "robeofthecrimsonorder": {
+    "id": 31297,
+    "icon": "inv_chest_cloth_25"
+  },
+  "glovesofthedeadwatcher": {
+    "id": 27493,
+    "icon": "inv_gauntlets_19"
+  },
+  "astralaanshoulderpads": {
+    "id": 24651,
+    "icon": "inv_shoulder_09"
+  },
+  "pendantoftriumph": {
+    "id": 28244,
+    "icon": "inv_jewelry_necklace_36"
+  },
+  "glovesofoblivion": {
+    "id": 27537,
+    "icon": "inv_gauntlets_16"
+  },
+  "maleficgirdle": {
+    "id": 28654,
+    "icon": "inv_belt_03"
+  },
+  "marshalsplatebracers": {
+    "id": 28996,
+    "icon": "inv_bracer_19"
+  },
+  "grandmarshalsplatelegguards": {
+    "id": 28702,
+    "icon": "inv_pants_plate_17"
+  },
+  "royalcloakofarathikings": {
+    "id": 28529,
+    "icon": "inv_misc_cape_10"
+  },
+  "thunder": {
+    "id": 28440,
+    "icon": "inv_mace_2h_blacksmithing_01"
+  },
+  "bandofaccuria": {
+    "id": 17063,
+    "icon": "inv_jewelry_ring_15"
+  },
+  "handofjustice": {
+    "id": 11815,
+    "icon": "inv_jewelry_talisman_01"
+  },
+  "warbringerchestguard": {
+    "id": 29012,
+    "icon": "inv_chest_plate02"
+  },
+  "goblinrocketlauncher": {
+    "id": 23836,
+    "icon": "inv_gizmo_rocketlauncher"
+  },
+  "amberbandsoftheaggressor": {
+    "id": 29463,
+    "icon": "inv_bracer_02"
+  },
+  "thedecapitator": {
+    "id": 28767,
+    "icon": "inv_axe_66"
+  },
+  "bracersofmaliciousness": {
+    "id": 28514,
+    "icon": "inv_bracer_15"
+  },
+  "chestplateofadal": {
+    "id": 30258,
+    "icon": "inv_chest_plate11"
+  },
+  "mamasinsurance": {
+    "id": 30279,
+    "icon": "inv_weapon_rifle_06"
+  },
+  "chestpieceofmalorne": {
+    "id": 29091,
+    "icon": "inv_chest_chain_15"
+  },
+  "staghelmofmalorne": {
+    "id": 29098,
+    "icon": "inv_helmet_15"
+  },
+  "ivoryidolofthemoongoddess": {
+    "id": 27518,
+    "icon": "spell_arcane_arcane03"
+  },
+  "breastplateofmalorne": {
+    "id": 29096,
+    "icon": "inv_chest_chain_15"
+  },
+  "terestiansstranglestaff": {
+    "id": 28658,
+    "icon": "inv_staff_55"
+  },
+  "emberspurtalisman": {
+    "id": 28609,
+    "icon": "inv_jewelry_necklace_17"
+  },
+  "bandsofthebenevolent": {
+    "id": 29249,
+    "icon": "inv_bracer_13"
+  },
+  "earthsoulleggings": {
+    "id": 28591,
+    "icon": "inv_pants_mail_15"
+  },
+  "redridinghoodscloak": {
+    "id": 28582,
+    "icon": "inv_misc_cape_18"
+  },
+  "forestlordstriders": {
+    "id": 28752,
+    "icon": "inv_boots_chain_05"
+  },
+  "helmofdesolation": {
+    "id": 28192,
+    "icon": "inv_helmet_18"
+  },
+  "jaggedbarkpendant": {
+    "id": 28343,
+    "icon": "inv_jewelry_necklace_17"
+  },
+  "cloakofmalice": {
+    "id": 27519,
+    "icon": "inv_misc_cape_06"
+  },
+  "shattrathschampionbelt": {
+    "id": 31462,
+    "icon": "inv_belt_11"
+  },
+  "scaledgreavesofpatience": {
+    "id": 27430,
+    "icon": "inv_pants_plate_21"
+  },
+  "strengthofthehighchief": {
+    "id": 34423,
+    "icon": "inv_jewelry_talisman_09"
+  },
+  "stormreaverwarblades": {
+    "id": 28315,
+    "icon": "inv_weapon_hand_08"
+  },
+  "bigbadwolfspaw": {
+    "id": 28584,
+    "icon": "inv_misc_monsterclaw_04"
+  },
+  "adornmentofstolensouls": {
+    "id": 28762,
+    "icon": "inv_jewelry_necklace_29naxxramas"
+  },
+  "skyfirehawkbow": {
+    "id": 27526,
+    "icon": "inv_weapon_bow_17"
+  },
+  "bootsoftheinfernalcoven": {
+    "id": 28670,
+    "icon": "inv_boots_05"
+  },
+  "thelightningcapacitor": {
+    "id": 28785,
+    "icon": "inv_trinket_naxxramas06"
+  },
+  "gripsofdeftness": {
+    "id": 30644,
+    "icon": "inv_gauntlets_28"
+  },
+  "gildedthoriumcloak": {
+    "id": 28660,
+    "icon": "inv_misc_cape_20"
+  },
+  "ironstridersofurgency": {
+    "id": 28608,
+    "icon": "inv_boots_plate_04"
+  },
+  "lightcollaroftheincarnate": {
+    "id": 29049,
+    "icon": "inv_crown_01"
+  },
+  "arcaniumsignetbands": {
+    "id": 27746,
+    "icon": "inv_bracer_19"
+  },
+  "oshugunrelic": {
+    "id": 25634,
+    "icon": "inv_jewelry_talisman_06"
+  },
+  "cordofbelief": {
+    "id": 27542,
+    "icon": "inv_belt_30"
+  },
+  "celestialjewelring": {
+    "id": 29814,
+    "icon": "inv_jewelry_ring_05"
+  },
+  "nesingwarysafaristick": {
+    "id": 25640,
+    "icon": "inv_wand_05"
+  },
+  "jaderingoftheeverliving": {
+    "id": 28763,
+    "icon": "inv_jewelry_ring_08"
+  },
+  "nethershardgirdle": {
+    "id": 28565,
+    "icon": "inv_belt_08"
+  },
+  "skulkersgreaves": {
+    "id": 28741,
+    "icon": "inv_pants_leather_13"
+  },
+  "chestguardoftheconniver": {
+    "id": 28601,
+    "icon": "inv_chest_leather_06"
+  },
+  "steelspinefaceguard": {
+    "id": 28671,
+    "icon": "inv_helmet_05"
+  },
+  "expeditionscoutsepaulets": {
+    "id": 25790,
+    "icon": "inv_shoulder_13"
+  },
+  "talonlordscollar": {
+    "id": 29335,
+    "icon": "inv_jewelry_necklace_04"
+  },
+  "salvagershauberk": {
+    "id": 30835,
+    "icon": "inv_chest_plate08"
+  },
+  "telaarihuntinggirdle": {
+    "id": 27521,
+    "icon": "inv_belt_09"
+  },
+  "stalkerswarbands": {
+    "id": 28454,
+    "icon": "inv_bracer_02"
+  },
+  "glovesofquickening": {
+    "id": 28519,
+    "icon": "inv_gauntlets_25"
+  },
+  "bladefistsbreadth": {
+    "id": 28041,
+    "icon": "inv_datacrystal06"
+  },
+  "fiendslayerboots": {
+    "id": 28746,
+    "icon": "inv_boots_chain_05"
+  },
+  "nalikosrevenge": {
+    "id": 25804,
+    "icon": "inv_jewelry_ring_16"
+  },
+  "totemofrage": {
+    "id": 22395,
+    "icon": "inv_relics_totemofrage"
+  },
+  "fistofreckoning": {
+    "id": 31139,
+    "icon": "inv_mace_08"
+  },
+  "whirlwindbracers": {
+    "id": 28503,
+    "icon": "inv_bracer_02"
+  },
+  "mittsofthetreemender": {
+    "id": 28521,
+    "icon": "inv_gauntlets_25"
+  },
+  "mendersheartring": {
+    "id": 28661,
+    "icon": "inv_jewelry_ring_36"
+  },
+  "scaledbreastplateofcarnage": {
+    "id": 28599,
+    "icon": "inv_chest_chain_07"
+  },
+  "foolsbane": {
+    "id": 28657,
+    "icon": "inv_weapon_shortblade_44"
+  },
+  "ribbonofsacrifice": {
+    "id": 28590,
+    "icon": "inv_misc_bandage_16"
+  },
+  "triptychshieldoftheancients": {
+    "id": 28754,
+    "icon": "inv_shield_31"
+  },
+  "stormmastershelmet": {
+    "id": 32086,
+    "icon": "inv_helmet_69"
+  },
+  "babascloakofarcanistry": {
+    "id": 28269,
+    "icon": "inv_misc_cape_05"
+  },
+  "pauldronsofwildmagic": {
+    "id": 32078,
+    "icon": "inv_shoulder_33"
+  },
+  "netherstrikebracers": {
+    "id": 29521,
+    "icon": "inv_bracer_12"
+  },
+  "netherstrikebreastplate": {
+    "id": 29519,
+    "icon": "inv_chest_plate07"
+  },
+  "stormsongkilt": {
+    "id": 30541,
+    "icon": "inv_pants_leather_03"
+  },
+  "mazthorilhonorshield": {
+    "id": 29268,
+    "icon": "inv_shield_37"
+  },
+  "netherstrikebelt": {
+    "id": 29520,
+    "icon": "inv_belt_03"
+  },
+  "bandofcrimsonfury": {
+    "id": 28793,
+    "icon": "inv_jewelry_ring_65"
+  },
+  "nathrezimmindblade": {
+    "id": 28770,
+    "icon": "inv_weapon_shortblade_41"
+  },
+  "totemofthestorm": {
+    "id": 23199,
+    "icon": "inv_relics_totemofrage"
+  },
+  "voidheartgloves": {
+    "id": 28968,
+    "icon": "inv_gauntlets_17"
+  },
+  "seerssignet": {
+    "id": 29126,
+    "icon": "inv_jewelry_ring_52naxxramas"
+  },
+  "plagueheartshoulderpads": {
+    "id": 22507,
+    "icon": "inv_shoulder_25"
+  },
+  "sigillacedboots": {
+    "id": 28406,
+    "icon": "inv_boots_cloth_04"
+  },
+  "tempeststouch": {
+    "id": 29317,
+    "icon": "inv_gauntlets_32"
+  },
+  "theblackstalk": {
+    "id": 29350,
+    "icon": "inv_wand_1h_stratholme_d_01"
+  },
+  "chestguardoftheprowler": {
+    "id": 27461,
+    "icon": "inv_chest_leather_08"
+  },
+  "flametongueseal": {
+    "id": 29270,
+    "icon": "spell_fire_sealoffire"
+  },
+  "warbringergauntlets": {
+    "id": 29020,
+    "icon": "inv_gauntlets_28"
+  },
+  "gorehowl": {
+    "id": 28773,
+    "icon": "inv_axe_60"
+  },
+  "midnightlegguards": {
+    "id": 30538,
+    "icon": "inv_pants_leather_09"
+  },
+  "warbringershoulderguards": {
+    "id": 29016,
+    "icon": "inv_shoulder_29"
+  },
+  "warbringergreathelm": {
+    "id": 29011,
+    "icon": "inv_helmet_58"
+  },
+  "devilsharkcape": {
+    "id": 27804,
+    "icon": "inv_misc_cape_13"
+  },
+  "blinkstrike": {
+    "id": 31332,
+    "icon": "inv_sword_76"
+  },
+  "shieldofimpenetrabledarkness": {
+    "id": 28606,
+    "icon": "inv_shield_29"
+  },
+  "cowlofdefiance": {
+    "id": 28732,
+    "icon": "inv_helmet_58"
+  },
+  "unimindheaddress": {
+    "id": 28744,
+    "icon": "inv_helmet_53"
+  },
+  "pauldronsofmalorne": {
+    "id": 29095,
+    "icon": "inv_shoulder_14"
+  },
+  "broochofunquenchablefury": {
+    "id": 28530,
+    "icon": "inv_jewelry_necklace_ahnqiraj_04"
+  },
+  "britchesofmalorne": {
+    "id": 29094,
+    "icon": "inv_pants_mail_15"
+  },
+  "girdleoftreachery": {
+    "id": 28750,
+    "icon": "inv_belt_26"
+  },
+  "saberclawtalisman": {
+    "id": 28674,
+    "icon": "inv_jewelry_necklace_34"
+  },
+  "manabinderscowl": {
+    "id": 32089,
+    "icon": "inv_helmet_30"
+  },
+  "legacy": {
+    "id": 28587,
+    "icon": "inv_axe_46"
+  },
+  "pauldronsofthealdor": {
+    "id": 29079,
+    "icon": "inv_shoulder_25"
+  },
+  "irongauntletsofthemaiden": {
+    "id": 28518,
+    "icon": "inv_gauntlets_31"
+  },
+  "jewelofinfinitepossibilities": {
+    "id": 28734,
+    "icon": "inv_misc_gem_ebondraenite_02"
+  },
+  "justicarlegguards": {
+    "id": 29069,
+    "icon": "inv_pants_mail_15"
+  },
+  "pauldronsofthejusticeseeker": {
+    "id": 28666,
+    "icon": "inv_shoulder_35"
+  },
+  "breastplateofthelightbinder": {
+    "id": 28662,
+    "icon": "inv_chest_plate03"
+  },
+  "bootsofvaliance": {
+    "id": 28569,
+    "icon": "inv_boots_chain_05"
+  },
+  "pendantofthevioleteye": {
+    "id": 28727,
+    "icon": "inv_trinket_naxxramas02"
+  },
+  "figurinenightseyepanther": {
+    "id": 24128,
+    "icon": "inv_jewelcrafting_blackpearlpanther"
+  },
+  "lighttouchedstoleofaltruism": {
+    "id": 29354,
+    "icon": "inv_misc_cape_06"
+  },
+  "auchenaiboots": {
+    "id": 28177,
+    "icon": "inv_boots_chain_11"
+  },
+  "masqueradegown": {
+    "id": 28578,
+    "icon": "inv_chest_cloth_43"
+  },
+  "cordofsanctification": {
+    "id": 29250,
+    "icon": "inv_belt_15"
+  },
+  "ebonnetherscalebelt": {
+    "id": 29516,
+    "icon": "inv_belt_29"
+  },
+  "drapeofthedarkreavers": {
+    "id": 28672,
+    "icon": "inv_misc_cape_10"
+  },
+  "scryersbloodgem": {
+    "id": 29132,
+    "icon": "inv_misc_gem_bloodstone_02"
+  },
+  "warbringerbattlehelm": {
+    "id": 29021,
+    "icon": "inv_helmet_58"
+  },
+  "warbringershoulderplates": {
+    "id": 29023,
+    "icon": "inv_shoulder_29"
+  },
+  "warbringerbreastplate": {
+    "id": 29019,
+    "icon": "inv_chest_plate02"
+  },
+  "terokksshadowstaff": {
+    "id": 29355,
+    "icon": "inv_weapon_halberd19"
+  },
+  "bootsoftheshiftingsands": {
+    "id": 28339,
+    "icon": "inv_boots_05"
+  },
+  "resoundingringofglory": {
+    "id": 27904,
+    "icon": "inv_jewelry_ring_64"
+  },
+  "steelhawkcrossbow": {
+    "id": 28504,
+    "icon": "inv_weapon_crossbow_18"
+  },
+  "staffofinfinitemysteries": {
+    "id": 28633,
+    "icon": "inv_weapon_halberd17"
+  },
+  "sunfurybowofthephoenix": {
+    "id": 28772,
+    "icon": "inv_weapon_bow_18"
+  },
+  "redemptionheadpiece": {
+    "id": 22428,
+    "icon": "inv_helmet_15"
+  },
+  "justicarchestguard": {
+    "id": 29066,
+    "icon": "inv_chest_chain_15"
+  },
+  "collarofthealdor": {
+    "id": 29076,
+    "icon": "inv_crown_01"
+  },
+  "redemptionwristguards": {
+    "id": 22424,
+    "icon": "inv_bracer_02"
+  },
+  "justicebearerspauldrons": {
+    "id": 27539,
+    "icon": "inv_shoulder_37"
+  },
+  "necklaceofnecropsy": {
+    "id": 23036,
+    "icon": "inv_jewelry_necklace_30naxxramas"
+  },
+  "redemptionhandguards": {
+    "id": 22426,
+    "icon": "inv_gauntlets_25"
+  },
+  "cassockoftheloyal": {
+    "id": 27748,
+    "icon": "inv_chest_cloth_59"
+  },
+  "redemptiongirdle": {
+    "id": 22431,
+    "icon": "inv_belt_22"
+  },
+  "pureelementiumband": {
+    "id": 19382,
+    "icon": "inv_jewelry_ring_42"
+  },
+  "ringofredemption": {
+    "id": 23066,
+    "icon": "inv_jewelry_ring_51naxxramas"
+  },
+  "rejuvenatinggem": {
+    "id": 19395,
+    "icon": "inv_misc_gem_topaz_02"
+  },
+  "hammerofthetwistingnether": {
+    "id": 23056,
+    "icon": "inv_mace_27"
+  },
+  "shieldofcondemnation": {
+    "id": 22819,
+    "icon": "inv_shield_28"
+  },
+  "libramoflight": {
+    "id": 23006,
+    "icon": "inv_relics_libramofgrace"
+  },
+  "starheartlamp": {
+    "id": 28187,
+    "icon": "inv_offhand_outlandraid_03blue"
+  },
+  "robesoftheincarnate": {
+    "id": 29050,
+    "icon": "inv_chest_cloth_43"
+  },
+  "justicarshoulderplates": {
+    "id": 29075,
+    "icon": "inv_shoulder_14"
+  },
+  "cycloneheaddress": {
+    "id": 29028,
+    "icon": "inv_helmet_15"
+  },
+  "voidheartmantle": {
+    "id": 28967,
+    "icon": "inv_shoulder_25"
+  },
+  "gladiatorsslicer": {
+    "id": 28295,
+    "icon": "inv_sword_71"
+  },
+  "wrynndynastygreaves": {
+    "id": 28621,
+    "icon": "inv_pants_plate_05"
+  },
+  "voidheartleggings": {
+    "id": 28966,
+    "icon": "inv_pants_cloth_05"
+  },
+  "battlescarboots": {
+    "id": 28747,
+    "icon": "inv_boots_plate_06"
+  },
+  "ringofathousandmarks": {
+    "id": 28757,
+    "icon": "inv_jewelry_ring_ahnqiraj_05"
+  },
+  "romulospoisonvial": {
+    "id": 28579,
+    "icon": "inv_poison_mindnumbing"
+  },
+  "warpinfuseddrape": {
+    "id": 28342,
+    "icon": "inv_chest_cloth_29"
+  }
 }

@@ -1790,7 +1790,7 @@ async function saveClaSheetsToGitHub() {
   }
 }
 
-const APPS_SCRIPT = 'https://script.google.com/macros/s/AKfycbzvNZtTYR0eO2uh5EOnXeoRyJSDtpUgXkRPzx_7k5Bl7EQfHRdi4nu9ZAd5Oojm-dUO/exec';
+const APPS_SCRIPT = 'https://script.google.com/macros/s/AKfycbx7c7X9j7p0SiUOgsQmSHZhSP880h747CBdVSzUtO80BRgy0wWbRgYUGROA2Pslc7w/exec';
 const ICON_SCRIPT = 'https://script.google.com/macros/s/AKfycbyBs6sgRoX6Zy3a3lq9q6fR4o0spLHRfKc-G63Vy8JUBTQa2HFWhnP8MxFGm8JxjNo/exec';
 
 // Fetch a Google Sheet tab via Apps Script proxy
@@ -2356,7 +2356,7 @@ function render({ dates, roles }) {
           <col style="width:80px;">  <!-- Consumes -->
           <col>                      <!-- Raids (dots) -->
           <col style="width:50px;">  <!-- # -->
-          <col style="width:140px;"> <!-- Attendance % -->
+          <col style="width:60px;"> <!-- % -->
         </colgroup>
         <thead id="thead-${roleSafeId}">
           <tr>
@@ -2606,7 +2606,7 @@ async function lookupItemId(itemName) {
     if (!res.ok) { console.warn('lookupItemId HTTP error:', res.status, itemName); return null; }
     const text = await res.text();
     const data = JSON.parse(text);
-    if (data.id) return data.id;
+    if (data.id) return { id: data.id, slot: data.slot || null };
     console.warn('No ID returned for:', itemName, data);
     return null;
   } catch(e) {
@@ -2667,8 +2667,9 @@ async function processGearListingForItemIds(sheetId, gearListingGid) {
     for (let i = 0; i < unknown.length; i += 3) {
       const batch = unknown.slice(i, i + 3);
       await Promise.all(batch.map(async name => {
-        const id = await lookupItemId(name);
-        if (id) {
+        const result = await lookupItemId(name);
+        if (result) {
+          const { id, slot } = result;
           // Also fetch icon for new items
           let icon = null;
           try {
@@ -2676,7 +2677,7 @@ async function processGearListingForItemIds(sheetId, gearListingGid) {
             const iconData = JSON.parse(iconText);
             if (iconData.icon) { icon = iconData.icon.toLowerCase(); itemIcons[id] = icon; }
           } catch(e) {}
-          gearItemIds[normalizeName(name)] = { id, icon };
+          gearItemIds[normalizeName(name)] = { id, icon, slot };
           found++;
         }
       }));
@@ -3276,9 +3277,27 @@ function onItemChange() {
   });
 
   // Determine which gear slots to show for the selected item
+  // Map Wowhead slot names to gear listing column names
+  const WOWHEAD_SLOT_MAP = {
+    'Head': ['Head'], 'Neck': ['Neck'], 'Shoulder': ['Shoulders'],
+    'Back': ['Cloak'], 'Chest': ['Chest'], 'Wrist': ['Bracers'],
+    'Hands': ['Hands'], 'Waist': ['Waist'], 'Legs': ['Legs'],
+    'Feet': ['Feet'], 'Finger': ['Ring1','Ring2'], 'Trinket': ['Trinket1','Trinket2'],
+    'One-Hand': ['Weapon','Off-Hand'], 'Two-Hand': ['Weapon','Off-Hand'],
+    'Off Hand': ['Weapon','Off-Hand'], 'Held In Off-hand': ['Off-Hand'],
+    'Ranged': ['Weapon'], 'Relic': ['Wand/Idol/Relic etc.'],
+  };
+
   function getRelevantSlots(itemName) {
-    // Find the slot this item occupies in any player's gear listing
+    // Primary: check stored slot in gearItemIds
     const normItem = normalizeName(itemName);
+    const entry = gearItemIds[normItem];
+    if (entry && typeof entry === 'object' && entry.slot) {
+      const mapped = WOWHEAD_SLOT_MAP[entry.slot];
+      if (mapped) return mapped;
+    }
+
+    // Secondary: find slot by scanning player gear listings
     for (const { slots } of Object.values(gearListingByPlayer)) {
       for (const [slot, name] of Object.entries(slots)) {
         if (normalizeName(name) === normItem) {
@@ -3290,14 +3309,33 @@ function onItemChange() {
         }
       }
     }
-    // Fallback: guess from item name patterns
+    // Fallback: infer slot from item name keywords
+    const n = itemName.toLowerCase();
+    if (/helm|hood|crown|cowl|circlet|mask|headguard|cap |hat |faceguard|facemask/.test(n)) return ['Head'];
+    if (/necklace|amulet|pendant|collar|choker|chain|talisman|medallion|brooch/.test(n)) return ['Neck'];
+    if (/pauldrons|shoulderpads|shoulderguards|spaulders|mantle|shoulders/.test(n)) return ['Shoulders'];
+    if (/cloak|cape|drape|shroud|shawl/.test(n)) return ['Cloak'];
+    if (/robe|breastplate|chestguard|cuirass|vest |tunic|harness|chest/.test(n)) return ['Chest'];
+    if (/wristguards|bracers|bindings|armwraps|cuffs|wraps/.test(n)) return ['Bracers'];
+    if (/gauntlets|gloves|grips|handguards|mitts|fists|hands/.test(n)) return ['Hands'];
+    if (/girdle|belt|cinch|waistguard|cord/.test(n)) return ['Waist'];
+    if (/leggings|legguards|trousers|kilt|greaves|pants|legs/.test(n)) return ['Legs'];
+    if (/boots|treads|slippers|sabatons|greaves|feet|footpads/.test(n)) return ['Feet'];
+    if (/ring|band|signet|loop/.test(n)) return ['Ring1','Ring2'];
+    if (/trinket|eye|scarab|abacus|icon|brooch|talisman|badge|charm|idol of|totem of|libram of/.test(n)) return ['Trinket1','Trinket2'];
+    if (/sword|axe|mace|staff|wand|dagger|fist|spear|halberd|blade|claymore|hammer|champion|sun eater/.test(n)) return ['Weapon','Off-Hand'];
+    if (/shield|off.hand|orb|tome|book/.test(n)) return ['Weapon','Off-Hand'];
+    if (/idol|totem|libram|rod|wand/.test(n)) return ['Wand/Idol/Relic etc.'];
+    // If gear listing data exists but item not found in it, still show column
+    if (Object.keys(gearListingByPlayer).length > 0) return ['__unknown__'];
     return null;
   }
 
   function currentItemCellHtml(playerKey, slots) {
     if (!slots || !slots.length) return '<td style="text-align:center;color:var(--text-dim);font-style:italic;">—</td>';
     const gear = gearListingByPlayer[playerKey]?.slots;
-    if (!gear) return '<td style="text-align:center;color:var(--text-dim);font-style:italic;font-size:11px;">No data</td>';
+    if (!gear) return '<td style="text-align:center;color:var(--text-dim);font-style:italic;font-size:11px;">—</td>';
+    if (slots[0] === '__unknown__') return '<td style="text-align:center;color:var(--text-dim);font-style:italic;font-size:11px;">—</td>';
     const items = slots.map(slot => gear[slot]).filter(Boolean);
     if (!items.length) return '<td style="text-align:center;color:var(--text-dim);font-style:italic;">—</td>';
     const html = items.map(name => {
@@ -3403,6 +3441,7 @@ function onItemChange() {
 
     return `<tr style="${dimmed ? 'opacity:0.35;' : ''}${rowBg ? 'background:' + rowBg + ';' : ''}" class="${dimmed ? 'na-row' : ''}">
       <td class="player-name" onclick="toggleLoot(this, '${p.name}')" style="cursor:pointer;" title="Click to view loot"><span style="${nameStyle}">${p.name}</span>${badge ? ` <span class="inactive-badge" style="font-size:9px;letter-spacing:0.1em;">${badge}</span>` : ''} <span class="loot-arrow">▸</span></td>
+      ${relevantSlots ? currentItemCellHtml(key, relevantSlots) : ''}
       <td class="priority-cell" style="color:${prCol};" title="${fullTooltip}">${prStr !== '—' ? `<span class="priority-score" style="color:${prCol};">${prStr}</span>` : '<span style="color:var(--text-dim);font-style:italic;font-size:12px;">—</span>'}</td>
       <td class="gear-flag-cell">${gearHtml}</td>
       <td class="points-cell" style="color:${ptsCol};text-align:center;">${pts}</td>
@@ -3415,14 +3454,7 @@ function onItemChange() {
       <td class="consumes-cell" style="text-align:center;">${conStr}</td>
       <td>${dotsHtml}</td>
       <td class="att-count" style="text-align:right;">${p.attended}</td>
-      <td>
-        <div class="att-cell">
-          <div class="att-bar-bg"><div class="att-bar-fill ${attCol === '#4caa6e' ? 'exact100' : attCol === '#8abf50' ? 'high' : attCol === '#d4c84a' ? 'mid' : 'low'}" style="width:${barW}%"></div></div>
-          <span class="att-pct" style="color:${attCol};">${pctStr}</span>
-        </div>
-      </td>
-      ${relevantSlots ? currentItemCellHtml(key, relevantSlots) : ''}
-    </tr>`;
+      <td style="text-align:right;"><span style="color:${attCol};">${pctStr}</span></td>    </tr>`;
   }
 
   const thS = (label, col, align='center', extraClass='') =>
@@ -3433,6 +3465,7 @@ function onItemChange() {
     <table style="width:100%;border-collapse:collapse;margin-top:24px;">
       <colgroup>
         <col style="width:16ch;min-width:16ch;"> <!-- Player -->
+        ${relevantSlots ? '<col style="width:140px;"> <!-- Current -->' : ''}
         <col style="width:70px;">  <!-- Priority -->
         <col style="width:24px;">  <!-- Gear flag -->
         <col style="width:80px;">  <!-- Loot Score -->
@@ -3440,11 +3473,12 @@ function onItemChange() {
         <col style="width:80px;">  <!-- Consumes -->
         <col>                      <!-- Raids (dots) -->
         <col style="width:50px;">  <!-- # -->
-        <col style="width:140px;"> <!-- Attendance % -->
+        <col style="width:60px;"> <!-- % -->
       </colgroup>
       <thead>
         <tr style="border-bottom:1px solid var(--border);">
           ${thS('Player','player','left')}
+          ${relevantSlots ? '<th style=\"padding:6px 12px;font-family:\'Cinzel\',serif;font-size:10px;letter-spacing:0.2em;color:var(--text-dim);white-space:nowrap;\">Current</th>' : ''}
           ${thS('Priority','priority')}
           <th style="padding:6px 12px;"></th>
           ${thS('Loot Score','points')}
@@ -3452,8 +3486,7 @@ function onItemChange() {
           ${thS('Consumes','consumes')}
           <th style="padding:6px 12px;text-align:center;font-family:'Cinzel',serif;font-size:10px;letter-spacing:0.2em;color:var(--text-dim);" title="Raids attended. Color indicates consumable usage.">Raids</th>
           ${thS('#','attendance')}
-          ${thS('Attendance %','pct','left')}
-          ${relevantSlots ? '<th style=\"padding:6px 12px;font-family:\'Cinzel\',serif;font-size:10px;letter-spacing:0.2em;color:var(--text-dim);white-space:nowrap;\">Current Item</th>' : ''}
+          ${thS('%','pct','left')}
         </tr>
       </thead>
       <tbody>

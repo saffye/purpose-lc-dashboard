@@ -1532,7 +1532,6 @@ async function startWclPkce() {
     client_id: WCL_CLIENT_ID,
     redirect_uri: WCL_REDIRECT_URI,
     response_type: 'code',
-    scope: 'view:user-private-profile',
     code_challenge: challenge,
     code_challenge_method: 'S256',
     state: 'wclauth'
@@ -1581,7 +1580,7 @@ async function handleWclCallback() {
   return true;
 }
 
-const WCL_CLIENT_ID = 'a157742c-4a4e-410c-9da2-f907e1893268';
+const WCL_CLIENT_ID = 'a1577bef-44fb-4fb3-87f6-555c24400a38';
 const WCL_REDIRECT_URI = 'https://bunzosteele.github.io/dbs-lc/';
 const WCL_AUTH_URL = 'https://www.warcraftlogs.com/oauth/authorize';
 const WCL_TOKEN_URL = 'https://www.warcraftlogs.com/oauth/token';

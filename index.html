@@ -1709,13 +1709,18 @@ async function fetchWclAllStars(realm) {
         const rankings = char?.zoneRankings;
         if (!rankings) { console.warn('No rankings for', p.name, JSON.stringify(charData)?.slice(0, 200)); return; }
         const key = normalizeName(p.name);
-        wclData[key] = {
+        const entry = {
           points: rankings.allStars?.[0]?.points ?? null,
           rank: rankings.allStars?.[0]?.rank ?? null,
           outOf: rankings.allStars?.[0]?.total ?? null,
           bestPerf: rankings.bestPerformanceAverage ?? null,
           medianPerf: rankings.medianPerformanceAverage ?? null,
         };
+        // Sycamoore one-off: use best parse as median (healer median unreliable)
+        if (normalizeName(wclName) === 'sycamoore' && entry.bestPerf !== null) {
+          entry.medianPerf = entry.bestPerf;
+        }
+        wclData[key] = entry;
         console.log('WCL data for', p.name, ':', JSON.stringify(wclData[key]));
       } catch(e) { console.warn('WCL char error for', p.name, e); }
     }));

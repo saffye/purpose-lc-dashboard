@@ -1323,9 +1323,8 @@ async function fetchItemIcons() {
   console.log(`fetchItemIcons: ${ids.length} total IDs, ${toFetch.length} to fetch`);
   await Promise.all(toFetch.map(async id => {
     try {
-      const res = await fetch(`${ICON_SCRIPT}?itemId=${id}`);
-      if (!res.ok) { console.warn('Icon fetch failed for id:', id, res.status); return; }
-      const data = await res.json();
+      const text = await proxyFetch(`${ICON_SCRIPT}?itemId=${id}`);
+      const data = JSON.parse(text);
       if (data.icon) itemIcons[id] = data.icon.toLowerCase();
     } catch(e) { console.warn('Icon fetch error for id:', id, e.message); }
   }));
@@ -3313,6 +3312,7 @@ function onItemChange() {
   }
 
   const relevantSlots = getRelevantSlots(item);
+  console.log('getRelevantSlots for', item, '->', relevantSlots, '| gearListingByPlayer players:', Object.keys(gearListingByPlayer).length);
 
   function lootPlayerRow(p, dimmed, badge) {
     const key = normalizeName(p.name);

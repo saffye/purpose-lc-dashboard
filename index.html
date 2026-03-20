@@ -2914,13 +2914,17 @@ async function loadClaSheetsFromRepo() {
 async function loadGearItemIdsFromRepo() {
   try {
     const res = await fetch('./gear-item-ids.json?t=' + Date.now());
-    if (!res.ok) return;
+    if (!res.ok) { console.warn('gear-item-ids.json fetch failed:', res.status, res.url); return; }
     const data = await res.json();
     if (typeof data === 'object' && data !== null) {
       gearItemIds = data;
       console.log('Loaded', Object.keys(gearItemIds).length, 'gear item IDs from repo');
+    } else {
+      console.warn('gear-item-ids.json: unexpected format', data);
     }
-  } catch(e) {}
+  } catch(e) {
+    console.warn('gear-item-ids.json load error:', e.message);
+  }
 }
 
 loadClaSheetsFromRepo().then(async () => {

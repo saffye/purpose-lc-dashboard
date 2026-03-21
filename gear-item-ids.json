@@ -176,7 +176,7 @@
   "bladeofthearchmage": {
     "id": 29153,
     "icon": "inv_weapon_shortblade_37",
-    "slot": null,
+    "slot": "Main Hand",
     "name": "Blade of the Archmage"
   },
   "bladespirewarbands": {
@@ -200,7 +200,7 @@
   "bloodmawmagusblade": {
     "id": 28802,
     "icon": "inv_sword_65",
-    "slot": null,
+    "slot": "Main Hand",
     "name": "Bloodmaw Magus-Blade"
   },
   "bogstrokscalecloak": {
@@ -296,19 +296,19 @@
   "chestgaurdofthefalledhero": {
     "id": 29755,
     "icon": "inv_chest_chain_03",
-    "slot": null,
+    "slot": "Chest",
     "name": "Chestguard of the Fallen Hero"
   },
   "chestgaurdofthefallenchampion": {
     "id": 29754,
     "icon": "inv_chest_chain_03",
-    "slot": null,
+    "slot": "Chest",
     "name": "Chestguard of the Fallen Champion"
   },
   "chestgaurdofthefallendefender": {
     "id": 29753,
     "icon": "inv_chest_chain_03",
-    "slot": null,
+    "slot": "Chest",
     "name": "Chestguard of the Fallen Defender"
   },
   "chestguardofnoremorse": {
@@ -320,19 +320,19 @@
   "chestguardofthefallenchampion": {
     "id": 29754,
     "icon": "inv_chest_chain_03",
-    "slot": null,
+    "slot": "Chest",
     "name": "Chestguard of the Fallen Champion"
   },
   "chestguardofthefallendefender": {
     "id": 29753,
     "icon": "inv_chest_chain_03",
-    "slot": null,
+    "slot": "Chest",
     "name": "Chestguard of the Fallen Defender"
   },
   "chestguardofthefallenhero": {
     "id": 29755,
     "icon": "inv_chest_chain_03",
-    "slot": null,
+    "slot": "Chest",
     "name": "Chestguard of the Fallen Hero"
   },
   "chokerofvileintent": {
@@ -590,7 +590,7 @@
   "eterniumrunedblade": {
     "id": 23554,
     "icon": "inv_weapon_shortblade_05",
-    "slot": null,
+    "slot": "Main Hand",
     "name": "Eternium Runed Blade"
   },
   "exorcistssilkhood": {
@@ -746,7 +746,7 @@
   "gavelofpurelight": {
     "id": 29175,
     "icon": "inv_hammer_04",
-    "slot": null,
+    "slot": "Main Hand",
     "name": "Gavel of Pure Light"
   },
   "girdleofdivineblessing": {
@@ -872,7 +872,7 @@
   "hammerofthepenitent": {
     "id": 28257,
     "icon": "inv_mace_13",
-    "slot": null,
+    "slot": "Main Hand",
     "name": "Hammer of the Penitent"
   },
   "haramadsbargain": {
@@ -1058,19 +1058,19 @@
   "leggingsofthefallenchampion": {
     "id": 29766,
     "icon": "inv_pants_plate_17",
-    "slot": null,
+    "slot": "Legs",
     "name": "Leggings of the Fallen Champion"
   },
   "leggingsofthefallendefender": {
     "id": 29767,
     "icon": "inv_pants_plate_17",
-    "slot": null,
+    "slot": "Legs",
     "name": "Leggings of the Fallen Defender"
   },
   "leggingsofthefallenhero": {
     "id": 29765,
     "icon": "inv_pants_plate_17",
-    "slot": null,
+    "slot": "Legs",
     "name": "Leggings of the Fallen Hero"
   },
   "liarstonguegloves": {
@@ -1106,7 +1106,7 @@
   "lightswornhammer": {
     "id": 27538,
     "icon": "inv_hammer_23",
-    "slot": null,
+    "slot": "Main Hand",
     "name": "Lightsworn Hammer"
   },
   "lightwovenslippers": {
@@ -1148,7 +1148,7 @@
   "magtheridonshead": {
     "id": 32385,
     "icon": "inv_misc_head_tauren_01",
-    "slot": null,
+    "slot": "Finger",
     "name": "Magtheridon's Head"
   },
   "maleficmaskoftheshadows": {
@@ -1340,19 +1340,19 @@
   "pauldronsofthefallenchampion": {
     "id": 29763,
     "icon": "inv_shoulder_22",
-    "slot": null,
+    "slot": "Shoulder",
     "name": "Pauldrons of the Fallen Champion"
   },
   "pauldronsofthefallendefender": {
     "id": 29764,
     "icon": "inv_shoulder_22",
-    "slot": null,
+    "slot": "Shoulder",
     "name": "Pauldrons of the Fallen Defender"
   },
   "pauldronsofthefallenhero": {
     "id": 29762,
     "icon": "inv_shoulder_22",
-    "slot": null,
+    "slot": "Shoulder",
     "name": "Pauldrons of the Fallen Hero"
   },
   "pendantofbattlelust": {
@@ -1360,12 +1360,6 @@
     "icon": "inv_jewelry_necklace_17",
     "slot": "Neck",
     "name": "Pendant of Battle-Lust"
-  },
-  "pitlordssatchel": {
-    "id": 34845,
-    "icon": "inv_misc_bag_enchantedrunecloth",
-    "slot": null,
-    "name": "Pit Lord's Satchel"
   },
   "plagueheartbelt": {
     "id": 22510,
@@ -1538,7 +1532,7 @@
   "runesongdagger": {
     "id": 27868,
     "icon": "inv_weapon_shortblade_52",
-    "slot": null,
+    "slot": "Main Hand",
     "name": "Runesong Dagger"
   },
   "ryngosbandofingenuity": {
@@ -1658,7 +1652,7 @@
   "shockwavetruncheon": {
     "id": 29353,
     "icon": "inv_mace_54",
-    "slot": null,
+    "slot": "Main Hand",
     "name": "Shockwave Truncheon"
   },
   "shoulderguardsofthebold": {
@@ -1676,7 +1670,7 @@
   "shurikenofnegation": {
     "id": 28826,
     "icon": "inv_misc_ahnqirajtrinket_03",
-    "slot": null,
+    "slot": "Ranged",
     "name": "Shuriken of Negation"
   },
   "slayersmarkoftheredemption": {
@@ -1748,7 +1742,7 @@
   "spinesever": {
     "id": 34622,
     "icon": "inv_weapon_shortblade_24",
-    "slot": null,
+    "slot": "Ranged",
     "name": "Spinesever"
   },
   "spymistresswristguards": {
@@ -1760,7 +1754,7 @@
   "starlightdagger": {
     "id": 27543,
     "icon": "inv_weapon_shortblade_37",
-    "slot": null,
+    "slot": "Main Hand",
     "name": "Starlight Dagger"
   },
   "steamhingechainofvalor": {
@@ -1820,13 +1814,13 @@
   "theessencefocuser": {
     "id": 31304,
     "icon": "inv_mace_34",
-    "slot": null,
+    "slot": "Main Hand",
     "name": "The Essence Focuser"
   },
   "thesagaofterokk": {
     "id": 27634,
     "icon": "inv_relics_libramoftruth",
-    "slot": null,
+    "slot": "Off Hand",
     "name": "The Saga of Terokk"
   },
   "thesoulharvestersbindings": {
@@ -2024,7 +2018,7 @@
   "wraithblade": {
     "id": 22807,
     "icon": "inv_sword_11",
-    "slot": null,
+    "slot": "Main Hand",
     "name": "Wraith Blade"
   },
   "wrathfirehandcannon": {
@@ -2036,7 +2030,7 @@
   "xavianstiletto": {
     "id": 28659,
     "icon": "inv_weapon_shortblade_35",
-    "slot": null,
+    "slot": "Ranged",
     "name": "Xavian Stiletto"
   },
   "zierhutslosttreads": {
@@ -2498,73 +2492,73 @@
   "nathrezimmindblade": {
     "id": 28770,
     "icon": "inv_weapon_shortblade_41",
-    "slot": null,
+    "slot": "Main Hand",
     "name": "Nathrezim Mindblade"
   },
   "gladiatorsspellblade": {
     "id": 28297,
     "icon": "inv_weapon_shortblade_26",
-    "slot": null,
+    "slot": "Main Hand",
     "name": "Gladiator's Spellblade"
   },
   "gladiatorsgavel": {
     "id": 32450,
     "icon": "inv_mace_47",
-    "slot": null,
+    "slot": "Main Hand",
     "name": "Gladiator's Gavel"
   },
   "gavelofunearthedsecrets": {
     "id": 30832,
     "icon": "inv_hammer_08",
-    "slot": null,
+    "slot": "Main Hand",
     "name": "Gavel of Unearthed Secrets"
   },
   "highwarlordsspellblade": {
     "id": 28931,
     "icon": "inv_weapon_shortblade_26",
-    "slot": null,
+    "slot": "Main Hand",
     "name": "High Warlord's Spellblade"
   },
   "grandmarshalsspellblade": {
     "id": 28957,
     "icon": "inv_weapon_shortblade_26",
-    "slot": null,
+    "slot": "Main Hand",
     "name": "Grand Marshal's Spellblade"
   },
   "skybreaker": {
     "id": 27937,
     "icon": "inv_mace_34",
-    "slot": null,
+    "slot": "Main Hand",
     "name": "Sky Breaker"
   },
   "bleedinghollowwarhammer": {
     "id": 27741,
     "icon": "inv_mace_1h_stratholme_d_01",
-    "slot": null,
+    "slot": "Main Hand",
     "name": "Bleeding Hollow Warhammer"
   },
   "theendofdreams": {
     "id": 22988,
     "icon": "inv_mace_1h_stratholme_d_02",
-    "slot": null,
+    "slot": "Main Hand",
     "name": "The End of Dreams"
   },
   "talonofthetempest": {
     "id": 30723,
     "icon": "inv_weapon_shortblade_53",
-    "slot": null,
+    "slot": "Main Hand",
     "name": "Talon of the Tempest"
   },
   "illidaribanemagebladedemon": {
     "id": 30787,
     "icon": "inv_sword_77",
-    "slot": null,
+    "slot": "Main Hand",
     "name": "Illidari-Bane Mageblade"
   },
   "terokksgavel": {
     "id": 32537,
     "icon": "inv_hammer_20",
-    "slot": null,
+    "slot": "Main Hand",
     "name": "Terokk's Gavel"
   },
   "handwrapsofflowingthought": {
@@ -3158,13 +3152,13 @@
   "mercilessgladiatorsspellblade": {
     "id": 32053,
     "icon": "inv_weapon_shortblade_26",
-    "slot": null,
+    "slot": "Main Hand",
     "name": "Merciless Gladiator's Spellblade"
   },
   "mercilessgladiatorsgavel": {
     "id": 32963,
     "icon": "inv_mace_47",
-    "slot": null,
+    "slot": "Main Hand",
     "name": "Merciless Gladiator's Gavel"
   },
   "gauntletsofthesunking": {
@@ -3434,25 +3428,25 @@
   "vengefulgladiatorsgavel": {
     "id": 33687,
     "icon": "inv_mace_56",
-    "slot": null,
+    "slot": "Main Hand",
     "name": "Vengeful Gladiator's Gavel"
   },
   "vengefulgladiatorsspellblade": {
     "id": 33763,
     "icon": "inv_weapon_shortblade_51",
-    "slot": null,
+    "slot": "Main Hand",
     "name": "Vengeful Gladiator's Spellblade"
   },
   "hammerofjudgement": {
     "id": 34009,
     "icon": "inv_mace_57",
-    "slot": null,
+    "slot": "Main Hand",
     "name": "Hammer of Judgement"
   },
   "themaelstromsfury": {
     "id": 32237,
     "icon": "inv_weapon_shortblade_58",
-    "slot": null,
+    "slot": "Main Hand",
     "name": "The Maelstrom's Fury"
   },
   "thunderhearthandguards": {
@@ -3716,13 +3710,13 @@
   "wubscursedhexblade": {
     "id": 33354,
     "icon": "inv_weapon_shortblade_64",
-    "slot": null,
+    "slot": "Main Hand",
     "name": "Wub's Cursed Hexblade"
   },
   "amanipunisher": {
     "id": 33283,
     "icon": "inv_mace_32",
-    "slot": null,
+    "slot": "Main Hand",
     "name": "Amani Punisher"
   },
   "studiouswraps": {
@@ -3944,25 +3938,25 @@
   "sunflare": {
     "id": 34336,
     "icon": "inv_weapon_shortblade_73",
-    "slot": null,
+    "slot": "Main Hand",
     "name": "Sunflare"
   },
   "reignofmisery": {
     "id": 34176,
     "icon": "inv_mace_73",
-    "slot": null,
+    "slot": "Main Hand",
     "name": "Reign of Misery"
   },
   "scryersbladeoffocus": {
     "id": 34895,
     "icon": "inv_weapon_shortblade_78",
-    "slot": null,
+    "slot": "Main Hand",
     "name": "Scryer's Blade of Focus"
   },
   "cudgelofconsecration": {
     "id": 34611,
     "icon": "inv_mace_31",
-    "slot": null,
+    "slot": "Main Hand",
     "name": "Cudgel of Consecration"
   },
   "handguardsofdefiledworlds": {
@@ -4610,61 +4604,61 @@
   "lightsjustice": {
     "id": 28771,
     "icon": "inv_mace_46",
-    "slot": null,
+    "slot": "Main Hand",
     "name": "Light's Justice"
   },
   "gladiatorssalvation": {
     "id": 32451,
     "icon": "inv_mace_47",
-    "slot": null,
+    "slot": "Main Hand",
     "name": "Gladiator's Salvation"
   },
   "shardofthevirtuous": {
     "id": 28522,
     "icon": "inv_hammer_26",
-    "slot": null,
+    "slot": "Main Hand",
     "name": "Shard of the Virtuous"
   },
   "handofeternity": {
     "id": 23556,
     "icon": "inv_mace_16",
-    "slot": null,
+    "slot": "Main Hand",
     "name": "Hand of Eternity"
   },
   "hammerofthetwistingnether": {
     "id": 23056,
     "icon": "inv_mace_27",
-    "slot": null,
+    "slot": "Main Hand",
     "name": "Hammer of the Twisting Nether"
   },
   "dathrohansceremonialhammer": {
     "id": 28216,
     "icon": "inv_hammer_11",
-    "slot": null,
+    "slot": "Main Hand",
     "name": "Dathrohan's Ceremonial Hammer"
   },
   "willofthefallenexarch": {
     "id": 27876,
     "icon": "inv_mace_08",
-    "slot": null,
+    "slot": "Main Hand",
     "name": "Will of the Fallen Exarch"
   },
   "runeddaggerofsolace": {
     "id": 28322,
     "icon": "inv_weapon_shortblade_52",
-    "slot": null,
+    "slot": "Main Hand",
     "name": "Runed Dagger of Solace"
   },
   "theancientscepterofsuemin": {
     "id": 31342,
     "icon": "inv_mace_53",
-    "slot": null,
+    "slot": "Main Hand",
     "name": "The Ancient Scepter of Sue-Min"
   },
   "ceremonialkris": {
     "id": 31013,
     "icon": "inv_weapon_shortblade_25",
-    "slot": null,
+    "slot": "Main Hand",
     "name": "Ceremonial Kris"
   },
   "mittsofthetreemender": {
@@ -5252,13 +5246,13 @@
   "lightfathomscepter": {
     "id": 30108,
     "icon": "inv_weapon_shortblade_43",
-    "slot": null,
+    "slot": "Main Hand",
     "name": "Lightfathom Scepter"
   },
   "mercilessgladiatorssalvation": {
     "id": 32964,
     "icon": "inv_mace_47",
-    "slot": null,
+    "slot": "Main Hand",
     "name": "Merciless Gladiator's Salvation"
   },
   "nordrassilgloves": {
@@ -5546,19 +5540,19 @@
   "crystalspireofkarabor": {
     "id": 32500,
     "icon": "inv_mace_56",
-    "slot": null,
+    "slot": "Main Hand",
     "name": "Crystal Spire of Karabor"
   },
   "vengefulgladiatorssalvation": {
     "id": 33743,
     "icon": "inv_mace_56",
-    "slot": null,
+    "slot": "Main Hand",
     "name": "Vengeful Gladiator's Salvation"
   },
   "hammerofatonement": {
     "id": 30918,
     "icon": "inv_mace_57",
-    "slot": null,
+    "slot": "Main Hand",
     "name": "Hammer of Atonement"
   },
   "glovesofunfailingfaith": {
@@ -5768,7 +5762,7 @@
   "darkblessing": {
     "id": 33468,
     "icon": "inv_staff_64",
-    "slot": null,
+    "slot": "Main Hand",
     "name": "Dark Blessing"
   },
   "lightblessedbonds": {
@@ -5948,19 +5942,19 @@
   "hammerofsanctification": {
     "id": 34335,
     "icon": "inv_mace_72",
-    "slot": null,
+    "slot": "Main Hand",
     "name": "Hammer of Sanctification"
   },
   "archonsgavel": {
     "id": 34199,
     "icon": "inv_mace_71",
-    "slot": null,
+    "slot": "Main Hand",
     "name": "Archon's Gavel"
   },
   "gavelofnaarublessings": {
     "id": 34896,
     "icon": "inv_mace_82",
-    "slot": null,
+    "slot": "Main Hand",
     "name": "Gavel of Naaru Blessings"
   },
   "handsofeternallight": {
@@ -6530,7 +6524,7 @@
   "stormforgedaxe": {
     "id": 30087,
     "icon": "inv_axe_39",
-    "slot": null,
+    "slot": "Main Hand",
     "name": "Stormforged Axe"
   },
   "talonofanzu": {
@@ -6542,7 +6536,7 @@
   "bigbadwolfspaw": {
     "id": 28584,
     "icon": "inv_misc_monsterclaw_04",
-    "slot": null,
+    "slot": "Main Hand",
     "name": "Big Bad Wolf's Paw"
   },
   "spiteblade": {
@@ -7712,7 +7706,7 @@
   "clawofmoltenfury": {
     "id": 32946,
     "icon": "inv_weapon_hand_14",
-    "slot": null,
+    "slot": "Main Hand",
     "name": "Claw of Molten Fury"
   },
   "fistofmoltenfury": {
@@ -8006,7 +8000,7 @@
   "rage": {
     "id": 33495,
     "icon": "inv_weapon_hand_15",
-    "slot": null,
+    "slot": "Main Hand",
     "name": "Rage"
   },
   "umbralshiv": {
@@ -8240,13 +8234,13 @@
   "vanirsrightfistofbrutality": {
     "id": 34893,
     "icon": "inv_weapon_hand_16",
-    "slot": null,
+    "slot": "Main Hand",
     "name": "Vanir's Right Fist of Brutality"
   },
   "handofthedeceiver": {
     "id": 34331,
     "icon": "inv_weapon_hand_15",
-    "slot": null,
+    "slot": "Main Hand",
     "name": "Hand of the Deceiver"
   },
   "breechingcomet": {
@@ -8570,31 +8564,31 @@
   "stormcaller": {
     "id": 29155,
     "icon": "inv_sword_01",
-    "slot": null,
+    "slot": "Main Hand",
     "name": "Stormcaller"
   },
   "greatswordofhorriddreams": {
     "id": 27905,
     "icon": "inv_sword_2h_blood_c_03",
-    "slot": null,
+    "slot": "Main Hand",
     "name": "Greatsword of Horrid Dreams"
   },
   "thewillbreaker": {
     "id": 27512,
     "icon": "inv_sword_01",
-    "slot": null,
+    "slot": "Main Hand",
     "name": "The Willbreaker"
   },
   "manawrath": {
     "id": 27899,
     "icon": "inv_sword_draenei_04",
-    "slot": null,
+    "slot": "Main Hand",
     "name": "Mana Wrath"
   },
   "bladeofwizardry": {
     "id": 31336,
     "icon": "inv_sword_01",
-    "slot": null,
+    "slot": "Main Hand",
     "name": "Blade of Wizardry"
   },
   "glovesofthealdor": {
@@ -8816,7 +8810,7 @@
   "fangoftheleviathan": {
     "id": 30095,
     "icon": "inv_sword_73",
-    "slot": null,
+    "slot": "Main Hand",
     "name": "Fang of the Leviathan"
   },
   "glovesoftirisfal": {
@@ -8930,7 +8924,7 @@
   "tempestofchaos": {
     "id": 30910,
     "icon": "inv_sword_90",
-    "slot": null,
+    "slot": "Main Hand",
     "name": "Tempest of Chaos"
   },
   "glovesofthetempest": {
@@ -9002,7 +8996,7 @@
   "bladeoftwistedvisions": {
     "id": 33467,
     "icon": "inv_sword_109",
-    "slot": null,
+    "slot": "Main Hand",
     "name": "Blade of Twisted Visions"
   },
   "achromictrousersofthenaaru": {
@@ -9068,7 +9062,7 @@
   "jadedcrystaldagger": {
     "id": 34604,
     "icon": "inv_weapon_shortblade_54",
-    "slot": null,
+    "slot": "Main Hand",
     "name": "Jaded Crystal Dagger"
   },
   "beltofthetempest": {
@@ -10178,7 +10172,7 @@
   "malletofthetides": {
     "id": 30058,
     "icon": "inv_weapon_shortblade_42",
-    "slot": null,
+    "slot": "Main Hand",
     "name": "Mallet of the Tides"
   },
   "royalgauntletsofsilvermoon": {
@@ -12818,7 +12812,7 @@
   "timeshifteddagger": {
     "id": 27431,
     "icon": "inv_weapon_shortblade_33",
-    "slot": null,
+    "slot": "Main Hand",
     "name": "Time-Shifted Dagger"
   },
   "jaedenfireglovesofannihilationshadow": {
@@ -13184,19 +13178,19 @@
   "dragonmawmeleeproc": {
     "id": 28438,
     "icon": "inv_mace_38",
-    "slot": null,
+    "slot": "Main Hand",
     "name": "Dragonmaw"
   },
   "drakefisthammermeleeproc": {
     "id": 28437,
     "icon": "inv_mace_37",
-    "slot": null,
+    "slot": "Main Hand",
     "name": "Drakefist Hammer"
   },
   "gladiatorsrightripper": {
     "id": 28313,
     "icon": "inv_weapon_hand_13",
-    "slot": null,
+    "slot": "Main Hand",
     "name": "Gladiator's Right Ripper"
   },
   "gladiatorsslicer": {
@@ -13220,7 +13214,7 @@
   "foolsbane": {
     "id": 28657,
     "icon": "inv_weapon_shortblade_44",
-    "slot": null,
+    "slot": "Main Hand",
     "name": "Fool's Bane"
   },
   "gladiatorsshanker": {
@@ -13244,7 +13238,7 @@
   "thebladefist": {
     "id": 29348,
     "icon": "inv_weapon_hand_10",
-    "slot": null,
+    "slot": "Main Hand",
     "name": "The Bladefist"
   },
   "illidaribanebroadsworddemon": {
@@ -13256,19 +13250,19 @@
   "clawofthewatcher": {
     "id": 27846,
     "icon": "inv_weapon_hand_07",
-    "slot": null,
+    "slot": "Main Hand",
     "name": "Claw of the Watcher"
   },
   "reflexblades": {
     "id": 28392,
     "icon": "inv_weapon_hand_08",
-    "slot": null,
+    "slot": "Main Hand",
     "name": "Reflex Blades"
   },
   "demonbloodeviscerator": {
     "id": 27533,
     "icon": "inv_weapon_hand_05",
-    "slot": null,
+    "slot": "Main Hand",
     "name": "Demonblood Eviscerator"
   },
   "honorscall": {
@@ -13286,13 +13280,13 @@
   "highwarlordsrightripper": {
     "id": 28928,
     "icon": "inv_weapon_hand_02",
-    "slot": null,
+    "slot": "Main Hand",
     "name": "High Warlord's Right Ripper"
   },
   "grandmarshalsrightripper": {
     "id": 28953,
     "icon": "inv_weapon_hand_02",
-    "slot": null,
+    "slot": "Main Hand",
     "name": "Grand Marshal's Right Ripper"
   },
   "hopeender": {
@@ -13550,7 +13544,7 @@
   "felsteelwhisperknives": {
     "id": 29204,
     "icon": "inv_weapon_shortblade_26",
-    "slot": null,
+    "slot": "Ranged",
     "name": "Felsteel Whisper Knives"
   },
   "deathblowx11goggles": {
@@ -13598,7 +13592,7 @@
   "talonofthephoenix": {
     "id": 32944,
     "icon": "inv_weapon_hand_12",
-    "slot": null,
+    "slot": "Main Hand",
     "name": "Talon of the Phoenix"
   },
   "fangofvashj": {
@@ -13616,7 +13610,7 @@
   "mercilessgladiatorsrightripper": {
     "id": 32028,
     "icon": "inv_weapon_hand_13",
-    "slot": null,
+    "slot": "Main Hand",
     "name": "Merciless Gladiator's Right Ripper"
   },
   "mercilessgladiatorspummeler": {
@@ -13646,13 +13640,13 @@
   "thehorsemansblade": {
     "id": 38175,
     "icon": "inv_sword_07",
-    "slot": null,
+    "slot": "Main Hand",
     "name": "The Horseman's Blade"
   },
   "dragonstrikemeleeproc": {
     "id": 28439,
     "icon": "inv_mace_39",
-    "slot": null,
+    "slot": "Main Hand",
     "name": "Dragonstrike"
   },
   "mercilessgladiatorsshiv": {
@@ -13712,7 +13706,7 @@
   "serpentshrineshuriken": {
     "id": 30025,
     "icon": "inv_throwingknife_06",
-    "slot": null,
+    "slot": "Ranged",
     "name": "Serpentshrine Shuriken"
   },
   "slayershelm": {
@@ -13790,13 +13784,13 @@
   "warglaiveofazzinoth": {
     "id": 32837,
     "icon": "inv_weapon_glave_01",
-    "slot": null,
+    "slot": "Main Hand",
     "name": "Warglaive of Azzinoth"
   },
   "vengefulgladiatorsrightripper": {
     "id": 33737,
     "icon": "inv_weapon_hand_13",
-    "slot": null,
+    "slot": "Main Hand",
     "name": "Vengeful Gladiator's Right Ripper"
   },
   "_ef_32838": {
@@ -13916,7 +13910,7 @@
   "twistedbladesofzarak": {
     "id": 32326,
     "icon": "inv_throwingknife_04",
-    "slot": null,
+    "slot": "Ranged",
     "name": "Twisted Blades of Zarak"
   },
   "brutalgladiatorsleathertunic": {
@@ -14042,13 +14036,13 @@
   "bladeoflifesinevitability": {
     "id": 34349,
     "icon": "inv_throwingknife_07",
-    "slot": null,
+    "slot": "Ranged",
     "name": "Blade of Life's Inevitability"
   },
   "distractingblades": {
     "id": 34603,
     "icon": "inv_throwingknife_01",
-    "slot": null,
+    "slot": "Ranged",
     "name": "Distracting Blades"
   },
   "cyclonefaceguard": {
@@ -14750,7 +14744,7 @@
   "blackplanaredge": {
     "id": 28432,
     "icon": "inv_axe_1h_blacksmithing_02",
-    "slot": null,
+    "slot": "Main Hand",
     "name": "Black Planar Edge"
   },
   "gladiatorscleaver": {
@@ -14768,13 +14762,13 @@
   "thedecapitator": {
     "id": 28767,
     "icon": "inv_axe_66",
-    "slot": null,
+    "slot": "Main Hand",
     "name": "The Decapitator"
   },
   "theplanaredge": {
     "id": 28431,
     "icon": "inv_axe_1h_blacksmithing_01",
-    "slot": null,
+    "slot": "Main Hand",
     "name": "The Planar Edge"
   },
   "feledgedbattleaxe": {
@@ -14966,7 +14960,7 @@
   "wickededgeoftheplanes": {
     "id": 28433,
     "icon": "inv_axe_1h_blacksmithing_03",
-    "slot": null,
+    "slot": "Main Hand",
     "name": "Wicked Edge of the Planes"
   },
   "mercilessgladiatorshacker": {
@@ -15806,7 +15800,7 @@
   "continuumblade": {
     "id": 29185,
     "icon": "inv_sword_11",
-    "slot": null,
+    "slot": "Main Hand",
     "name": "Continuum Blade"
   },
   "voidheartgloves": {
@@ -16436,13 +16430,13 @@
   "nexusclaw": {
     "id": 29371,
     "icon": "inv_weapon_hand_01",
-    "slot": null,
+    "slot": "Main Hand",
     "name": "Nexus-Claw"
   },
   "ripfangpaw": {
     "id": 30277,
     "icon": "inv_gauntlets_07",
-    "slot": null,
+    "slot": "Main Hand",
     "name": "Ripfang Paw"
   },
   "magharifurybrand": {
@@ -16460,7 +16454,7 @@
   "lavaforgedwarhammer": {
     "id": 30089,
     "icon": "inv_hammer_17",
-    "slot": null,
+    "slot": "Main Hand",
     "name": "Lavaforged Warhammer"
   },
   "amanivenomaxe": {

@@ -11,12 +11,12 @@
     --gold: #c9a84c;
     --gold-light: #e8c96a;
     --gold-dim: #7a5f28;
-    --bg: #0a0804;
-    --bg2: #110e08;
-    --bg3: #1a1508;
-    --border: #2e2510;
-    --text: #e8dfc8;
-    --text-dim: #8a7d60;
+    --bg: #0a0a0a;
+    --bg2: #111111;
+    --bg3: #191919;
+    --border: #2a2a22;
+    --text: #e8e4dc;
+    --text-dim: #a8a89a;
     --red: #c94c4c;
     --green: #4caa6e;
   }
@@ -1082,7 +1082,7 @@
       <div style="margin-top:14px;font-size:14px;color:var(--text);line-height:1.75;display:grid;gap:20px;">
 
         <div>
-          <div style="font-family:'Cinzel',serif;font-size:10px;letter-spacing:0.18em;color:var(--gold-dim);margin-bottom:6px;">FINAL SCORE</div>
+          <div style="font-family:'Cinzel',serif;font-size:12px;letter-spacing:0.15em;color:var(--gold-dim);margin-bottom:8px;">FINAL SCORE</div>
           <div style="font-family:monospace;font-size:12px;background:var(--bg2);padding:8px 12px;border-left:2px solid var(--gold-dim);color:var(--text-dim);">
             score = AttendanceScore × ConsumeMod × GearMod × LootMod × HardSoftPrio × BisMod
           </div>
@@ -1090,7 +1090,7 @@
         </div>
 
         <div>
-          <div style="font-family:'Cinzel',serif;font-size:10px;letter-spacing:0.18em;color:var(--gold-dim);margin-bottom:6px;">ATTENDANCE SCORE <span style="color:var(--text-dim);font-weight:400;">(primary driver)</span></div>
+          <div style="font-family:'Cinzel',serif;font-size:12px;letter-spacing:0.15em;color:var(--gold-dim);margin-bottom:8px;">ATTENDANCE SCORE <span style="color:var(--text-dim);font-weight:400;">(primary driver)</span></div>
           <div style="font-family:monospace;font-size:12px;background:var(--bg2);padding:8px 12px;border-left:2px solid var(--gold-dim);color:var(--text-dim);">
             tenure = 4 × log₂(raidsAttended + 1)<br>
             effPct = rawPct + (100 − rawPct) × (1 − 1/(1 + raids/8))<br>
@@ -1103,45 +1103,47 @@
         </div>
 
         <div>
-          <div style="font-family:'Cinzel',serif;font-size:10px;letter-spacing:0.18em;color:var(--gold-dim);margin-bottom:6px;">CONSUME MODIFIER <span style="color:var(--text-dim);font-weight:400;">(×0.5 – ×1.0)</span></div>
+          <div style="font-family:'Cinzel',serif;font-size:12px;letter-spacing:0.15em;color:var(--gold-dim);margin-bottom:8px;">CONSUME MODIFIER <span style="color:var(--text-dim);font-weight:400;">(×0.5 – ×1.0)</span></div>
           <div style="font-family:monospace;font-size:12px;background:var(--bg2);padding:8px 12px;border-left:2px solid var(--gold-dim);color:var(--text-dim);">
-            ConsumeMod = 1 / (1 + missingPct / 100)
+            ConsumeMod = 1 / (1 + missingPct / 100)<br>
+            forgiveness = 1 − 1 / (1 + raidsAttended / 8)<br>
+            adjRaidScore = raidScore + (median − raidScore) × forgiveness &nbsp;[if gap &gt; 20]
           </div>
           <div style="margin-top:8px;color:var(--text-dim);">
-            Per-raid consume scores are adjusted before being averaged. For Tanks and Physical DPS, weapon enhancement percentage is recomputed per raid: if two or more players in those roles share the same value, it is treated as a raid-level coverage gap (e.g. missing Windfury or Paladin blessing) and forgiven. A player who is the only one at a given value is held accountable.<br><br>
+            Per-raid consume scores are adjusted before being averaged. For Tanks and Physical DPS, weapon enhancement percentage is recomputed per raid: if two or more players in those roles share the same value, it is treated as a raid-level coverage gap (e.g. missing Windfury) and forgiven.<br><br>
             Outlier-low individual raids are also partially forgiven based on track record. A consistently well-prepared player who had one poor raid will have that raid blended toward their personal median. Raiders with fewer than approximately four raids receive minimal forgiveness, as there is insufficient history to distinguish a pattern from an anomaly.
           </div>
         </div>
 
         <div>
-          <div style="font-family:'Cinzel',serif;font-size:10px;letter-spacing:0.18em;color:var(--gold-dim);margin-bottom:6px;">GEAR MODIFIER <span style="color:var(--text-dim);font-weight:400;">(×0.5 – ×1.0)</span></div>
+          <div style="font-family:'Cinzel',serif;font-size:12px;letter-spacing:0.15em;color:var(--gold-dim);margin-bottom:8px;">GEAR MODIFIER <span style="color:var(--text-dim);font-weight:400;">(×0.5 – ×1.0)</span></div>
           <div style="font-family:monospace;font-size:12px;background:var(--bg2);padding:8px 12px;border-left:2px solid var(--gold-dim);color:var(--text-dim);">
             GearMod = 1 / (1 + 0.1 × gearIssues)
           </div>
-          <div style="margin-top:8px;color:var(--text-dim);">Missing gems and missing enchants are always counted as gear issues, regardless of item quality. Suboptimal enchants — correct slot but wrong or budget enhancement — are additionally flagged if the item is ranked top 10 BiS for that player's spec across any phase. Items of that calibre are unlikely to be replaced, so a suboptimal enchant is treated the same as a missing one. On non-top-5 items, suboptimal enchants are not penalised, as the player may reasonably be saving for an upgrade. The penalty scales linearly: 5 issues is ×0.67, 10 issues is ×0.5.</div>
+          <div style="margin-top:8px;color:var(--text-dim);">Missing gems and missing enchants are always counted as gear issues, regardless of item quality. Suboptimal enchants — correct slot but wrong or budget enhancement — are additionally flagged if the item is ranked top 10 BiS for that player's spec across any phase. Items of that calibre are unlikely to be replaced, so a suboptimal enchant is treated the same as a missing one. On non-top-10 items, suboptimal enchants are not penalised, as the player may reasonably be saving for an upgrade. The penalty scales linearly: 5 issues is ×0.67, 10 issues is ×0.5.</div>
         </div>
 
         <div>
-          <div style="font-family:'Cinzel',serif;font-size:10px;letter-spacing:0.18em;color:var(--gold-dim);margin-bottom:6px;">LOOT SCORE MODIFIER <span style="color:var(--text-dim);font-weight:400;">(×0.33 – ×1.0)</span></div>
+          <div style="font-family:'Cinzel',serif;font-size:12px;letter-spacing:0.15em;color:var(--gold-dim);margin-bottom:8px;">LOOT SCORE MODIFIER <span style="color:var(--text-dim);font-weight:400;">(×0.33 – ×1.0)</span></div>
           <div style="font-family:monospace;font-size:12px;background:var(--bg2);padding:8px 12px;border-left:2px solid var(--gold-dim);color:var(--text-dim);">
             LootMod = 1.0 − percentile × 0.667
           </div>
           <div style="margin-top:8px;color:var(--text-dim);">
             Loot Score = (total item value received ÷ raids attended) × 100. Each item is assigned a value reflecting its relative desirability, and the total is divided by raids attended so that tenure does not inflate the score — a veteran who received little is not penalised relative to a newer raider who received a similar amount.<br><br>
-            The modifier is a continuous curve within each role group. The player at the lowest percentile (received the least relative to peers) receives ×1.0 — no penalty. The player at the highest percentile receives ×0.33. This approach avoids the cliff edges of a tiered system and ensures the penalty scales proportionally with how much loot a player has received.
+            The modifier is a continuous curve within each role group. The player at the lowest percentile (received the least relative to peers) receives ×1.0 — no penalty. The player at the highest percentile receives ×0.33.
           </div>
         </div>
 
         <div>
-          <div style="font-family:'Cinzel',serif;font-size:10px;letter-spacing:0.18em;color:var(--gold-dim);margin-bottom:6px;">HARD &amp; SOFT PRIORITY</div>
+          <div style="font-family:'Cinzel',serif;font-size:12px;letter-spacing:0.15em;color:var(--gold-dim);margin-bottom:8px;">HARD &amp; SOFT PRIORITY</div>
           <div style="font-family:monospace;font-size:12px;background:var(--bg2);padding:8px 12px;border-left:2px solid var(--gold-dim);color:var(--text-dim);">
             Hard Prio: ×1.75 &nbsp;|&nbsp; Soft Prio: ×1.25 &nbsp;|&nbsp; Both: ×2.1875
           </div>
-          <div style="margin-top:8px;color:var(--text-dim);">Set by the loot council to reflect class or spec alignment with a specific item. Hard priority indicates the item is strongly intended for that spec. Soft priority indicates a preference without exclusivity. Both multipliers stack if assigned together. These are meaningful but not absolute — a raider who has waited a long time with a low loot score can still outrank a priority holder.</div>
+          <div style="margin-top:8px;color:var(--text-dim);">Set by the loot council to reflect class or spec alignment with a specific item. Hard priority indicates the item is strongly intended for that spec. Soft priority indicates a preference without exclusivity. Both multipliers stack if assigned together.</div>
         </div>
 
         <div>
-          <div style="font-family:'Cinzel',serif;font-size:10px;letter-spacing:0.18em;color:var(--gold-dim);margin-bottom:6px;">BIS UPGRADE MODIFIER <span style="color:var(--text-dim);font-weight:400;">(×0.5 – ×1.4)</span></div>
+          <div style="font-family:'Cinzel',serif;font-size:12px;letter-spacing:0.15em;color:var(--gold-dim);margin-bottom:8px;">BIS UPGRADE MODIFIER <span style="color:var(--text-dim);font-weight:400;">(×0.5 – ×1.4)</span></div>
           <div style="font-family:monospace;font-size:12px;background:var(--bg2);padding:8px 12px;border-left:2px solid var(--gold-dim);color:var(--text-dim);">
             Within ±5%: ×1.0 (sidegrade) &nbsp;|&nbsp; Outside ±5%: ×(1.0 + pct×0.02), upgrades capped at +50%<br>
             Examples: +20%→×1.4 &nbsp;|&nbsp; +50%→×2.0 &nbsp;|&nbsp; −20%→×0.6 &nbsp;|&nbsp; −50%→×0.1 (floor)<br>
@@ -2538,7 +2540,7 @@ function getRoleRowsHtml(sorted, dates, bottom20threshold, top20threshold, point
         const prNorm = prScore * priorityNorm;
         const prBg = prNorm >= 100 ? 'rgba(76,170,110,0.08)' : prNorm >= 90 ? 'rgba(138,191,80,0.07)' : prNorm >= 60 ? 'rgba(212,200,74,0.06)' : prNorm >= 30 ? 'rgba(224,120,48,0.06)' : prScore > 0 ? 'rgba(201,76,76,0.06)' : '';
         return `<tr class="${p.pct === null ? 'na-row' : ''}${p.inactive ? ' inactive-row' : ''}" style="${prBg ? 'background:' + prBg + ';' : ''}">
-          <td class="player-name" onclick="toggleLoot(this, '${p.name}')" style="cursor:pointer;" title="Click to view loot"><span style="${(() => { const cc = classColor(p.name); return cc ? 'color:' + cc + ';' : ''; })()}">${p.name}</span>${groupingMode !== 'role' ? ` <span class="role-icon" title="${playerRoleName(p.name)}">${playerRoleIcon(p.name)}</span>` : ''} <span class="loot-arrow">▸</span></td>
+          <td class="player-name" onclick="toggleLoot(this, '${p.name}')" style="cursor:pointer;" title="Click to view loot"><span class="loot-arrow">▸</span> <span style="${(() => { const cc = classColor(p.name); return cc ? 'color:' + cc + ';' : ''; })()}">${p.name}</span>${groupingMode !== 'role' ? ` <span class="role-icon" title="${playerRoleName(p.name)}">${playerRoleIcon(p.name)}</span>` : ''}</td>
           <td class="priority-cell">${(() => {
             const { score, tooltip } = calculatePriority(p, bottom20threshold, top20threshold, pointValues);
             if (!score) return '<span style="color:var(--text-dim);font-style:italic;font-size:12px;">—</span>';
@@ -4442,7 +4444,7 @@ function onItemChange() {
     const roleIconHtml = `<span class="role-icon" title="${playerRoleName(p.name)}">${playerRoleIcon(p.name)}</span>`;
     const truncName = p.name.length > 16 ? p.name.slice(0, 15) + '…' : p.name;
     return `<tr style="${dimmed ? 'opacity:0.35;' : ''}${rowBg ? 'background:' + rowBg + ';' : ''}" class="${dimmed ? 'na-row' : ''}">
-      <td class="player-name" onclick="toggleLoot(this, '${p.name}')" style="cursor:pointer;max-width:16ch;overflow:hidden;" title="${p.name} — Click to view loot"><span style="${nameStyle}">${truncName}</span> ${roleIconHtml}${badgeIcon} <span class="loot-arrow">▸</span></td>
+      <td class="player-name" onclick="toggleLoot(this, '${p.name}')" style="cursor:pointer;" title="${p.name} — Click to view loot"><span class="loot-arrow">▸</span>${badgeIcon} <span style="${nameStyle}">${truncName}</span> ${roleIconHtml}</td>
       ${relevantSlots ? currentItemCellHtml(key, relevantSlots) : ''}
       <td class="priority-cell" style="color:${prCol};" title="${fullTooltip}">${prStr !== '—' ? `<span class="priority-score" style="color:${prCol};">${prStr}</span>` : '<span style="color:var(--text-dim);font-style:italic;font-size:12px;">—</span>'}</td>
       <td class="gear-flag-cell">${gearHtml}</td>
@@ -4466,7 +4468,7 @@ function onItemChange() {
   el.innerHTML = itemHeaderHtml + `
     <table style="width:100%;border-collapse:collapse;margin-top:24px;">
       <colgroup>
-        <col style="width:14ch;"> <!-- Player -->
+        <col style="width:16ch;min-width:16ch;"> <!-- Player -->
         ${relevantSlots ? '<col style="width:180px;"> <!-- Current -->' : ''}
         <col style="width:55px;">  <!-- Prio -->
         <col style="width:24px;">  <!-- Gear flag -->

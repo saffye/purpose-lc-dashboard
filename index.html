@@ -1072,21 +1072,21 @@
         <div id="lootItemDropdown" class="loot-item-dropdown" style="display:none;"></div>
       </div>
     </div>
-    <div id="lootEligible"></div>
+    <div id="lootEligible" style="overflow-x:auto;width:100%;"></div>
 
     <div id="lootFormulaPanel" style="margin-top:20px;border-top:1px solid var(--border);padding-top:16px;">
-<details style="margin-top:20px;border-top:1px solid var(--border);padding-top:16px;">
+<details>
       <summary style="font-family:'Cinzel',serif;font-size:11px;letter-spacing:0.2em;color:var(--text-dim);cursor:pointer;user-select:none;list-style:none;display:flex;align-items:center;gap:8px;">
         <span style="font-size:10px;">▶</span> PRIORITY FORMULA
       </summary>
-      <div style="margin-top:14px;font-size:13px;color:var(--text);line-height:1.7;display:grid;gap:16px;">
+      <div style="margin-top:14px;font-size:14px;color:var(--text);line-height:1.75;display:grid;gap:20px;">
 
         <div>
           <div style="font-family:'Cinzel',serif;font-size:10px;letter-spacing:0.18em;color:var(--gold-dim);margin-bottom:6px;">FINAL SCORE</div>
           <div style="font-family:monospace;font-size:12px;background:var(--bg2);padding:8px 12px;border-left:2px solid var(--gold-dim);color:var(--text-dim);">
             score = AttendanceScore × ConsumeMod × GearMod × LootMod × HardSoftPrio × BisMod
           </div>
-          <div style="margin-top:6px;color:var(--text-dim);font-size:12px;">All scores are normalised so the top eligible player = 100. Modifiers are applied in sequence, each one multiplying the running total.</div>
+          <div style="margin-top:8px;color:var(--text-dim);">All scores are normalised so the highest-scoring eligible player = 100. Each modifier multiplies the running total — no single factor is additive.</div>
         </div>
 
         <div>
@@ -1096,9 +1096,9 @@
             effPct = rawPct + (100 − rawPct) × (1 − 1/(1 + raids/8))<br>
             AttendanceScore = floor(effPct / 10) × tenure
           </div>
-          <div style="margin-top:6px;color:var(--text-dim);font-size:12px;">
-            Tenure uses a logarithmic curve — early raids matter most. Attending 2 vs 5 raids is a much bigger difference than 20 vs 25. The curve softens significantly after ~10 raids and flattens by ~20.<br><br>
-            Effective attendance percentage forgives occasional absences for established raiders. A two-week vacation barely affects a 6-month veteran, but a new raider missing raids early is a red flag and is not forgiven. Raiders must have attended at least 2 raids to receive any score.
+          <div style="margin-top:8px;color:var(--text-dim);">
+            Tenure follows a logarithmic curve, giving the most weight to early raids. The difference between attending 2 and 5 raids is much more significant than between 20 and 25. The curve flattens substantially after ~10 raids, preventing long-tenured veterans from being insurmountably ahead of established raiders.<br><br>
+            The effective attendance percentage blends a veteran's raw percentage toward 100% based on tenure, so an occasional absence does not permanently harm a long-standing raider's priority. New raiders receive little or no forgiveness — consistent attendance in the early weeks is expected and indicative of long-term reliability. Raiders must have attended at least 2 raids to receive any score.
           </div>
         </div>
 
@@ -1107,9 +1107,9 @@
           <div style="font-family:monospace;font-size:12px;background:var(--bg2);padding:8px 12px;border-left:2px solid var(--gold-dim);color:var(--text-dim);">
             ConsumeMod = 1 / (1 + missingPct / 100)
           </div>
-          <div style="margin-top:6px;color:var(--text-dim);font-size:12px;">
-            Per-raid scores are adjusted before averaging. Weapon oil is recomputed for Tanks and Physical DPS — if 2 or more players share the same weapon enhancement percentage on a given raid, it is treated as a raid buff coverage issue (Windfury, Paladin blessing) and forgiven. If a player is the only one at that value, it counts against them.<br><br>
-            Additionally, outlier-low individual raids are partially forgiven based on track record. A player who is consistently well-consumed but had one bad raid will have that raid blended toward their personal median. Players with fewer than ~4 raids receive minimal forgiveness as there is insufficient track record.
+          <div style="margin-top:8px;color:var(--text-dim);">
+            Per-raid consume scores are adjusted before being averaged. For Tanks and Physical DPS, weapon enhancement percentage is recomputed per raid: if two or more players in those roles share the same value, it is treated as a raid-level coverage gap (e.g. missing Windfury or Paladin blessing) and forgiven. A player who is the only one at a given value is held accountable.<br><br>
+            Outlier-low individual raids are also partially forgiven based on track record. A consistently well-prepared player who had one poor raid will have that raid blended toward their personal median. Raiders with fewer than approximately four raids receive minimal forgiveness, as there is insufficient history to distinguish a pattern from an anomaly.
           </div>
         </div>
 
@@ -1118,17 +1118,17 @@
           <div style="font-family:monospace;font-size:12px;background:var(--bg2);padding:8px 12px;border-left:2px solid var(--gold-dim);color:var(--text-dim);">
             GearMod = 1 / (1 + 0.1 × gearIssues)
           </div>
-          <div style="margin-top:6px;color:var(--text-dim);font-size:12px;">Missing gems and enchants are always gear issues regardless of item quality. Suboptimal enchants (wrong or cheap enhancements) are additionally flagged if the item is ranked top 5 BiS for that player's spec — since top-5 items are unlikely to be replaced, using a budget enchant on them is not forgivable. Suboptimal enchants on non-BiS gear are ignored since the player is expected to replace the item soon. The penalty scales linearly — 5 issues is ×0.67, 10 issues is ×0.5.</div>
+          <div style="margin-top:8px;color:var(--text-dim);">Missing gems and missing enchants are always counted as gear issues, regardless of item quality. Suboptimal enchants — correct slot but wrong or budget enhancement — are additionally flagged if the item is ranked top 5 BiS for that player's spec across any phase. Items of that calibre are unlikely to be replaced, so a suboptimal enchant is treated the same as a missing one. On non-top-5 items, suboptimal enchants are not penalised, as the player may reasonably be saving for an upgrade. The penalty scales linearly: 5 issues is ×0.67, 10 issues is ×0.5.</div>
         </div>
 
         <div>
-          <div style="font-family:'Cinzel',serif;font-size:10px;letter-spacing:0.18em;color:var(--gold-dim);margin-bottom:6px;">LOOT SCORE MODIFIER <span style="color:var(--text-dim);font-weight:400;">(×0.3 – ×0.7)</span></div>
+          <div style="font-family:'Cinzel',serif;font-size:10px;letter-spacing:0.18em;color:var(--gold-dim);margin-bottom:6px;">LOOT SCORE MODIFIER <span style="color:var(--text-dim);font-weight:400;">(×0.33 – ×1.0)</span></div>
           <div style="font-family:monospace;font-size:12px;background:var(--bg2);padding:8px 12px;border-left:2px solid var(--gold-dim);color:var(--text-dim);">
             LootMod = 1.0 − percentile × 0.667
           </div>
-          <div style="margin-top:6px;color:var(--text-dim);font-size:12px;">
-            Loot Score = (total item value received ÷ raids attended) × 100. Each item is assigned a numerical value reflecting its desirability, and a player's total received value is divided by their raids attended to normalise for tenure — a long-attending raider who received little is not unfairly penalised vs a newer player.<br><br>
-            The modifier is a continuous curve within each role group — the player at the 0th percentile (received the least relative to peers) gets ×1.0 (no penalty), the player at the 100th percentile (received the most) gets ×0.33. This is smoother than a bucketed tier system and avoids cliff edges.
+          <div style="margin-top:8px;color:var(--text-dim);">
+            Loot Score = (total item value received ÷ raids attended) × 100. Each item is assigned a value reflecting its relative desirability, and the total is divided by raids attended so that tenure does not inflate the score — a veteran who received little is not penalised relative to a newer raider who received a similar amount.<br><br>
+            The modifier is a continuous curve within each role group. The player at the lowest percentile (received the least relative to peers) receives ×1.0 — no penalty. The player at the highest percentile receives ×0.33. This approach avoids the cliff edges of a tiered system and ensures the penalty scales proportionally with how much loot a player has received.
           </div>
         </div>
 
@@ -1137,16 +1137,17 @@
           <div style="font-family:monospace;font-size:12px;background:var(--bg2);padding:8px 12px;border-left:2px solid var(--gold-dim);color:var(--text-dim);">
             Hard Prio: ×1.75 &nbsp;|&nbsp; Soft Prio: ×1.25 &nbsp;|&nbsp; Both: ×2.1875
           </div>
-          <div style="margin-top:6px;color:var(--text-dim);font-size:12px;">Set by the loot council to reflect class/spec needs for specific items. Hard prio is a strong signal that the item is designed for that spec. Soft prio indicates preference. These multiply together if both apply. They are impactful but do not completely override a raider who has been waiting a very long time.</div>
+          <div style="margin-top:8px;color:var(--text-dim);">Set by the loot council to reflect class or spec alignment with a specific item. Hard priority indicates the item is strongly intended for that spec. Soft priority indicates a preference without exclusivity. Both multipliers stack if assigned together. These are meaningful but not absolute — a raider who has waited a long time with a low loot score can still outrank a priority holder.</div>
         </div>
 
         <div>
           <div style="font-family:'Cinzel',serif;font-size:10px;letter-spacing:0.18em;color:var(--gold-dim);margin-bottom:6px;">BIS UPGRADE MODIFIER <span style="color:var(--text-dim);font-weight:400;">(×0.5 – ×1.4)</span></div>
           <div style="font-family:monospace;font-size:12px;background:var(--bg2);padding:8px 12px;border-left:2px solid var(--gold-dim);color:var(--text-dim);">
-            &gt;+20% EPV: ×1.4 &nbsp;|&nbsp; +5–20%: ×1.2 &nbsp;|&nbsp; ±5%: ×1.0 &nbsp;|&nbsp; −5–20%: ×0.8 &nbsp;|&nbsp; &gt;−20%: ×0.5<br>
-            Not on spec BiS list (others are): ×0.5 &nbsp;|&nbsp; Item not on any BiS list: no modifier
+            Within ±5%: ×1.0 (sidegrade) &nbsp;|&nbsp; Outside ±5%: ×(1.0 + pct×0.02), upgrades capped at +50%<br>
+            Examples: +20%→×1.4 &nbsp;|&nbsp; +50%→×2.0 &nbsp;|&nbsp; −20%→×0.6 &nbsp;|&nbsp; −50%→×0.1 (floor)<br>
+            Not on this player's BiS list (but on others'): ×0.5 &nbsp;|&nbsp; Not on any BiS list: no modifier applied
           </div>
-          <div style="margin-top:6px;color:var(--text-dim);font-size:12px;">EPV (Equivalence Point Value) measures an item's stat value relative to BiS for that spec. Upgrade percentage is computed relative to the player's current item in that slot. Thresholds are percentage-based rather than flat EPV so they scale correctly across slots — a 5% upgrade on a weapon and a 5% upgrade on a ring represent equally meaningful improvements relative to their slot.</div>
+          <div style="margin-top:8px;color:var(--text-dim);">EPV (Equivalence Point Value) quantifies an item's stat contribution relative to the BiS ceiling for that spec. The upgrade percentage is computed against the player's current equipped item in the relevant slot, using the best EPV seen across all phases. Items within ±5% EPV of the current item are treated as sidegrades and receive no modifier. Beyond that threshold the modifier scales continuously at twice the upgrade percentage — a +20% upgrade gives ×1.4, a +50% upgrade gives ×2.0 (the cap). Downgrades scale symmetrically with a floor of ×0.1 at -50% or worse. Using percentage rather than flat EPV ensures the modifier scales correctly across slot types — a 10% upgrade on a weapon and a 10% upgrade on a ring carry equal relative weight.</div>
         </div>
 
       </div>
@@ -4082,11 +4083,12 @@ function onItemChange() {
     );
 
     function _pctToResult(pct) {
-      if (pct >= 20)       return { mult: 1.4, reason: `Major upgrade +${pct.toFixed(1)}% (×1.4)` };
-      else if (pct >= 5)   return { mult: 1.2, reason: `Upgrade +${pct.toFixed(1)}% (×1.2)` };
-      else if (pct >= -5)  return { mult: 1.0, reason: null };
-      else if (pct >= -20) return { mult: 0.8, reason: `Minor downgrade ${pct.toFixed(1)}% (×0.8)` };
-      else                 return { mult: 0.5, reason: `Major downgrade ${pct.toFixed(1)}% (×0.5)` };
+      if (Math.abs(pct) <= 5) return { mult: 1.0, reason: null };
+      const cappedPct = pct > 0 ? Math.min(pct, 50) : pct;
+      const mult = Math.max(0.1, 1.0 + cappedPct * 2 / 100);
+      const multStr = mult.toFixed(2);
+      if (pct > 5)  return { mult, reason: `Upgrade +${pct.toFixed(1)}% (×${multStr})` };
+      else          return { mult, reason: `Downgrade ${pct.toFixed(1)}% (×${multStr})` };
     }
 
     if (_isTwoHand && currentNames.length > 1) {

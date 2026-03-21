@@ -4436,8 +4436,13 @@ function onItemChange() {
       return n >= 100 ? 'rgba(76,170,110,0.08)' : n >= 90 ? 'rgba(138,191,80,0.07)' : n >= 60 ? 'rgba(212,200,74,0.06)' : n >= 30 ? 'rgba(224,120,48,0.06)' : 'rgba(201,76,76,0.06)';
     })() : '';
 
+    const badgeIcon = badge === 'Inactive'  ? `<span title="Inactive" style="font-size:11px;opacity:0.7;">💤</span>`
+                   : badge === 'Received' ? `<span title="Already received" style="font-size:11px;">✓</span>`
+                   : '';
+    const roleIconHtml = `<span class="role-icon" title="${playerRoleName(p.name)}">${playerRoleIcon(p.name)}</span>`;
+    const truncName = p.name.length > 16 ? p.name.slice(0, 15) + '…' : p.name;
     return `<tr style="${dimmed ? 'opacity:0.35;' : ''}${rowBg ? 'background:' + rowBg + ';' : ''}" class="${dimmed ? 'na-row' : ''}">
-      <td class="player-name" onclick="toggleLoot(this, '${p.name}')" style="cursor:pointer;" title="Click to view loot"><span style="${nameStyle}">${p.name}</span>${badge ? ` <span class="inactive-badge" style="font-size:9px;letter-spacing:0.1em;">${badge}</span>` : ''} <span class="loot-arrow">▸</span></td>
+      <td class="player-name" onclick="toggleLoot(this, '${p.name}')" style="cursor:pointer;max-width:16ch;overflow:hidden;" title="${p.name} — Click to view loot"><span style="${nameStyle}">${truncName}</span> ${roleIconHtml}${badgeIcon} <span class="loot-arrow">▸</span></td>
       ${relevantSlots ? currentItemCellHtml(key, relevantSlots) : ''}
       <td class="priority-cell" style="color:${prCol};" title="${fullTooltip}">${prStr !== '—' ? `<span class="priority-score" style="color:${prCol};">${prStr}</span>` : '<span style="color:var(--text-dim);font-style:italic;font-size:12px;">—</span>'}</td>
       <td class="gear-flag-cell">${gearHtml}</td>
@@ -4461,7 +4466,7 @@ function onItemChange() {
   el.innerHTML = itemHeaderHtml + `
     <table style="width:100%;border-collapse:collapse;margin-top:24px;">
       <colgroup>
-        <col style="width:16ch;min-width:16ch;"> <!-- Player -->
+        <col style="width:14ch;"> <!-- Player -->
         ${relevantSlots ? '<col style="width:180px;"> <!-- Current -->' : ''}
         <col style="width:55px;">  <!-- Prio -->
         <col style="width:24px;">  <!-- Gear flag -->

@@ -2387,6 +2387,21 @@ function getAdjustedConsumeAvg(playerName) {
   return scores.reduce((a, b) => a + b, 0) / scores.length;
 }
 
+// Check if an item is top-5 BiS for a given player's specs across any phase
+function isTop5BisItem(itemName, playerName) {
+  const itemId = getItemId(itemName);
+  const specs = getPlayerBisSpecs(playerName);
+  if (!itemId || !specs.length) return false;
+  for (const spec of specs) {
+    if (!bisData[spec]) continue;
+    for (const items of Object.values(bisData[spec])) {
+      const entry = items.find(e => e[0] === itemId);
+      if (entry && entry[1] <= 5) return true;
+    }
+  }
+  return false;
+}
+
 function calculatePriority(p, bottom20threshold, top20threshold, pointValues) {
   // Must have attended more than 2 raids
   if (!p.pct || p.attended < 2) return { score: 0, tooltip: 'Insufficient raids attended' };
@@ -2409,23 +2424,9 @@ function calculatePriority(p, bottom20threshold, top20threshold, pointValues) {
   // Gear modifier: 1 / (1 + 0.1 * gearIssues)
   // Suboptimal enchants only count as issues on top-5 BiS items for this player's spec
   const gi = latestGearIssuesByPlayer[normalizeName(p.name)];
-  const playerBisSpecs = getPlayerBisSpecs(p.name);
-  function isTop5BisItem(itemName) {
-    const itemId = getItemId(itemName);
-    if (!itemId || !playerBisSpecs.length) return false;
-    for (const spec of playerBisSpecs) {
-      if (!bisData[spec]) continue;
-      for (const items of Object.values(bisData[spec])) {
-        // Get best rank for this item across all phases
-        const entry = items.find(e => e[0] === itemId);
-        if (entry && entry[1] <= 5) return true;
-      }
-    }
-    return false;
-  }
   const gearIssueCount = (gi?.issues || []).reduce((count, issue) => {
     if (typeof issue === 'string') return count + 1; // always-flagged (no gem/enchant)
-    if (issue?.suboptimal) return count + (isTop5BisItem(issue.itemName) ? 1 : 0);
+    if (issue?.suboptimal) return count + (isTop5BisItem(issue.itemName, p.name) ? 1 : 0);
     return count;
   }, 0);
   const gearMod = 1 / (1 + 0.1 * gearIssueCount);
@@ -4363,7 +4364,7 @@ function onItemChange() {
     // Compute effective gear issues for display — suboptimal only count on top-5 BiS items
     const _displayIssues = (gi?.issues || []).reduce((acc, issue) => {
       if (typeof issue === 'string') acc.push(issue);
-      else if (issue?.suboptimal && isTop5BisItem(issue.itemName)) acc.push(issue.raw + ' (BiS item)');
+      else if (issue?.suboptimal && isTop5BisItem(issue.itemName, p.name)) acc.push(issue.raw + ' (BiS item)');
       return acc;
     }, []);
     const gearHtml = _displayIssues.length ? `<span class="gear-flag" style="color:${gearColor(_displayIssues.length)};filter:drop-shadow(0 0 4px ${gearColor(_displayIssues.length)}88);" title="${_displayIssues.join('&#10;')}">⚠</span>` : '';

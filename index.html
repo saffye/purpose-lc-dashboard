@@ -3139,9 +3139,19 @@ const ROLE_CLASS_TO_BIS_SPECS = {
 
 // Get the BiS specs for a player given their role and class
 function getPlayerBisSpecs(playerName) {
-  const role = lastRenderData.roles.find(r => r.players.some(p => normalizeName(p.name) === normalizeName(playerName)))?.name || '';
-  const cls = classMap[normalizeName(playerName)] || '';
-  return ROLE_CLASS_TO_BIS_SPECS[role + '|' + cls] || [];
+  const normName = normalizeName(playerName);
+  // Try matching by normalized name against role players
+  const role = lastRenderData.roles.find(r =>
+    r.players.some(p => normalizeName(p.name) === normName || normalizeName(p.name) === playerName)
+  )?.name || '';
+  // Try classMap with both the raw name and normalized key
+  const cls = classMap[normName] || classMap[normalizeName(playerName)] || '';
+  const key = role + '|' + cls;
+  const specs = ROLE_CLASS_TO_BIS_SPECS[key] || [];
+  if (!specs.length && role && cls) {
+    console.warn(`getPlayerBisSpecs: no mapping for "${key}" (player: ${playerName})`);
+  }
+  return specs;
 }
 
 // Get the best EPV for an item ID for a player across all their applicable specs, for a given phase

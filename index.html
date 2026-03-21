@@ -3832,8 +3832,22 @@ function onItemChange() {
     'Feet': ['Feet'], 'Finger': ['Ring1','Ring2'], 'Trinket': ['Trinket1','Trinket2'],
     'One-Hand': ['Weapon','Off-Hand'], 'Two-Hand': ['Weapon','Off-Hand'],
     'Off Hand': ['Weapon','Off-Hand'], 'Held In Off-hand': ['Off-Hand'],
+    'Shield': ['Off-Hand'],
     'Ranged': ['Weapon'], 'Relic': ['Wand/Idol/Relic etc.'],
   };
+
+  // Check if an item is a shield by inspecting its tooltip subclass
+  function itemIsShield(itemName) {
+    const norm = normalizeName(itemName);
+    const entry = gearItemIds[norm];
+    const id = entry ? (typeof entry === 'object' ? entry.id : entry) : null;
+    if (!id) return false;
+    // Check BiS data — shields appear under 'Off Hand' slot in BiS data
+    // but we also check the gear JSON icon as shields have distinct icons
+    // Most reliable: check if any BiS spec lists it under a shield-specific context
+    // For now use icon prefix — all shield icons start with inv_shield
+    return !!(entry?.icon && entry.icon.startsWith('inv_shield'));
+  }
 
   // Map Wowhead BiS slot names back to gear listing column names for EPV lookup
   const BIS_TO_GEAR_SLOT = {
@@ -3850,6 +3864,8 @@ function onItemChange() {
     const normItem = normalizeName(itemName);
     const entry = gearItemIds[normItem];
     if (entry && typeof entry === 'object' && entry.slot) {
+      // Shields share Wowhead slot 'Off Hand' but should only map to ['Off-Hand']
+      if (entry.slot === 'Off Hand' && entry.icon && entry.icon.startsWith('inv_shield')) return ['Off-Hand'];
       const mapped = WOWHEAD_SLOT_MAP[entry.slot];
       if (mapped) return mapped;
     }
@@ -3881,7 +3897,8 @@ function onItemChange() {
     if (/ring|band|signet|loop/.test(n)) return ['Ring1','Ring2'];
     if (/trinket|eye|scarab|abacus|icon|brooch|talisman|badge|charm|idol of|totem of|libram of/.test(n)) return ['Trinket1','Trinket2'];
     if (/sword|axe|mace|staff|wand|dagger|fist|spear|halberd|blade|claymore|hammer|champion|sun eater/.test(n)) return ['Weapon','Off-Hand'];
-    if (/shield|off.hand|orb|tome|book/.test(n)) return ['Weapon','Off-Hand'];
+    if (/shield/.test(n)) return ['Off-Hand'];
+    if (/off.hand|orb|tome|book/.test(n)) return ['Weapon','Off-Hand'];
     if (/idol|totem|libram|rod|wand/.test(n)) return ['Wand/Idol/Relic etc.'];
     // If gear listing data exists but item not found in it, still show column
     // For weapon/offhand items from BiS data, make sure we show both slots

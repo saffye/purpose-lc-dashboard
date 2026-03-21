@@ -3973,9 +3973,10 @@ function onItemChange() {
     const playerName = lastRenderData.roles.flatMap(r => r.players)
       .find(p => normalizeName(p.name) === playerKey)?.name || playerKey;
     const _dbgSpecs = getPlayerBisSpecs(playerName);
-    if (_dbgSpecs.length === 0) console.warn('[BiS] no specs for', playerName, '| playerKey:', playerKey, '| classMap:', classMap[playerKey]);
+    console.log('[BiS] player:', playerName, '| specs:', _dbgSpecs, '| classMap entry:', classMap[normalizeName(playerName)]);
     const candidateEpv = candidateOnBisForAnyone ? getPlayerItemEpv(playerName, candidateItemId) : null;
     const candidateRank = candidateOnBisForAnyone ? getPlayerItemBisRank(playerName, candidateItemId) : null;
+    console.log('[BiS] candidateEpv:', candidateEpv, '| candidateRank:', candidateRank);
 
     const items = slots.map(slot => gear[slot]).filter(Boolean);
     if (!items.length) return dimCell;

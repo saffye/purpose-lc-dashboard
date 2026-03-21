@@ -3836,9 +3836,10 @@ function onItemChange() {
       'Back': ['Cloak'], 'Chest': ['Chest'], 'Wrist': ['Bracers'],
       'Hands': ['Hands'], 'Waist': ['Waist'], 'Legs': ['Legs'],
       'Feet': ['Feet'], 'Finger': ['Ring1','Ring2'], 'Trinket': ['Trinket1','Trinket2'],
-      'One-Hand': ['Weapon','Off-Hand'], 'Two-Hand': ['Weapon','Off-Hand'],
-      'Off Hand': ['Weapon','Off-Hand'], 'Held In Off-hand': ['Off-Hand'],
-      'Shield': ['Off-Hand'], 'Main Hand': ['Weapon','Off-Hand'],
+      'One-Hand': ['Weapon'], 'Two-Hand': ['Weapon','Off-Hand'],
+      'Main Hand': ['Weapon'],
+      'Off Hand': ['Off-Hand'], 'Held In Off-hand': ['Off-Hand'],
+      'Shield': ['Off-Hand'],
       'Ranged': ['Wand/Idol/Relic etc.'], 'Relic': ['Wand/Idol/Relic etc.'],
     };
     // Shield detection
@@ -3854,31 +3855,37 @@ function onItemChange() {
       (slots['Two Hand'] || []).some(([id]) => id === _candidateItemId)
     );
 
-    let currentEpv = null;
+    function _pctToResult(pct) {
+      if (pct >= 20)       return { mult: 1.4, reason: `Major upgrade +${pct.toFixed(1)}% (×1.4)` };
+      else if (pct >= 5)   return { mult: 1.2, reason: `Upgrade +${pct.toFixed(1)}% (×1.2)` };
+      else if (pct >= -5)  return { mult: 1.0, reason: null };
+      else if (pct >= -20) return { mult: 0.8, reason: `Minor downgrade ${pct.toFixed(1)}% (×0.8)` };
+      else                 return { mult: 0.5, reason: `Major downgrade ${pct.toFixed(1)}% (×0.5)` };
+    }
+
     if (_isTwoHand && currentNames.length > 1) {
+      // Two-hand: sum MH+OH EPVs, skip if MH not on BiS
       const mhEpv = getPlayerItemEpv(playerName, getItemId(currentNames[0]));
       if (mhEpv === null) return { mult: 1, reason: null };
       const epvs = currentNames.map(n => getPlayerItemEpv(playerName, getItemId(n))).filter(e => e !== null);
-      currentEpv = epvs.reduce((a, b) => a + b, 0);
+      const currentEpv = epvs.reduce((a, b) => a + b, 0);
+      const pct = currentEpv > 0 ? ((candidateEpv - currentEpv) / currentEpv) * 100 : 0;
+      return _pctToResult(pct);
     } else {
+      // For rings/trinkets (multiple slots): evaluate each current item independently
+      // and take the best (highest mult) result across all that are on BiS
+      let bestResult = null;
       for (const name of currentNames) {
         const epv = getPlayerItemEpv(playerName, getItemId(name));
-        if (epv === null) return { mult: 1, reason: null };
-        currentEpv = epv;
-        break;
+        if (epv === null) continue; // this slot item not on BiS — skip it, try next
+        const pct = epv > 0 ? ((candidateEpv - epv) / epv) * 100 : 0;
+        const result = _pctToResult(pct);
+        if (bestResult === null || result.mult > bestResult.mult) bestResult = result;
       }
+      // If no current items were on BiS at all, skip modifier
+      if (bestResult === null) return { mult: 1, reason: null };
+      return bestResult;
     }
-
-    if (currentEpv === null) return { mult: 1, reason: null };
-
-    const delta = candidateEpv - currentEpv;
-    const pct = currentEpv > 0 ? (delta / currentEpv) * 100 : 0;
-
-    if (pct >= 20)       return { mult: 1.4, reason: `Major upgrade +${pct.toFixed(1)}% (×1.4)` };
-    else if (pct >= 5)   return { mult: 1.2, reason: `Upgrade +${pct.toFixed(1)}% (×1.2)` };
-    else if (pct >= -5)  return { mult: 1.0, reason: null };
-    else if (pct >= -20) return { mult: 0.8, reason: `Minor downgrade ${pct.toFixed(1)}% (×0.8)` };
-    else                 return { mult: 0.5, reason: `Major downgrade ${pct.toFixed(1)}% (×0.5)` };
   }
 
   function lootPriorityScore(p) {
@@ -3920,8 +3927,9 @@ function onItemChange() {
     'Back': ['Cloak'], 'Chest': ['Chest'], 'Wrist': ['Bracers'],
     'Hands': ['Hands'], 'Waist': ['Waist'], 'Legs': ['Legs'],
     'Feet': ['Feet'], 'Finger': ['Ring1','Ring2'], 'Trinket': ['Trinket1','Trinket2'],
-    'One-Hand': ['Weapon','Off-Hand'], 'Two-Hand': ['Weapon','Off-Hand'],
-    'Off Hand': ['Weapon','Off-Hand'], 'Held In Off-hand': ['Off-Hand'],
+    'One-Hand': ['Weapon'], 'Two-Hand': ['Weapon','Off-Hand'],
+    'Main Hand': ['Weapon'],
+    'Off Hand': ['Off-Hand'], 'Held In Off-hand': ['Off-Hand'],
     'Shield': ['Off-Hand'],
     'Ranged': ['Wand/Idol/Relic etc.'], 'Relic': ['Wand/Idol/Relic etc.'],
   };
@@ -3942,7 +3950,7 @@ function onItemChange() {
   // Map Wowhead BiS slot names back to gear listing column names for EPV lookup
   const BIS_TO_GEAR_SLOT = {
     'Main Hand': 'Weapon', 'One Hand': 'Weapon', 'Two Hand': 'Weapon',
-    'Off Hand': 'Off-Hand', 'Held In Off-hand': 'Off-Hand',
+    'Off Hand': 'Off-Hand', 'Held In Off-hand': 'Off-Hand', 'Shield': 'Off-Hand',
     'Head': 'Head', 'Neck': 'Neck', 'Shoulder': 'Shoulders', 'Back': 'Cloak',
     'Chest': 'Chest', 'Wrist': 'Bracers', 'Hands': 'Hands', 'Waist': 'Waist',
     'Legs': 'Legs', 'Feet': 'Feet', 'Finger': 'Ring1', 'Trinket': 'Trinket1',
@@ -3986,9 +3994,9 @@ function onItemChange() {
     if (/boots|treads|slippers|sabatons|greaves|feet|footpads/.test(n)) return ['Feet'];
     if (/ring|band|signet|loop/.test(n)) return ['Ring1','Ring2'];
     if (/trinket|eye|scarab|abacus|icon|brooch|talisman|badge|charm|idol of|totem of|libram of/.test(n)) return ['Trinket1','Trinket2'];
-    if (/sword|axe|mace|staff|wand|dagger|fist|spear|halberd|blade|claymore|hammer|champion|sun eater/.test(n)) return ['Weapon','Off-Hand'];
+    if (/sword|axe|mace|staff|wand|dagger|fist|spear|halberd|blade|claymore|hammer|champion|sun eater/.test(n)) return ['Weapon'];
     if (/shield/.test(n)) return ['Off-Hand'];
-    if (/off.hand|orb|tome|book/.test(n)) return ['Weapon','Off-Hand'];
+    if (/off.hand|orb|tome|book/.test(n)) return ['Off-Hand'];
     if (/idol|totem|libram|rod|wand/.test(n)) return ['Wand/Idol/Relic etc.'];
     // If gear listing data exists but item not found in it, still show column
     // For weapon/offhand items from BiS data, make sure we show both slots
@@ -3998,7 +4006,9 @@ function onItemChange() {
         for (const slots of Object.values(bisData)) {
           for (const [bisSlot, items] of Object.entries(slots)) {
             if (items.some(([id]) => id === candidateItemId)) {
-              if (['Main Hand','One Hand','Two Hand','Off Hand'].includes(bisSlot)) return ['Weapon','Off-Hand'];
+              if (['Two Hand'].includes(bisSlot)) return ['Weapon','Off-Hand'];
+              if (['Main Hand','One Hand'].includes(bisSlot)) return ['Weapon'];
+              if (['Off Hand'].includes(bisSlot)) return ['Off-Hand'];
               if (bisSlot === 'Ranged') return ['Wand/Idol/Relic etc.'];
             }
           }

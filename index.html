@@ -2192,9 +2192,11 @@ async function fetchData() {
     } else {
       setStatus(`Updated at ${new Date().toLocaleTimeString([], {hour: '2-digit', minute: '2-digit'})}`, 'success');
     }
-    // Override sheet-derived points with BiS EPV-based calculation
-    pointsByPlayer = computePointsByPlayer(data.roles);
     render(data);
+    // Override sheet-derived points with BiS EPV-based calculation
+    // Must run after render() so lastRenderData is set (needed by getPlayerBisSpecs)
+    pointsByPlayer = computePointsByPlayer(data.roles);
+    render(data);  // re-render to apply updated points
     if (typeof $WowheadPower !== 'undefined' && $WowheadPower.refreshLinks) $WowheadPower.refreshLinks();
   } catch(e) {
     setStatus(`Failed to load data — ${e?.message}`, 'error');

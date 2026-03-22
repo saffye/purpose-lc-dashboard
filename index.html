@@ -1129,7 +1129,7 @@
             LootMod = 1.0 − percentile × 0.667
           </div>
           <div style="margin-top:8px;color:var(--text-dim);">
-            Loot Score = sum of weighted EPV across all items received ÷ raids attended, rounded to the nearest integer. Each item's weighted EPV = player's EPV × log(lists+1)/log(3) × avg(1/rank)^1.5. The log scaling gives ~1.63x at 5 lists and ~2.85x at 22 lists. The rank score (average of 1/rank across all lists) is raised to the power of 1.5 to amplify the penalty for items ranked poorly despite being contested — e.g. a weapon appearing near the bottom of many lists scores much lower than a trinket ranking near the top of the same number of lists. Items not on any BiS list contribute 0. Dividing by raids attended normalises for tenure.<br><br>
+            Loot Score = sum of weighted EPV across all items received ÷ raids attended, rounded to the nearest integer. Each item's weighted EPV = avgEPV × log(N+1)/log(3) × avg(1/rank)^1.5 × best^0.5 × 2H-penalty. For tokens, avgEPV = average of best EPV across all unique reward items; for others, max EPV. N = unique reward count (tokens) or BiS list count (others). EPV rank is derived from EPV values, not stored rank. best = max(0.1, 1.0 − (bestRank − 3) × 0.1): top 3 scores 1.0, decaying by 0.1 per rank beyond 3, floored at 0.1. Two-handed weapons receive a ×0.5 penalty. Items not on any BiS list contribute 0. Dividing by raids attended normalises for tenure.<br><br>
             The modifier is a continuous curve within each role group. The player at the lowest percentile receives ×1.0 — no penalty. The player at the highest percentile receives ×0.33.
           </div>
         </div>
@@ -1709,9 +1709,6 @@ function getEffectiveListCount(itemId) {
 // Get the weighted EPV for an item for a player: player's EPV × number of BiS lists it appears on
 // Log base 3 for list count scaling: gives ~2.85x at 22 lists, ~1.63x at 5 lists
 const BIS_LOG_BASE = 3;
-// Rank score exponent: amplifies penalty for items ranked poorly across their lists
-const BIS_RANK_EXP = 2;
-
 function getEpvDerivedRank(itemId, slotItems) {
   // Rank item by EPV within each phase it appears in, return best (lowest) rank across phases
   // This prevents phase 5 items from depressing the rank of a phase 1 item
@@ -1770,10 +1767,27 @@ function getMaxItemEpv(itemId) {
   return best;
 }
 
+function getAvgRewardEpv(itemId) {
+  // For tokens: average of best EPV per unique reward item
+  // For non-tokens: same as getMaxItemEpv
+  if (!itemId) return 0;
+  if (!TOKEN_REWARDS[itemId]) return getMaxItemEpv(itemId);
+  const rewardIds = [...new Set(Object.values(TOKEN_REWARDS[itemId]))];
+  const epvs = rewardIds.map(rid => {
+    let best = 0;
+    for (const slots of Object.values(bisData))
+      for (const items of Object.values(slots))
+        for (const e of items)
+          if (e[0] === rid) best = Math.max(best, e[3] / 100);
+    return best;
+  }).filter(e => e > 0);
+  return epvs.length ? epvs.reduce((a, b) => a + b, 0) / epvs.length : 0;
+}
+
 function getBisRankScoreComponents(itemId) {
   // Returns { avg, best } where:
   //   avg  = average of 1/epvRank across all BiS list appearances
-  //   best = 1.0 if item ever appears in top 3 on any list, otherwise actual best 1/rank
+  //   best = max(0.1, 1.0 - (bestRank-3)*0.1): top3=1.0, linear decay of 0.1/rank beyond 3
   const rewardIds = TOKEN_REWARDS[itemId]
     ? [...new Set(Object.values(TOKEN_REWARDS[itemId]))]
     : [itemId];
@@ -1803,12 +1817,13 @@ function getBisRankScoreComponents(itemId) {
   const invRanks = allRanks.map(r => 1 / r);
   const avg = invRanks.reduce((s, v) => s + v, 0) / invRanks.length;
   const bestRank = Math.min(...allRanks);
-  const best = bestRank <= 3 ? 1.0 : Math.max(...invRanks);
+  // Smooth decay: top 3 = 1.0, each rank beyond 3 reduces by 0.1, floor 0.1
+  const best = Math.max(0.1, 1.0 - Math.max(0, bestRank - 3) * 0.1);
   return { avg, best };
 }
 
 function getWeightedItemEpv(playerName, itemId) {
-  const epv = getMaxItemEpv(itemId);
+  const epv = getAvgRewardEpv(itemId);
   if (!epv) return 0;
   const listCount = getEffectiveListCount(itemId);
   if (!listCount) return 0;
@@ -2994,7 +3009,7 @@ function toggleLoot(td, playerName) {
     const playerObj = lastRenderData.roles.flatMap(r => r.players).find(p => normalizeName(p.name) === key);
     html += `<div class="loot-list">${items.map(({name, value}) => {
       const itemId = getItemId(name, playerName);
-      const epv = itemId ? getMaxItemEpv(itemId) : null;
+      const epv = itemId ? getAvgRewardEpv(itemId) : null;
       const weightedEpv = itemId ? getWeightedItemEpv(playerName, itemId) : 0;
       const col = lootValueColor(weightedEpv);
       const listCount = itemId ? getBisListCount(itemId) : 0;
@@ -3002,7 +3017,7 @@ function toggleLoot(td, playerName) {
       const logMult = effListCount ? (Math.log(effListCount + 1) / Math.log(BIS_LOG_BASE)) : 0;
       const { avg: rankAvg, best: rankBest } = itemId ? getBisRankScoreComponents(itemId) : { avg: 0, best: 0 };
       const _is2h = itemId ? isTwoHandedItem(itemId) : false;
-      const epvTip = ` title="EPV: ${epv ? epv.toFixed(1) : '0'} × ${logMult.toFixed(2)} (log ${effListCount} players) × avg^1.5(${rankAvg.toFixed(3)})×best^0.5(${rankBest.toFixed(2)})${_is2h ? ' × 0.5 (2H)' : ''} = ${weightedEpv.toFixed(1)}"`;
+      const epvTip = ` title="avgEPV: ${epv ? epv.toFixed(1) : '0'} × ${logMult.toFixed(2)} (log ${effListCount} lists) × avg^1.5(${rankAvg.toFixed(3)}) × best(${rankBest.toFixed(2)})^0.5${_is2h ? ' × 0.5 (2H)' : ''} = ${weightedEpv.toFixed(1)}"`;
       return `<span class="loot-item" style="border-color:${col};background:${col}18;"${epvTip}>${itemLink(name, name)}</span>`;
     }).join('')}</div>`;
   }

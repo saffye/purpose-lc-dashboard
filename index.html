@@ -1562,12 +1562,12 @@ function parseItemSheet(text) {
   }
 }
 
-function lootValueColor(value) {
-  if (value === 0)  return C1;  // green
-  if (value <= 2)   return C2;  // yellow-green
-  if (value <= 4)   return C3;  // yellow
-  if (value <= 7)   return C4;  // orange
-  return C5;                    // red
+function lootValueColor(weightedEpv) {
+  if (!weightedEpv || weightedEpv <= 0) return 'var(--border)'; // not on any BiS list
+  if (weightedEpv < 80)  return C1;  // green  — low value
+  if (weightedEpv < 200) return C2;  // yellow — moderate
+  if (weightedEpv < 450) return C4;  // orange — high
+  return C5;                         // red    — very high (top tokens, DST-tier)
 }
 
 // Items where the same display name maps to different IDs depending on player spec
@@ -1727,8 +1727,25 @@ function isTwoHandedItem(itemId) {
   return Object.values(bisData).some(slots => (slots['Two Hand'] || []).some(([id]) => id === itemId));
 }
 
+function getMaxItemEpv(itemId) {
+  // Returns the highest EPV for an item across ALL specs and phases
+  if (!itemId) return 0;
+  const reward_ids = TOKEN_REWARDS[itemId]
+    ? new Set(Object.values(TOKEN_REWARDS[itemId]))
+    : new Set([itemId]);
+  let best = 0;
+  for (const slots of Object.values(bisData)) {
+    for (const items of Object.values(slots)) {
+      for (const e of items) {
+        if (reward_ids.has(e[0])) best = Math.max(best, e[3] / 100);
+      }
+    }
+  }
+  return best;
+}
+
 function getWeightedItemEpv(playerName, itemId) {
-  const epv = getPlayerItemEpv(playerName, itemId);
+  const epv = getMaxItemEpv(itemId);
   if (!epv) return 0;
   const listCount = getBisListCount(itemId);
   if (!listCount) return 0;
@@ -2912,10 +2929,10 @@ function toggleLoot(td, playerName) {
   } else {
     const playerObj = lastRenderData.roles.flatMap(r => r.players).find(p => normalizeName(p.name) === key);
     html += `<div class="loot-list">${items.map(({name, value}) => {
-      const col = lootValueColor(value);
       const itemId = getItemId(name, playerName);
-      const epv = itemId ? getPlayerItemEpv(playerName, itemId) : null;
+      const epv = itemId ? getMaxItemEpv(itemId) : null;
       const weightedEpv = itemId ? getWeightedItemEpv(playerName, itemId) : 0;
+      const col = lootValueColor(weightedEpv);
       const listCount = itemId ? getBisListCount(itemId) : 0;
       const logMult = listCount ? (Math.log(listCount + 1) / Math.log(BIS_LOG_BASE)) : 0;
       const rankScore = itemId ? getBisRankScore(itemId) : 0;

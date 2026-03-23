@@ -37,8 +37,8 @@
               "multiplier": 1.75
             },
             {
-              "target": "Ranged DPS",
-              "multiplier": 1.25
+              "target": "Healers",
+              "multiplier": 0.75
             }
           ],
           "roleValues": {

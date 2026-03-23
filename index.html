@@ -3198,7 +3198,7 @@ function buildTierProgressHtml(playerName) {
 
   // Define all possible slots per tier for progress display
   const TIER_SLOTS = {
-    T4: ['Shoulders','Chest','Legs'],
+    T4: ['Head','Shoulders','Chest','Hands','Legs'],
     T5: ['Shoulders','Chest','Legs','Hands','Head'],
     T6: ['Shoulders','Chest','Legs','Hands','Head','Bracers','Waist','Feet'],
   };
@@ -4706,6 +4706,14 @@ const TOKEN_REWARDS = {
   29767: {Prot:29022, Fury:29022, Arms:29022, Holy:29053, Shad:29059, Bear:29099, Cat:29099, Owl:29094, Tree:29088},  // Legs Defender
   29765: {BM:29083, SV:29083, Arc:29078, Fire:29078, Aff:28966, Dest:28966},  // Legs Hero
 
+  29760: {Heal:29061, Tank:29068, Ret:29073, Rog:29044, Ele:29035, Enh:29040, Resto:29028},  // Head Champion
+  29761: {Prot:29011, Fury:29021, Arms:29021, Holy:29049, Shad:29058, Bear:29098, Cat:29093, Owl:29093, Tree:29086},  // Head Defender
+  29758: {BM:29081, SV:29081, Arc:29076, Fire:29076, Aff:28963, Dest:28963},  // Head Hero
+
+  29757: {Heal:29065, Tank:29067, Ret:29072, Rog:29048, Ele:29034, Enh:29039, Resto:29032},  // Hands Champion
+  29759: {Prot:29017, Fury:29020, Arms:29020, Holy:29055, Shad:29057, Bear:29097, Cat:29097, Owl:29092, Tree:29090},  // Hands Defender
+  29756: {BM:29085, SV:29085, Arc:29080, Fire:29080, Aff:28968, Dest:28968},  // Hands Hero
+
   // Magtheridon's Head (Finger) — id:32385
   32385: {Heal:28790, Tank:28792, Ret:28791, Prot:28792, Fury:28791, Arms:28791, Bear:28791, Cat:28791, Owl:28793, Tree:28790, Holy:28790, Shad:28793, Ele:28793, Enh:28791, Resto:28790, Arc:28793, Fire:28793, Aff:28793, Dest:28793, Rog:28791, BM:28791, SV:28791},
 
@@ -4778,6 +4786,8 @@ const TOKEN_TIER_META = {
   29763:{tier:'T4',set:'Champion',slot:'Shoulders'}, 29764:{tier:'T4',set:'Defender',slot:'Shoulders'}, 29762:{tier:'T4',set:'Hero',slot:'Shoulders'},
   29754:{tier:'T4',set:'Champion',slot:'Chest'},     29753:{tier:'T4',set:'Defender',slot:'Chest'},     29755:{tier:'T4',set:'Hero',slot:'Chest'},
   29766:{tier:'T4',set:'Champion',slot:'Legs'},      29767:{tier:'T4',set:'Defender',slot:'Legs'},      29765:{tier:'T4',set:'Hero',slot:'Legs'},
+  29760:{tier:'T4',set:'Champion',slot:'Head'},    29761:{tier:'T4',set:'Defender',slot:'Head'},    29758:{tier:'T4',set:'Hero',slot:'Head'},
+  29757:{tier:'T4',set:'Champion',slot:'Hands'},   29759:{tier:'T4',set:'Defender',slot:'Hands'},   29756:{tier:'T4',set:'Hero',slot:'Hands'},
   // T5 Vanquished
   30242:{tier:'T5',set:'Champion',slot:'Shoulders'}, 30243:{tier:'T5',set:'Defender',slot:'Shoulders'}, 30244:{tier:'T5',set:'Hero',slot:'Shoulders'},
   30236:{tier:'T5',set:'Champion',slot:'Chest'},     30237:{tier:'T5',set:'Defender',slot:'Chest'},     30238:{tier:'T5',set:'Hero',slot:'Chest'},

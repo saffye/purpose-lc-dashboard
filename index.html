@@ -4180,11 +4180,11 @@ function renderGlossaryPanel() {
               return '<tr style="border-bottom:1px solid rgba(255,255,255,0.05);">' +
                 '<td style="padding:6px 10px;color:var(--text);">' + conds.join('<span style="color:var(--text-dim);margin:0 4px;">+</span>') + '</td>' +
                 '<td style="padding:6px 10px;">' +
-                  '<select onchange="setBonusUpdateMult('' + threshold + '',' + i + ',this.value)" style="background:var(--bg);border:1px solid var(--border);color:var(--gold);padding:3px 6px;border-radius:4px;font-size:13px;">' +
+                  '<select onchange="setBonusUpdateMult(\'' + threshold + '\',' + i + ',this.value)" style="background:var(--bg);border:1px solid var(--border);color:var(--gold);padding:3px 6px;border-radius:4px;font-size:13px;">' +
                   [0.5,0.75,1.0,1.25,1.5,1.75,2.0,2.25,2.5].map(m => '<option value="' + m + '"' + (pr.multiplier==m?' selected':'') + '>×' + m + '</option>').join('') +
                   '</select></td>' +
                 '<td style="padding:6px 4px;text-align:right;">' +
-                  '<button onclick="setBonusRemove('' + threshold + '',' + i + ')" style="background:none;border:none;color:var(--text-dim);cursor:pointer;font-size:13px;padding:2px 6px;">✕</button>' +
+                  '<button onclick="setBonusRemove(\'' + threshold + '\',' + i + ')" style="background:none;border:none;color:var(--text-dim);cursor:pointer;font-size:13px;padding:2px 6px;">✕</button>' +
                 '</td></tr>';
             }).join('');
             return (prios.length

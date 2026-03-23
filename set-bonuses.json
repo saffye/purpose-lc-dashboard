@@ -1,0 +1,46 @@
+{
+  "setThresholds": {
+    "T4": {
+      "Champion": {
+        "2pc": [],
+        "4pc": []
+      },
+      "Defender": {
+        "2pc": [],
+        "4pc": []
+      },
+      "Hero": {
+        "2pc": [],
+        "4pc": []
+      }
+    },
+    "T5": {
+      "Champion": {
+        "2pc": [],
+        "4pc": []
+      },
+      "Defender": {
+        "2pc": [],
+        "4pc": []
+      },
+      "Hero": {
+        "2pc": [],
+        "4pc": []
+      }
+    },
+    "T6": {
+      "Conqueror": {
+        "2pc": [],
+        "4pc": []
+      },
+      "Protector": {
+        "2pc": [],
+        "4pc": []
+      },
+      "Vanquisher": {
+        "2pc": [],
+        "4pc": []
+      }
+    }
+  }
+}

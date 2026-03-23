@@ -1145,22 +1145,24 @@
             LootMod = 1.0 − percentile × 0.667
           </div>
           <div style="margin-top:8px;color:var(--text-dim);">
-            Loot Score = sum of weighted EPV across all items received ÷ raids attended.<br><br>
-            Each item's weighted EPV = EPV × log(N+1)/log(3) × avg_quality^1.5 × peak_quality^0.5 × 2H-penalty.<br><br>
-            <b>N</b>: the number of active raiders whose spec has the item on their BiS list, counted once per player regardless of how many specs qualify. For tier tokens, capped at the number of unique class rewards to reflect that tokens are guaranteed drops shared across many classes.<br><br>
-            <b>avg_quality</b>: average desirability across all specs that want the item — higher for items that are broadly strong, lower for items that are filler for most specs.<br><br>
-            <b>peak_quality</b>: how good the item is for the spec that wants it most. Scores 1.0 if the item is top 3 for any spec, then decays by 0.1 per position beyond 3rd, floored at 0.1.<br><br>
-            Two-handed weapons receive a ×0.5 penalty to account for their inflated base EPV. Items not on any BiS list contribute 0. Dividing by raids attended normalises for tenure so veterans who received little are not penalised relative to newer raiders.<br><br>
-            The modifier is a continuous curve within each role group. The player at the lowest percentile receives ×1.0 — no penalty. The player at the highest percentile receives ×0.33.
+            Each player's loot score reflects the weighted value of items they've received relative to their raids attended. Players are ranked within their role group — the highest scorer receives ×0.33, the lowest receives ×1.0. Hover any item in the loot received dropdown for a full breakdown of how it was weighted.
           </div>
         </div>
 
         <div>
-          <div style="font-family:'Cinzel',serif;font-size:12px;letter-spacing:0.15em;color:var(--gold-dim);margin-bottom:8px;">HARD &amp; SOFT PRIORITY</div>
+          <div style="font-family:'Cinzel',serif;font-size:12px;letter-spacing:0.15em;color:var(--gold-dim);margin-bottom:8px;">ITEM PRIORITIZATION</div>
           <div style="font-family:monospace;font-size:12px;background:var(--bg2);padding:8px 12px;border-left:2px solid var(--gold-dim);color:var(--text-dim);">
-            Hard Prio: ×1.75 &nbsp;|&nbsp; Soft Prio: ×1.25 &nbsp;|&nbsp; Both: ×2.1875
+            Multipliers stack: ×1.75 × ×1.25 = ×2.1875
           </div>
-          <div style="margin-top:8px;color:var(--text-dim);">Set per item in the Loot Glossary. Multipliers can be assigned to a role, class, or specific raider. Multiple matching multipliers stack multiplicatively — e.g. if Physical DPS receives ×1.75 and Hunter also receives ×1.25, an Enhancement Shaman qualifying for Physical DPS would receive ×1.75 × 1.25 = ×2.1875.</div>
+          <div style="margin-top:8px;color:var(--text-dim);">Configured per item in the Loot Glossary. Each entry targets a role, class, spec combination, or specific raider — all conditions in an entry must match. Multiple matching entries stack multiplicatively.</div>
+        </div>
+
+        <div>
+          <div style="font-family:'Cinzel',serif;font-size:12px;letter-spacing:0.15em;color:var(--gold-dim);margin-bottom:8px;">SET BONUS PRIORITIZATION</div>
+          <div style="font-family:monospace;font-size:12px;background:var(--bg2);padding:8px 12px;border-left:2px solid var(--gold-dim);color:var(--text-dim);">
+            Only applies to tier tokens &nbsp;|&nbsp; Only when player is exactly one piece away from 2pc or 4pc
+          </div>
+          <div style="margin-top:8px;color:var(--text-dim);">Configured per tier set in the Loot Glossary when a token is selected. Piece count is checked against both the loot distribution log and the player's currently equipped gear from the CLA, so items obtained outside of raids are counted. Stacks with item prioritization.</div>
         </div>
 
         <div>
@@ -5760,7 +5762,10 @@ function onItemChange() {
 
   function lootPriorityScore(p) {
     const base = calculatePriority(p, eligBottom20, eligTop20, eligThreshPts).score;
-    return base * prioMultiplier(p).mult * bisMultiplier(p).mult;
+    const setBonusMult = TOKEN_TIER_META[_candidateItemId]
+      ? getSetBonusMultiplier(p.name, _candidateItemId).mult
+      : 1;
+    return base * prioMultiplier(p).mult * bisMultiplier(p).mult * setBonusMult;
   }
 
   // Now that bisMultiplier is defined, compute normalization factor

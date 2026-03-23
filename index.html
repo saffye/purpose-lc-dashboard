@@ -900,7 +900,13 @@
   /* Hide number input spinners */
   #bisContent input[type=number]::-webkit-outer-spin-button,
   #bisContent input[type=number]::-webkit-inner-spin-button,
-  #glValueInput::-webkit-outer-spin-button,
+  .gloss-btn-ready {
+    background: var(--gold) !important;
+    color: var(--bg) !important;
+    box-shadow: 0 0 6px var(--gold-dim);
+  }
+
+    #glValueInput::-webkit-outer-spin-button,
   #glValueInput::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
   #bisContent input[type=number],
   #glValueInput { -moz-appearance: textfield; }
@@ -1357,7 +1363,28 @@ function setGrouping(mode) {
   document.getElementById('glossaryPanel').style.display = isGlossary ? 'block' : 'none';
   document.getElementById('output').style.display      = (!isLoot && !isCla && !isBis && !isRoster && !isGlossary) ? 'block' : 'none';
   if (isLoot) {
-    renderLootDropdowns();
+    // Sync glossary selection → loot tab
+    if (_glossaryState.item && _glossaryState.raid && _glossaryState.boss) {
+      renderLootDropdowns();
+      // Pre-select raid/boss/item from glossary state
+      const _rSel = document.getElementById('lootRaid');
+      if (_rSel && _rSel.value !== _glossaryState.raid) {
+        _rSel.value = _glossaryState.raid;
+        onRaidChange(true);
+      }
+      const _bSel = document.getElementById('lootBoss');
+      if (_bSel && _bSel.value !== _glossaryState.boss) {
+        _bSel.value = _glossaryState.boss;
+        onBossChange();
+      }
+      // Select the item in the custom dropdown
+      if (_glossaryState.item && _glossaryState.item !== selectedItem) {
+        const _itemId = getItemId(_glossaryState.item);
+        selectItem(_glossaryState.item, _itemId, _itemId ? itemIcons[_itemId] : null);
+      }
+    } else {
+      renderLootDropdowns();
+    }
   } else if (isCla) {
     renderClaList();
   } else if (isBis) {
@@ -1365,6 +1392,18 @@ function setGrouping(mode) {
   } else if (isRoster) {
     renderRosterPanel();
   } else if (isGlossary) {
+    // Sync loot tab selection → glossary
+    if (selectedItem) {
+      const _lRaid = document.getElementById('lootRaid')?.value || '';
+      const _lBoss = document.getElementById('lootBoss')?.value || '';
+      if (_lRaid && _lBoss && _lRaid !== _glossaryState.raid ||
+          _lBoss !== _glossaryState.boss || selectedItem !== _glossaryState.item) {
+        _glossaryState.raid = _lRaid;
+        _glossaryState.boss = _lBoss;
+        _glossaryState.item = selectedItem;
+        _glossaryPendingConditions = [];
+      }
+    }
     renderGlossaryPanel();
   } else if (lastRenderData.roles.length) {
     render(lastRenderData);
@@ -3802,8 +3841,9 @@ function renderGlossaryPanel() {
             ${overrideVal !== null ? `<span style="font-size:13px;color:var(--text-dim);">(formula: ${formulaEpv.toFixed(1)})</span>` : `<span style="font-size:13px;color:var(--text-dim);">(formula)</span>`}
             <div style="display:flex;align-items:center;gap:8px;margin-left:auto;">
               <input id="glValueInput" type="number" step="0.1" value="${overrideVal !== null ? overrideVal : ''}" placeholder="${formulaEpv.toFixed(1)}"
+                oninput="document.getElementById('glValueSaveBtn')?.classList.add('gloss-btn-ready')"
                 style="width:100px;background:var(--bg);border:1px solid var(--border);color:var(--text);padding:6px 10px;border-radius:4px;font-size:13px;">
-              <button onclick="glossarySaveValue()" style="background:var(--gold-dim);border:none;color:var(--bg);padding:6px 14px;border-radius:4px;cursor:pointer;font-family:'Cinzel',serif;font-size:11px;letter-spacing:0.1em;">SAVE</button>
+              <button id="glValueSaveBtn" onclick="glossarySaveValue()" style="background:var(--gold-dim);border:none;color:var(--bg);padding:6px 14px;border-radius:4px;cursor:pointer;font-family:'Cinzel',serif;font-size:11px;letter-spacing:0.1em;transition:background 0.15s,box-shadow 0.15s;">SAVE</button>
               ${overrideVal !== null ? `<button onclick="glossaryClearValue()" style="background:none;border:1px solid var(--border);color:var(--text-dim);padding:6px 10px;border-radius:4px;cursor:pointer;font-size:12px;">Clear override</button>` : ''}
             </div>
           </div>
@@ -3814,8 +3854,9 @@ function renderGlossaryPanel() {
           <div style="font-family:'Cinzel',serif;font-size:12px;letter-spacing:0.15em;color:var(--gold-dim);margin-bottom:10px;">NOTES</div>
           <div style="display:flex;gap:8px;">
             <input id="glNotesInput" type="text" value="${(entry.notes||'').replace(/"/g,'&quot;')}" placeholder="Prioritization notes shown above loot table…"
+              oninput="document.getElementById('glNotesSaveBtn')?.classList.add('gloss-btn-ready')"
               style="flex:1;background:var(--bg);border:1px solid var(--border);color:var(--text);padding:6px 10px;border-radius:4px;font-size:13px;">
-            <button onclick="glossarySaveNotes()" style="background:var(--gold-dim);border:none;color:var(--bg);padding:6px 14px;border-radius:4px;cursor:pointer;font-family:'Cinzel',serif;font-size:11px;letter-spacing:0.1em;">SAVE</button>
+            <button id="glNotesSaveBtn" onclick="glossarySaveNotes()" style="background:var(--gold-dim);border:none;color:var(--bg);padding:6px 14px;border-radius:4px;cursor:pointer;font-family:'Cinzel',serif;font-size:11px;letter-spacing:0.1em;transition:background 0.15s,box-shadow 0.15s;">SAVE</button>
           </div>
         </div>
 
@@ -3863,10 +3904,10 @@ function renderGlossaryPanel() {
             </div>
             <div style="display:flex;gap:8px;align-items:center;margin-top:10px;">
               <label style="font-size:12px;color:var(--text-dim);">Multiplier:</label>
-              <select id="glPrioMult" style="background:var(--bg2);border:1px solid var(--border);color:var(--gold);padding:5px 8px;border-radius:4px;font-size:13px;">
+              <select id="glPrioMult" onchange="document.getElementById('glAddPrioBtn')?.classList.add('gloss-btn-ready')" style="background:var(--bg2);border:1px solid var(--border);color:var(--gold);padding:5px 8px;border-radius:4px;font-size:13px;">
                 ${MULTS.map(m => `<option value="${m}" ${m===1.75?'selected':''}>×${m}</option>`).join('')}
               </select>
-              <button onclick="glossaryAddPrio()" style="background:var(--gold-dim);border:none;color:var(--bg);padding:6px 14px;border-radius:4px;cursor:pointer;font-family:'Cinzel',serif;font-size:11px;letter-spacing:0.1em;margin-left:auto;">ADD PRIO</button>
+              <button id="glAddPrioBtn" onclick="glossaryAddPrio()" style="background:var(--gold-dim);border:none;color:var(--bg);padding:6px 14px;border-radius:4px;cursor:pointer;font-family:'Cinzel',serif;font-size:11px;letter-spacing:0.1em;margin-left:auto;transition:background 0.15s,box-shadow 0.15s;">ADD PRIO</button>
             </div>
           </div>
         </div>
@@ -3884,7 +3925,7 @@ function renderGlossaryPanel() {
             }).join('')}
           </div>
           <div style="display:flex;justify-content:flex-end;margin-top:8px;">
-            <button onclick="glossarySaveClasses()" style="background:var(--gold-dim);border:none;color:var(--bg);padding:6px 14px;border-radius:4px;cursor:pointer;font-family:'Cinzel',serif;font-size:11px;letter-spacing:0.1em;">SAVE</button>
+            <button id="glClassesSaveBtn" onclick="glossarySaveClasses()" style="background:var(--gold-dim);border:none;color:var(--bg);padding:6px 14px;border-radius:4px;cursor:pointer;font-family:'Cinzel',serif;font-size:11px;letter-spacing:0.1em;transition:background 0.15s,box-shadow 0.15s;">SAVE</button>
           </div>
         </div>
 
@@ -3953,6 +3994,7 @@ function _currentGlossaryEntry() {
 }
 
 function glossarySaveValue() {
+  document.getElementById('glValueSaveBtn')?.classList.remove('gloss-btn-ready');
   const val = parseFloat(document.getElementById('glValueInput')?.value);
   const { item } = _glossaryState;
   if (!item) return;
@@ -3975,6 +4017,7 @@ function glossaryClearValue() {
 }
 
 function glossarySaveNotes() {
+  document.getElementById('glNotesSaveBtn')?.classList.remove('gloss-btn-ready');
   const entry = _currentGlossaryEntry();
   if (!entry) return;
   entry.notes = document.getElementById('glNotesInput')?.value?.trim() || '';
@@ -4002,6 +4045,7 @@ function glossaryAddCondition() {
   if (!val || _glossaryPendingConditions.includes(val)) return;
   _glossaryPendingConditions.push(val);
   _glossaryRenderPendingConditions();
+  document.getElementById('glAddPrioBtn')?.classList.add('gloss-btn-ready');
 }
 
 function _glossaryRenderPendingConditions() {
@@ -4083,9 +4127,12 @@ function glossaryToggleClass(cls) {
   else entry.eligibleClasses.push(cls);
   rebuildGlossaryData();
   renderGlossaryPanel(); // don't save until SAVE clicked
+  // Re-highlight after re-render since innerHTML wipes the class
+  setTimeout(() => document.getElementById('glClassesSaveBtn')?.classList.add('gloss-btn-ready'), 0);
 }
 
 function glossarySaveClasses() {
+  document.getElementById('glClassesSaveBtn')?.classList.remove('gloss-btn-ready');
   saveGlossaryToGitHub();
   renderGlossaryPanel();
 }

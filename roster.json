@@ -159,6 +159,11 @@
       "name": "Sycamoore",
       "role": "Healers",
       "class": "Druid"
+    },
+    {
+      "name": "Shuuko",
+      "role": "Physical DPS",
+      "class": "Warrior"
     }
   ],
   "excluded": [

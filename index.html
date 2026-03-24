@@ -4132,8 +4132,7 @@ function setBonusRemove(threshold, idx) {
 // ── Attendance Panel ──────────────────────────────────────────────
 
 let _attendanceFilter = { role: '', cls: '' };
-let _attendancePendingSaves = new Set();
-let _attendanceSaveTimer = null;
+let _attendanceDirty = false;
 
 function renderAttendancePanel() {
   const panel = document.getElementById('attendancePanel');
@@ -4194,6 +4193,7 @@ function renderAttendancePanel() {
           <input type="date" id="newRaidDateInput" style="${selStyle}padding:5px 8px;" oninput="document.getElementById('addRaidBtn')?.classList.toggle('gloss-btn-ready', !!this.value)" />
           <button id="addRaidBtn" onclick="attendanceAddRaid()" style="background:var(--gold-dim);border:none;color:var(--bg);padding:6px 14px;border-radius:4px;cursor:pointer;font-family:\'Cinzel\',serif;font-size:11px;letter-spacing:0.1em;transition:background 0.15s,box-shadow 0.15s;">+ ADD RAID</button>
         </div>
+        <button id="attendanceSaveBtn" onclick="attendanceSave()" style="background:var(--gold-dim);border:none;color:var(--bg);padding:6px 14px;border-radius:4px;cursor:pointer;font-family:\'Cinzel\',serif;font-size:11px;letter-spacing:0.1em;transition:background 0.15s,box-shadow 0.15s;">SAVE</button>
         <span style="font-size:12px;color:var(--text-dim);">${filteredPlayers.length} players · ${raids.length} raids</span>
       </div>
 
@@ -4301,6 +4301,10 @@ function renderAttendancePanel() {
     const el = document.getElementById('att-count-' + raid.date);
     if (el) el.textContent = count;
   }
+  // Restore dirty state on save button if there are unsaved changes
+  if (_attendanceDirty) {
+    document.getElementById('attendanceSaveBtn')?.classList.add('gloss-btn-ready');
+  }
 }
 
 function attendanceAddRaid() {
@@ -4328,21 +4332,31 @@ function attendanceFilterClass(val) {
 
 function attendanceToggle(playerName, dateStr, value) {
   setPlayerAttendanceOverride(playerName, dateStr, value);
-  // Re-render just the count for this column
+  // Update count for this column
   const players = rosterData.players.filter(p => !rosterData.excluded?.includes(p.name));
   const count = players.filter(p => getPlayerAttendance(p.name, dateStr)).length;
   const el = document.getElementById('att-count-' + dateStr);
   if (el) el.textContent = count;
-  // Update checkbox styling
-  const key = normalizeName(playerName);
-  const hasOverride = attendanceData.overrides[key]?.[dateStr] !== undefined;
-  // Debounced save
-  _attendancePendingSaves.add(dateStr);
-  clearTimeout(_attendanceSaveTimer);
-  _attendanceSaveTimer = setTimeout(async () => {
+  // Mark dirty — user must explicitly save
+  _attendanceDirty = true;
+  const saveBtn = document.getElementById('attendanceSaveBtn');
+  if (saveBtn) saveBtn.classList.add('gloss-btn-ready');
+}
+
+async function attendanceSave() {
+  const saveBtn = document.getElementById('attendanceSaveBtn');
+  if (saveBtn) { saveBtn.textContent = 'SAVING…'; saveBtn.disabled = true; }
+  try {
     await saveAttendanceToGitHub();
-    _attendancePendingSaves.clear();
-  }, 1500);
+    _attendanceDirty = false;
+    if (saveBtn) { saveBtn.textContent = 'SAVED ✓'; saveBtn.classList.remove('gloss-btn-ready'); }
+    setTimeout(() => {
+      if (saveBtn) { saveBtn.textContent = 'SAVE'; saveBtn.disabled = false; }
+    }, 1500);
+  } catch(e) {
+    if (saveBtn) { saveBtn.textContent = 'FAILED'; saveBtn.disabled = false; }
+    setTimeout(() => { if (saveBtn) saveBtn.textContent = 'SAVE'; }, 2000);
+  }
 }
 
 // ── Loot Glossary Panel ──────────────────────────────────────────

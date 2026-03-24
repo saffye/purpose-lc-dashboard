@@ -3651,7 +3651,7 @@ function parseGearIssues(text, label) {
     const EXCLUDED_ITEMS = /mark of the champion|meta gem/i;
     const allIssues = row.slice(5)
       .map(v => v.trim())
-      .filter(v => v && v !== '' && !v.startsWith('-') && !EXCLUDED_ITEMS.test(v))
+      .filter(v => v && v !== '' && !v.startsWith('-') && !EXCLUDED_ITEMS.test(v) && !/ZG/i.test(v))
       .map(v => {
         const m = v.match(/^(.+?)\s*\[([^\]]+)\]$/);
         return m ? { raw: v, itemName: m[1].trim(), issue: m[2].trim() } : null;

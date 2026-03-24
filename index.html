@@ -905,6 +905,10 @@
     color: var(--bg) !important;
     box-shadow: 0 0 6px var(--gold-dim);
   }
+  .gloss-btn-saveable:not(.gloss-btn-ready) {
+    pointer-events: none;
+    cursor: default;
+  }
 
     #glValueInput::-webkit-outer-spin-button,
   #glValueInput::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
@@ -4191,9 +4195,9 @@ function renderAttendancePanel() {
         </select>
         <div style="display:flex;gap:6px;align-items:center;margin-left:auto;">
           <input type="date" id="newRaidDateInput" style="${selStyle}padding:5px 8px;" oninput="document.getElementById('addRaidBtn')?.classList.toggle('gloss-btn-ready', !!this.value)" />
-          <button id="addRaidBtn" onclick="attendanceAddRaid()" style="background:var(--gold-dim);border:none;color:var(--bg);padding:6px 14px;border-radius:4px;cursor:pointer;font-family:\'Cinzel\',serif;font-size:11px;letter-spacing:0.1em;transition:background 0.15s,box-shadow 0.15s;">+ ADD RAID</button>
+          <button id="addRaidBtn" class="gloss-btn-saveable" onclick="attendanceAddRaid()" style="background:var(--gold-dim);border:none;color:var(--bg);padding:6px 14px;border-radius:4px;cursor:pointer;font-family:\'Cinzel\',serif;font-size:11px;letter-spacing:0.1em;transition:background 0.15s,box-shadow 0.15s;">+ ADD RAID</button>
         </div>
-        <button id="attendanceSaveBtn" onclick="attendanceSave()" style="background:var(--gold-dim);border:none;color:var(--bg);padding:6px 14px;border-radius:4px;cursor:pointer;font-family:\'Cinzel\',serif;font-size:11px;letter-spacing:0.1em;transition:background 0.15s,box-shadow 0.15s;">SAVE</button>
+        <button id="attendanceSaveBtn" class="gloss-btn-saveable" onclick="attendanceSave()" style="background:var(--gold-dim);border:none;color:var(--bg);padding:6px 14px;border-radius:4px;cursor:pointer;font-family:\'Cinzel\',serif;font-size:11px;letter-spacing:0.1em;transition:background 0.15s,box-shadow 0.15s;">SAVE</button>
         <span style="font-size:12px;color:var(--text-dim);">${filteredPlayers.length} players · ${raids.length} raids</span>
       </div>
 
@@ -4344,6 +4348,7 @@ function attendanceToggle(playerName, dateStr, value) {
 }
 
 async function attendanceSave() {
+  if (!_attendanceDirty) return;
   const saveBtn = document.getElementById('attendanceSaveBtn');
   if (saveBtn) { saveBtn.textContent = 'SAVING…'; saveBtn.disabled = true; }
   try {
@@ -4461,7 +4466,7 @@ function renderGlossaryPanel() {
               <input id="glValueInput" type="number" step="0.1" value="${overrideVal !== null ? overrideVal : ''}" placeholder="${formulaEpv.toFixed(1)}"
                 oninput="document.getElementById('glValueSaveBtn')?.classList.add('gloss-btn-ready')"
                 style="width:100px;background:var(--bg);border:1px solid var(--border);color:var(--text);padding:6px 10px;border-radius:4px;font-size:13px;">
-              <button id="glValueSaveBtn" onclick="glossarySaveValue()" style="background:var(--gold-dim);border:none;color:var(--bg);padding:6px 14px;border-radius:4px;cursor:pointer;font-family:'Cinzel',serif;font-size:11px;letter-spacing:0.1em;transition:background 0.15s,box-shadow 0.15s;">SAVE</button>
+              <button id="glValueSaveBtn" class="gloss-btn-saveable" onclick="glossarySaveValue()" style="background:var(--gold-dim);border:none;color:var(--bg);padding:6px 14px;border-radius:4px;cursor:pointer;font-family:'Cinzel',serif;font-size:11px;letter-spacing:0.1em;transition:background 0.15s,box-shadow 0.15s;">SAVE</button>
               ${overrideVal !== null ? `<button onclick="glossaryClearValue()" style="background:none;border:1px solid var(--border);color:var(--text-dim);padding:6px 10px;border-radius:4px;cursor:pointer;font-size:12px;">Clear override</button>` : ''}
             </div>
           </div>
@@ -4474,7 +4479,7 @@ function renderGlossaryPanel() {
             <input id="glNotesInput" type="text" value="${(entry.notes||'').replace(/"/g,'&quot;')}" placeholder="Prioritization notes shown above loot table…"
               oninput="document.getElementById('glNotesSaveBtn')?.classList.add('gloss-btn-ready')"
               style="flex:1;background:var(--bg);border:1px solid var(--border);color:var(--text);padding:6px 10px;border-radius:4px;font-size:13px;">
-            <button id="glNotesSaveBtn" onclick="glossarySaveNotes()" style="background:var(--gold-dim);border:none;color:var(--bg);padding:6px 14px;border-radius:4px;cursor:pointer;font-family:'Cinzel',serif;font-size:11px;letter-spacing:0.1em;transition:background 0.15s,box-shadow 0.15s;">SAVE</button>
+            <button id="glNotesSaveBtn" class="gloss-btn-saveable" onclick="glossarySaveNotes()" style="background:var(--gold-dim);border:none;color:var(--bg);padding:6px 14px;border-radius:4px;cursor:pointer;font-family:'Cinzel',serif;font-size:11px;letter-spacing:0.1em;transition:background 0.15s,box-shadow 0.15s;">SAVE</button>
           </div>
         </div>
 
@@ -4525,7 +4530,7 @@ function renderGlossaryPanel() {
               <select id="glPrioMult" onchange="document.getElementById('glAddPrioBtn')?.classList.add('gloss-btn-ready')" style="background:var(--bg2);border:1px solid var(--border);color:var(--gold);padding:5px 8px;border-radius:4px;font-size:13px;">
                 ${MULTS.map(m => `<option value="${m}" ${m===1.75?'selected':''}>×${m}</option>`).join('')}
               </select>
-              <button id="glAddPrioBtn" onclick="glossaryAddPrio()" style="background:var(--gold-dim);border:none;color:var(--bg);padding:6px 14px;border-radius:4px;cursor:pointer;font-family:'Cinzel',serif;font-size:11px;letter-spacing:0.1em;margin-left:auto;transition:background 0.15s,box-shadow 0.15s;">ADD PRIO</button>
+              <button id="glAddPrioBtn" class="gloss-btn-saveable" onclick="glossaryAddPrio()" style="background:var(--gold-dim);border:none;color:var(--bg);padding:6px 14px;border-radius:4px;cursor:pointer;font-family:'Cinzel',serif;font-size:11px;letter-spacing:0.1em;margin-left:auto;transition:background 0.15s,box-shadow 0.15s;">ADD PRIO</button>
             </div>
           </div>
         </div>
@@ -4543,7 +4548,7 @@ function renderGlossaryPanel() {
             }).join('')}
           </div>
           <div style="display:flex;justify-content:flex-end;margin-top:8px;">
-            <button id="glClassesSaveBtn" onclick="glossarySaveClasses()" style="background:var(--gold-dim);border:none;color:var(--bg);padding:6px 14px;border-radius:4px;cursor:pointer;font-family:'Cinzel',serif;font-size:11px;letter-spacing:0.1em;transition:background 0.15s,box-shadow 0.15s;">SAVE</button>
+            <button id="glClassesSaveBtn" class="gloss-btn-saveable" onclick="glossarySaveClasses()" style="background:var(--gold-dim);border:none;color:var(--bg);padding:6px 14px;border-radius:4px;cursor:pointer;font-family:'Cinzel',serif;font-size:11px;letter-spacing:0.1em;transition:background 0.15s,box-shadow 0.15s;">SAVE</button>
           </div>
         </div>
 
@@ -4608,7 +4613,7 @@ function renderGlossaryPanel() {
               <select id="sbPrioMult" style="background:var(--bg2);border:1px solid var(--border);color:var(--gold);padding:5px 8px;border-radius:4px;font-size:13px;">
                 ${[0.5,0.75,1.0,1.25,1.5,1.75,2.0,2.25,2.5].map(m => '<option value="' + m + '"' + (m===1.25?' selected':'') + '>×' + m + '</option>').join('')}
               </select>
-              <button id="setBonusConfirmBtn" onclick="setBonusConfirmAdd()" style="background:var(--gold-dim);border:none;color:var(--bg);padding:6px 14px;border-radius:4px;cursor:pointer;font-family:'Cinzel',serif;font-size:11px;letter-spacing:0.1em;margin-left:auto;transition:background 0.15s,box-shadow 0.15s;">ADD</button>
+              <button id="setBonusConfirmBtn" class="gloss-btn-saveable" onclick="setBonusConfirmAdd()" style="background:var(--gold-dim);border:none;color:var(--bg);padding:6px 14px;border-radius:4px;cursor:pointer;font-family:'Cinzel',serif;font-size:11px;letter-spacing:0.1em;margin-left:auto;transition:background 0.15s,box-shadow 0.15s;">ADD</button>
               <button onclick="document.getElementById('setBonusAddForm').style.display='none';_sbPendingConditions=[];_sbActiveThreshold=null;" style="background:none;border:1px solid var(--border);color:var(--text-dim);padding:6px 10px;border-radius:4px;cursor:pointer;font-size:12px;">Cancel</button>
             </div>
           </div>
@@ -4945,7 +4950,7 @@ function renderRosterPanel() {
               <option value="">— Select role first —</option>
             </select>
           </div>
-          <button id="rosterAddBtn" onclick="rosterAddPlayer()" style="background:var(--gold-dim);border:none;color:var(--bg);padding:7px 16px;border-radius:4px;cursor:pointer;font-family:'Cinzel',serif;font-size:12px;letter-spacing:0.1em;transition:background 0.15s,box-shadow 0.15s;">ADD</button>
+          <button id="rosterAddBtn" class="gloss-btn-saveable" onclick="rosterAddPlayer()" style="background:var(--gold-dim);border:none;color:var(--bg);padding:7px 16px;border-radius:4px;cursor:pointer;font-family:'Cinzel',serif;font-size:12px;letter-spacing:0.1em;transition:background 0.15s,box-shadow 0.15s;">ADD</button>
         </div>
       </div>
 

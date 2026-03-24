@@ -5203,6 +5203,14 @@ async function saveJsonToGitHub(filename, data) {
     body: JSON.stringify({ message: `Update ${filename}`, content, ...(sha ? { sha } : {}) })
   });
   if (!putRes.ok) throw new Error(`GitHub save failed for ${filename}: ${(await putRes.json()).message}`);
+  // Reload the file we just saved so local state reflects what's on GitHub
+  // Small delay to allow GitHub Pages CDN to propagate
+  await new Promise(r => setTimeout(r, 1500));
+  if (filename === 'loot-glossary.json') await loadLootGlossaryFromRepo();
+  else if (filename === 'roster.json')   await loadRosterFromRepo();
+  else if (filename === 'set-bonuses.json') await loadSetBonusesFromRepo();
+  else if (filename === 'gear-item-ids.json') await loadGearItemIdsFromRepo();
+  else if (filename === 'bis-data.json') await loadBisDataFromRepo();
 }
 
 // Refresh slot options when phase changes without resetting spec

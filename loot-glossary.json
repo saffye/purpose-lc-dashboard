@@ -3927,25 +3927,7 @@
         {
           "item": "Warglaive of Azzinoth",
           "eligibleClasses": [
-            "Rogue",
-            "Warrior"
-          ],
-          "prioritization": []
-        },
-        {
-          "item": "Warglaive of Azzinoth (Off-Hand)",
-          "eligibleClasses": [
-            "Rogue",
-            "Warrior"
-          ],
-          "prioritization": []
-        },
-        {
-          "item": "Chestguard of the Forgotten Conqueror",
-          "eligibleClasses": [
-            "Paladin",
-            "Priest",
-            "Warlock"
+            "Rogue"
           ],
           "prioritization": []
         },

@@ -2305,7 +2305,6 @@ const GITHUB_FILE = 'cla-sheets.json';
 const GEAR_IDS_FILE = 'gear-item-ids.json';
 let gearItemIds = {}; // item name (lowercase) -> wowhead item ID
 let bisData = {};    // spec -> slot -> [[id, rank, phase, epv*100], ...]
-let githubToken = ''; // legacy — only used if WCL OAuth requires it
 let writeToken = localStorage.getItem('writeToken') || ''; // Cloudflare Worker write token
 
 async function saveWclConfigToGitHub(password, clientId, clientSecret, realm) {
@@ -3531,7 +3530,6 @@ function setHint(msg, type) {
 function clearGithubToken() {
   writeToken = '';
   try { localStorage.removeItem('writeToken'); } catch(e) {}
-  try { localStorage.removeItem('ghToken'); } catch(e) {}
   // If currently in CLA mode, switch back to role view
   if (['cla','bis','roster','glossary','attendance'].includes(groupingMode)) setGrouping('role');
   updateAuthState();

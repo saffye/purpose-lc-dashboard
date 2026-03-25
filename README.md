@@ -24,7 +24,7 @@ A TBC Classic loot council dashboard that tracks raid attendance, consumable usa
 
 ---
 
-## 2. Set Up the Google Apps Script Proxya
+## 2. Set Up the Google Apps Script Proxy
 
 The Apps Script acts as a server-side proxy that:
 - Fetches your CLA Google Sheets (bypassing browser CORS restrictions)

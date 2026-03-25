@@ -2678,7 +2678,6 @@ async function fetchWclAllStars(realm) {
   if (!ENABLE_WCL) return;
   const token = await getWclToken();
   if (!token) return;
-  const zone = { id: WCL_ZONE_ID, name: WCL_ZONE_NAME };
   try {
 
     // Build player list with their role for metric selection
@@ -2699,7 +2698,7 @@ async function fetchWclAllStars(realm) {
         const charQuery = `{
           characterData {
             character(name: "${wclName}", serverSlug: "${realm}", serverRegion: "${WCL_REGION}") {
-              zoneRankings(zoneID: ${zone.id}, metric: ${metric})
+              zoneRankings(metric: ${metric})
             }
           }
         }`;
@@ -4400,7 +4399,6 @@ async function loadGearItemIdsFromRepo() {
   try {
     const cfg = await fetch('./config.json?t=' + Date.now()).then(r => r.json());
     if (cfg.cf_worker_url)       CF_WORKER_URL        = cfg.cf_worker_url.trim().replace(/\/+$/, '');
-    if (cfg.github_repo)         GITHUB_REPO          = cfg.github_repo;
     if (cfg.sheet_id)            SHEET_ID             = cfg.sheet_id;
     if (cfg.apps_script)         APPS_SCRIPT          = cfg.apps_script;
     if (cfg.icon_script)         ICON_SCRIPT          = cfg.icon_script;
@@ -4410,8 +4408,6 @@ async function loadGearItemIdsFromRepo() {
     if (cfg.enable_wcl != null)  ENABLE_WCL           = !!cfg.enable_wcl;
     if (cfg.wcl_client_id)       WCL_CLIENT_ID        = cfg.wcl_client_id;
     if (cfg.wcl_realm)           WCL_REALM            = cfg.wcl_realm;
-    if (cfg.wcl_zone_id)         WCL_ZONE_ID          = cfg.wcl_zone_id;
-    if (cfg.wcl_zone_name)       WCL_ZONE_NAME        = cfg.wcl_zone_name;
     if (cfg.wcl_encryption_salt) WCL_ENCRYPTION_SALT  = cfg.wcl_encryption_salt;
     // Apply branding
     document.title = PAGE_TITLE;

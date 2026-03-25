@@ -3419,6 +3419,53 @@ function buildTierProgressHtml(playerName) {
   return html;
 }
 
+
+// Assign currently selected loot-tab item to a player from within their loot dropdown
+function lootLogAssignFromLootTab(playerName, itemName) {
+  if (!lootDistribution.raids.length) {
+    alert('No raids in the Loot Log yet. Add a raid on the Loot Log tab first.');
+    return;
+  }
+
+  // Find most recent raid
+  const sorted = [...lootDistribution.raids].sort((a, b) => b.date.localeCompare(a.date));
+  const latestRaid = sorted[0];
+
+  // Check if latest raid date matches today
+  const today = new Date().toISOString().slice(0, 10);
+  if (latestRaid.date !== today) {
+    const d = new Date(latestRaid.date + 'T12:00:00');
+    const label = d.toLocaleDateString('en-US', { weekday: 'short', month: 'short', day: 'numeric' });
+    const ok = confirm(
+      `The most recent raid in the log is ${label}, not today.\n\nAssign "${itemName}" to ${playerName} on ${label}?`
+    );
+    if (!ok) return;
+  }
+
+  if (!latestRaid.items) latestRaid.items = [];
+  latestRaid.items.push({ item: itemName, recipient: playerName });
+  lootByPlayer = buildLootByPlayerFromDistribution();
+  saveLootDistributionToGitHub();
+
+  // Re-render the open loot row to show updated list
+  const allLootRows = document.querySelectorAll('.loot-row');
+  allLootRows.forEach(row => {
+    const prevTr = row.previousElementSibling;
+    if (prevTr) {
+      const nameTd = prevTr.querySelector('.player-name');
+      if (nameTd && normalizeName(nameTd.textContent.trim()) === normalizeName(playerName)) {
+        const arrow = nameTd.querySelector('.loot-arrow');
+        row.remove();
+        if (arrow) {
+          arrow.textContent = '▸';
+          // Re-open to show updated loot
+          setTimeout(() => nameTd.click(), 50);
+        }
+      }
+    }
+  });
+}
+
 function toggleLoot(td, playerName) {
   const tr = td.closest('tr');
   const arrow = td.querySelector('.loot-arrow');
@@ -3442,8 +3489,17 @@ function toggleLoot(td, playerName) {
 
   let html = `<td colspan="${colspan}" class="loot-cell">`;
 
-  // Loot section
-  html += `<div class="expand-section-title">Loot Received</div>`;
+  // Loot section — with assign button if we're on the loot tab with an item selected
+  const _canAssign = writeToken && selectedItem && groupingMode === 'loot';
+  const _assignBtn = _canAssign
+    ? `<button onclick="lootLogAssignFromLootTab('${playerName.replace(/'/g, "\\'")}', '${selectedItem.replace(/'/g, "\\'")}')"
+        style="background:none;border:1px solid var(--gold-dim);color:var(--gold-dim);padding:2px 10px;border-radius:4px;cursor:pointer;font-family:'Cinzel',serif;font-size:10px;letter-spacing:0.1em;margin-left:8px;transition:background 0.15s;"
+        onmouseover="this.style.background='var(--gold-dim)';this.style.color='var(--bg)'"
+        onmouseout="this.style.background='none';this.style.color='var(--gold-dim)'">
+        + LOG ${selectedItem.length > 22 ? selectedItem.slice(0,21) + '…' : selectedItem}
+      </button>`
+    : '';
+  html += `<div style="display:flex;align-items:center;gap:0;"><div class="expand-section-title">Loot Received</div>${_assignBtn}</div>`;
   if (!items || items.length === 0) {
     html += `<em class="no-loot">No loot recorded</em>`;
   } else {
@@ -4376,9 +4432,12 @@ function lootLogBuildAutocomplete({ container, inputId, placeholder, items, rend
   const drop = container.querySelector(`#${inputId}_drop`);
   let activeIdx = -1;
 
+  function stripAccents(s) {
+    return s.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
+  }
   function showDrop(filter) {
-    const q = filter.toLowerCase();
-    const matched = q ? items.filter(i => i.toLowerCase().includes(q)) : items;
+    const q = stripAccents(filter);
+    const matched = q ? items.filter(i => stripAccents(i).includes(q)) : items;
     if (!matched.length) { drop.style.display = 'none'; return; }
     drop.innerHTML = matched.slice(0, 40).map((name, idx) =>
       `<div data-val="${name.replace(/"/g,'&quot;')}" data-idx="${idx}"

@@ -16,7 +16,7 @@
  *   Who has access: Anyone
  */
 
-function doGet(e) {
+function handleProxy(e) {
   const params = e.parameter;
   const action = params.action;
 

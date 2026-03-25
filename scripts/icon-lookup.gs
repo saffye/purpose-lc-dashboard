@@ -12,7 +12,7 @@
  *   Who has access: Anyone
  */
 
-function doGet(e) {
+function handleIconLookup(e) {
   const itemId = e.parameter.itemId;
 
   if (!itemId) {

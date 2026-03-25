@@ -129,6 +129,125 @@
     gap: 4px;
   }
 
+  .nav-segments {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin: 4px auto 0;
+  }
+
+  .nav-segment {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+  }
+
+  .nav-segment-label {
+    font-family: 'Cinzel', serif;
+    font-size: 14px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold-dim);
+    font-weight: 700;
+  }
+
+  .nav-dropdown {
+    position: relative;
+    display: inline-block;
+  }
+
+  .nav-dropdown-btn {
+    font-family: 'Cinzel', serif;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    padding: 9px 18px;
+    border: 1px solid var(--border);
+    background: transparent;
+    color: var(--gold-dim);
+    cursor: pointer;
+    transition: all 0.15s;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    white-space: nowrap;
+  }
+
+  .nav-dropdown-btn:hover,
+  .nav-dropdown-btn.open {
+    border-color: var(--gold-dim);
+    color: var(--gold);
+  }
+
+  .nav-dropdown-btn.has-active {
+    border-color: var(--gold);
+    color: var(--gold);
+    background: rgba(201,168,76,0.08);
+  }
+
+  .nav-dropdown-btn .nav-dd-arrow {
+    font-size: 9px;
+    opacity: 0.6;
+    transition: transform 0.15s;
+  }
+
+  .nav-dropdown-btn.open .nav-dd-arrow {
+    transform: rotate(180deg);
+  }
+
+  .nav-dropdown-menu {
+    position: absolute;
+    top: calc(100% + 4px);
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    display: none;
+    flex-direction: column;
+    z-index: 200;
+    min-width: 100%;
+    overflow: hidden;
+  }
+
+  .nav-dropdown-menu.open {
+    display: flex;
+  }
+
+  .nav-dropdown-menu .group-btn {
+    border: none;
+    border-bottom: 1px solid var(--border);
+    border-radius: 0;
+    text-align: left;
+    padding: 9px 18px;
+    white-space: nowrap;
+  }
+
+  .nav-dropdown-menu .group-btn:last-child {
+    border-bottom: none;
+  }
+
+  .nav-dropdown-menu .group-btn:hover {
+    border-color: transparent;
+    background: rgba(201,168,76,0.08);
+    color: var(--gold);
+  }
+
+  .nav-segment-btns {
+    display: flex;
+    gap: 4px;
+    justify-content: center;
+  }
+
+  .group-btn.group-btn-large {
+    font-size: 13px;
+    padding: 10px 28px;
+    letter-spacing: 0.15em;
+  }
+
   .group-btn {
     font-family: 'Cinzel', serif;
     font-size: 11px;
@@ -976,6 +1095,10 @@
     /* CLA manager */
     .cla-add-form { flex-direction: column; }
     .cla-input, .cla-input.wide { width: 100%; }
+    .nav-segments { gap: 8px; }
+    .nav-segment-btns { flex-wrap: wrap; }
+    .group-btn.group-btn-large { font-size: 12px; padding: 9px 20px; }
+
     .cla-io-row { flex-wrap: wrap; }
 
     /* Summary grid */
@@ -1041,23 +1164,47 @@
   <header>
     <h1>Don't Be Suspicious</h1>
     <p class="subtitle">Loot Council Summary</p>
+    <div id="readOnlyBadge" style="text-align:center;margin:12px 0 0;display:none;">
+      <span style="font-family:'Cinzel',serif;font-size:10px;letter-spacing:0.2em;color:var(--text-dim);border:1px solid var(--border);padding:2px 10px;border-radius:2px;">Read-Only Mode</span>
+    </div>
   </header>
 
-  <div id="readOnlyBadge" style="text-align:center;margin:6px 0 10px;display:none;">
-    <span style="font-family:'Cinzel',serif;font-size:10px;letter-spacing:0.2em;color:var(--text-dim);border:1px solid var(--border);padding:2px 10px;border-radius:2px;">Read-Only Mode</span>
-  </div>
-
-  <div class="group-btns" style="justify-content:center;margin:4px auto 0;">
-    <button class="group-btn active" data-mode="role" onclick="setGrouping('role')">Role</button>
-    <button class="group-btn" data-mode="t45" onclick="setGrouping('t45')">T4/5</button>
-    <button class="group-btn" data-mode="t6" onclick="setGrouping('t6')">T6</button>
-    <button class="group-btn" data-mode="loot" onclick="setGrouping('loot')">Loot</button>
-    <button class="group-btn" data-mode="cla" onclick="setGrouping('cla')">CLA</button>
-    <button class="group-btn" data-mode="bis" onclick="setGrouping('bis')">BiS</button>
-    <button class="group-btn" data-mode="roster" onclick="setGrouping('roster')">Roster</button>
-    <button class="group-btn" data-mode="glossary" onclick="setGrouping('glossary')">Loot Glossary</button>
-    <button class="group-btn" data-mode="attendance" onclick="setGrouping('attendance')">Attendance</button>
-    <button class="group-btn" data-mode="lootlog" onclick="setGrouping('lootlog')">Loot Log</button>
+  <div class="nav-segments">
+    <div class="nav-segment">
+      <span class="nav-segment-label">Guild Overview</span>
+      <div class="nav-segment-btns">
+        <button class="group-btn active" data-mode="role" onclick="setGrouping('role')">Role</button>
+        <button class="group-btn" data-mode="t45" onclick="setGrouping('t45')">T4/5</button>
+        <button class="group-btn" data-mode="t6" onclick="setGrouping('t6')">T6</button>
+      </div>
+    </div>
+    <div style="display:flex;gap:16px;align-items:flex-start;justify-content:center;">
+      <div class="nav-dropdown" id="navDdGuildMgmt">
+        <button class="nav-dropdown-btn" id="navDdGuildMgmtBtn" onclick="navDropdownToggle('navDdGuildMgmt')">
+          Guild Management <span class="nav-dd-arrow">▾</span>
+        </button>
+        <div class="nav-dropdown-menu" id="navDdGuildMgmtMenu">
+          <button class="group-btn" data-mode="attendance" onclick="navDropdownSelect('navDdGuildMgmt','attendance')">Attendance</button>
+          <button class="group-btn" data-mode="roster" onclick="navDropdownSelect('navDdGuildMgmt','roster')">Roster</button>
+          <button class="group-btn" data-mode="cla" onclick="navDropdownSelect('navDdGuildMgmt','cla')">CLA</button>
+        </div>
+      </div>
+      <div class="nav-dropdown" id="navDdLootMgmt">
+        <button class="nav-dropdown-btn" id="navDdLootMgmtBtn" onclick="navDropdownToggle('navDdLootMgmt')">
+          Loot Management <span class="nav-dd-arrow">▾</span>
+        </button>
+        <div class="nav-dropdown-menu" id="navDdLootMgmtMenu">
+          <button class="group-btn" data-mode="lootlog" onclick="navDropdownSelect('navDdLootMgmt','lootlog')">Loot Log</button>
+          <button class="group-btn" data-mode="glossary" onclick="navDropdownSelect('navDdLootMgmt','glossary')">Item Glossary</button>
+          <button class="group-btn" data-mode="bis" onclick="navDropdownSelect('navDdLootMgmt','bis')">BiS Lists</button>
+        </div>
+      </div>
+    </div>
+    <div class="nav-segment">
+      <div class="nav-segment-btns">
+        <button class="group-btn group-btn-large" data-mode="loot" onclick="setGrouping('loot')">Loot Distribution</button>
+      </div>
+    </div>
   </div>
 
   <div class="controls">
@@ -1237,15 +1384,15 @@
       <span class="cla-io-hint" id="claIoHint"></span>
     </div>
     <div id="claImportArea" style="display:none;margin-bottom:12px;">
-      <textarea class="cla-input wide" id="claImportText" rows="3" placeholder="Paste exported CLA data here..." style="width:100%;resize:vertical;"></textarea>
+      <textarea class="cla-input wide" id="claImportText" class="write-gated" rows="3" placeholder="Paste exported CLA data here..." style="width:100%;resize:vertical;"></textarea>
       <button class="btn primary" onclick="importCla()" style="margin-top:6px;">Import</button>
     </div>
     <div class="cla-add-form">
-      <input class="cla-input" id="claLabel" placeholder="Label (e.g. 2/26)" />
-      <input class="cla-input wide" id="claUrl" placeholder="Google Sheet URL" />
-      <input class="cla-input" id="claGearGid" placeholder="Issues GID" />
-      <input class="cla-input" id="claGearListingGid" placeholder="Gear GID (optional)" />
-      <input class="cla-input" id="claBuffGid" placeholder="Consumes GID" />
+      <input class="cla-input" id="claLabel" class="write-gated" placeholder="Label (e.g. 2/26)" />
+      <input class="cla-input wide" id="claUrl" class="write-gated" placeholder="Google Sheet URL" />
+      <input class="cla-input" id="claGearGid" class="write-gated" placeholder="Issues GID" />
+      <input class="cla-input" id="claGearListingGid" class="write-gated" placeholder="Gear GID (optional)" />
+      <input class="cla-input" id="claBuffGid" class="write-gated" placeholder="Consumes GID" />
       <button class="btn write-gated" onclick="addCla()">+ Add</button>
     </div>
   </div>
@@ -1386,9 +1533,56 @@ const GROUPING_SUBTITLES = {
   t6:  { Conqueror: 'Paladin / Priest / Warlock', Protector: 'Warrior / Hunter / Shaman', Vanquisher: 'Mage / Druid / Rogue' },
 };
 
+
+// ── Nav dropdowns ─────────────────────────────────────────────────
+const _navDropdowns = ['navDdGuildMgmt', 'navDdLootMgmt'];
+const _navDropdownModes = {
+  navDdGuildMgmt: ['attendance','roster','cla'],
+  navDdLootMgmt:  ['glossary','bis','lootlog'],
+};
+
+function navDropdownToggle(id) {
+  const menu = document.getElementById(id + 'Menu');
+  const btn  = document.getElementById(id + 'Btn');
+  if (!menu || !btn) return;
+  const isOpen = menu.classList.contains('open');
+  // Close all dropdowns first
+  _navDropdowns.forEach(did => {
+    document.getElementById(did + 'Menu')?.classList.remove('open');
+    document.getElementById(did + 'Btn')?.classList.remove('open');
+  });
+  if (!isOpen) {
+    menu.classList.add('open');
+    btn.classList.add('open');
+  }
+}
+
+function navDropdownSelect(ddId, mode) {
+  // Close dropdown
+  document.getElementById(ddId + 'Menu')?.classList.remove('open');
+  document.getElementById(ddId + 'Btn')?.classList.remove('open');
+  setGrouping(mode);
+}
+
+// Close dropdowns when clicking outside
+document.addEventListener('click', (e) => {
+  if (!e.target.closest('.nav-dropdown')) {
+    _navDropdowns.forEach(did => {
+      document.getElementById(did + 'Menu')?.classList.remove('open');
+      document.getElementById(did + 'Btn')?.classList.remove('open');
+    });
+  }
+});
+
 function setGrouping(mode) {
   groupingMode = mode;
   document.querySelectorAll('.group-btn').forEach(b => b.classList.toggle('active', b.dataset.mode === mode));
+  // Sync dropdown trigger button active state
+  _navDropdowns.forEach(did => {
+    const modes = _navDropdownModes[did] || [];
+    const btn = document.getElementById(did + 'Btn');
+    if (btn) btn.classList.toggle('has-active', modes.includes(mode));
+  });
   const isLoot = mode === 'loot';
   const isCla  = mode === 'cla';
   const isBis  = mode === 'bis';
@@ -2405,6 +2599,8 @@ function setWclStatus(msg, type = '') {
   const connected = type === 'success';
   if (topBtn) topBtn.style.display = connected ? 'none' : '';
   if (connectedLabel) connectedLabel.style.display = connected ? '' : 'none';
+  // Clear status text when connected — label handles it
+  if (connected && el) el.textContent = '';
   document.body.classList.toggle('wcl-hidden', !connected);
 }
 
@@ -4985,14 +5181,14 @@ function renderGlossaryPanel() {
                 <option value="class">Class</option>
                 <option value="player">Player</option>
               </select>
-              <select id="glPrioTarget" style="background:var(--bg2);border:1px solid var(--border);color:var(--text);padding:5px 8px;border-radius:4px;font-size:13px;">
+              <select id="glPrioTarget" class="write-gated" style="background:var(--bg2);border:1px solid var(--border);color:var(--text);padding:5px 8px;border-radius:4px;font-size:13px;">
                 ${ROLES.map(r => `<option value="${r}">${r}</option>`).join('')}
               </select>
               <button class="write-gated" onclick="glossaryAddCondition()" style="background:none;border:1px solid var(--border);color:var(--text-dim);padding:5px 10px;border-radius:4px;cursor:pointer;font-size:12px;">+ Add condition</button>
             </div>
             <div style="display:flex;gap:8px;align-items:center;margin-top:10px;">
               <label style="font-size:12px;color:var(--text-dim);">Multiplier:</label>
-              <select id="glPrioMult" onchange="document.getElementById('glAddPrioBtn')?.classList.add('gloss-btn-ready')" style="background:var(--bg2);border:1px solid var(--border);color:var(--gold);padding:5px 8px;border-radius:4px;font-size:13px;">
+              <select id="glPrioMult" class="write-gated" onchange="document.getElementById('glAddPrioBtn')?.classList.add('gloss-btn-ready')" style="background:var(--bg2);border:1px solid var(--border);color:var(--gold);padding:5px 8px;border-radius:4px;font-size:13px;">
                 ${MULTS.map(m => `<option value="${m}" ${m===1.75?'selected':''}>×${m}</option>`).join('')}
               </select>
               <button id="glAddPrioBtn" class="gloss-btn-saveable write-gated" onclick="glossaryAddPrio()" style="background:var(--gold-dim);border:none;color:var(--bg);padding:6px 14px;border-radius:4px;cursor:pointer;font-family:'Cinzel',serif;font-size:11px;letter-spacing:0.1em;margin-left:auto;transition:background 0.15s,box-shadow 0.15s;">ADD PRIO</button>
@@ -5006,7 +5202,7 @@ function renderGlossaryPanel() {
           <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px;">
             ${CLASSES.map(c => {
               const has = (entry.eligibleClasses||[]).includes(c);
-              return `<button onclick="glossaryToggleClass('${c}')"
+              return `<button onclick="glossaryToggleClass('${c}')" class="write-gated"
                 style="padding:5px 12px;border-radius:4px;border:1px solid var(--border);cursor:pointer;font-size:13px;
                   background:${has?'var(--gold-dim)':'var(--bg)'};color:${has?'var(--bg)':'var(--text-dim)'};">
                 ${c}</button>`;
@@ -5967,7 +6163,7 @@ function renderBisPanel() {
       <div style="display:flex;gap:8px;align-items:flex-end;flex-wrap:wrap;">
         <div style="display:flex;flex-direction:column;gap:4px;">
           <label style="font-size:11px;color:var(--text-dim);">Wowhead Item ID</label>
-          <input id="bisAddId" type="number" placeholder="e.g. 28802" style="background:var(--bg2);border:1px solid var(--border);color:var(--text);padding:6px 10px;font-size:14px;width:140px;outline:none;" />
+          <input id="bisAddId" type="number" placeholder="e.g. 28802" class="write-gated" style="background:var(--bg2);border:1px solid var(--border);color:var(--text);padding:6px 10px;font-size:14px;width:140px;outline:none;" />
         </div>
         <div style="display:flex;flex-direction:column;gap:4px;">
           <label style="font-size:11px;color:var(--text-dim);">EPV</label>

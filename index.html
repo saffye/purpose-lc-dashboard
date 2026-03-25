@@ -1609,22 +1609,74 @@ function setGrouping(mode) {
       }
     } else {
       renderLootDropdowns();
+      // Restore from URL if dropdowns are empty
+      const _urlRaid = _urlGetParam('raid');
+      const _urlBoss = _urlGetParam('boss');
+      const _urlItem = _urlGetParam('item');
+      const _rSel = document.getElementById('lootRaid');
+      if (_urlRaid && _rSel && !_rSel.value) {
+        _rSel.value = _urlRaid;
+        onRaidChange(true);
+        if (_urlBoss) {
+          setTimeout(() => {
+            const _bSel = document.getElementById('lootBoss');
+            if (_bSel) {
+              _bSel.value = _urlBoss;
+              onBossChange();
+              if (_urlItem) {
+                setTimeout(() => {
+                  const _iId = getItemId(_urlItem);
+                  selectItem(_urlItem, _iId, _iId ? itemIcons[_iId] : null);
+                }, 50);
+              }
+            }
+          }, 50);
+        }
+      }
     }
   } else if (isCla) {
     renderClaList();
   } else if (isBis) {
     initBisPanel();
+    // Restore from URL if dropdowns are currently empty
+    const _bisSpec  = document.getElementById('bisSpecSelect');
+    const _bisPhase = document.getElementById('bisPhaseSelect');
+    const _bisSlot  = document.getElementById('bisSlotSelect');
+    const _urlBisSpec  = _urlGetParam('bis_spec');
+    const _urlBisPhase = _urlGetParam('bis_phase');
+    const _urlBisSlot  = _urlGetParam('bis_slot');
+    if (_urlBisSpec && _bisSpec && !_bisSpec.value) {
+      if (_bisSpec)  _bisSpec.value  = _urlBisSpec;
+      if (_bisPhase && _urlBisPhase !== '') _bisPhase.value = _urlBisPhase;
+      onBisSpecChange();
+      if (_urlBisSlot) {
+        setTimeout(() => {
+          const sl = document.getElementById('bisSlotSelect');
+          if (sl) { sl.value = _urlBisSlot; renderBisPanel(); }
+        }, 50);
+      }
+    }
   } else if (isGlossary) {
-    // Sync loot tab selection → glossary
+    // Sync loot tab selection → glossary if we have one
     if (selectedItem) {
       const _lRaid = document.getElementById('lootRaid')?.value || '';
       const _lBoss = document.getElementById('lootBoss')?.value || '';
-      if (_lRaid && _lBoss && _lRaid !== _glossaryState.raid ||
-          _lBoss !== _glossaryState.boss || selectedItem !== _glossaryState.item) {
+      if (_lRaid && _lBoss && (_lRaid !== _glossaryState.raid ||
+          _lBoss !== _glossaryState.boss || selectedItem !== _glossaryState.item)) {
         _glossaryState.raid = _lRaid;
         _glossaryState.boss = _lBoss;
         _glossaryState.item = selectedItem;
         _glossaryPendingConditions = [];
+      }
+    } else if (!_glossaryState.raid) {
+      // Nothing selected yet — restore from URL params
+      const _urlGlRaid = _urlGetParam('gl_raid');
+      const _urlGlBoss = _urlGetParam('gl_boss');
+      const _urlGlItem = _urlGetParam('gl_item');
+      if (_urlGlRaid) {
+        _glossaryState.raid = _urlGlRaid;
+        _glossaryState.boss = _urlGlBoss || (glossaryBossList(_urlGlRaid)[0] || '');
+        _glossaryState.item = _urlGlItem || '';
       }
     }
     renderGlossaryPanel();
@@ -7517,7 +7569,7 @@ function onItemChange() {
         : `<span style="display:inline-flex;align-items:center;gap:5px;min-width:0;overflow:hidden;">${bisIndicator}<span style="font-size:15px;color:var(--gold-light);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">${name}</span></span>`;
     }).join('<br style="margin:2px 0;">');
 
-    return `<td style="padding:3px 8px;vertical-align:middle;text-align:left;max-width:27ch;overflow:hidden;white-space:nowrap;">${html}</td>`;
+    return `<td style="padding:3px 8px;vertical-align:middle;text-align:left;max-width:25ch;overflow:hidden;white-space:nowrap;">${html}</td>`;
   }
 
     const relevantSlots = getRelevantSlots(item);

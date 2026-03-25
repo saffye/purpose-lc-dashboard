@@ -6284,7 +6284,6 @@ function renderBisPanel() {
   const phase = parseInt(document.getElementById('bisPhaseSelect').value); // 0 = all
   const slot = document.getElementById('bisSlotSelect')?.value || '';
   _urlSetParam('bis_slot', slot);
-  const slot = document.getElementById('bisSlotSelect').value;
   const el = document.getElementById('bisContent');
 
   if (!spec || !slot) {

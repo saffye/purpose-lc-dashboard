@@ -1,0 +1,3208 @@
+{
+  "raids": {
+    "Gruul's Lair": {
+      "High King Maulgar": [
+        {
+          "item": "Pauldrons of the Fallen Defender",
+          "eligibleClasses": [
+            "Warrior",
+            "Priest",
+            "Druid"
+          ]
+        },
+        {
+          "item": "Pauldrons of the Fallen Champion",
+          "eligibleClasses": [
+            "Paladin",
+            "Rogue",
+            "Shaman"
+          ]
+        },
+        {
+          "item": "Pauldrons of the Fallen Hero",
+          "eligibleClasses": [
+            "Hunter",
+            "Mage",
+            "Warlock"
+          ]
+        },
+        {
+          "item": "Belt of Divine Inspiration",
+          "eligibleClasses": [
+            "Priest",
+            "Mage",
+            "Warlock",
+            "Shaman",
+            "Paladin",
+            "Druid"
+          ]
+        },
+        {
+          "item": "Malefic Mask of the Shadows",
+          "eligibleClasses": [
+            "Hunter",
+            "Shaman",
+            "Rogue",
+            "Warrior",
+            "Paladin",
+            "Druid"
+          ]
+        },
+        {
+          "item": "Maulgar's Warhelm",
+          "eligibleClasses": [
+            "Shaman",
+            "Hunter",
+            "Warrior",
+            "Paladin"
+          ]
+        },
+        {
+          "item": "Bladespire Warbands",
+          "eligibleClasses": [
+            "Warrior",
+            "Paladin"
+          ]
+        },
+        {
+          "item": "Brute Cloak of the Ogre-Magi",
+          "eligibleClasses": [
+            "Priest",
+            "Mage",
+            "Warlock",
+            "Shaman",
+            "Paladin",
+            "Druid"
+          ]
+        },
+        {
+          "item": "Hammer of the Naaru",
+          "eligibleClasses": [
+            "Warrior",
+            "Paladin",
+            "Shaman"
+          ]
+        }
+      ],
+      "Gruul": [
+        {
+          "item": "Leggings of the Fallen Defender",
+          "eligibleClasses": [
+            "Warrior",
+            "Priest",
+            "Druid"
+          ]
+        },
+        {
+          "item": "Leggings of the Fallen Champion",
+          "eligibleClasses": [
+            "Paladin",
+            "Rogue",
+            "Shaman"
+          ]
+        },
+        {
+          "item": "Leggings of the Fallen Hero",
+          "eligibleClasses": [
+            "Hunter",
+            "Mage",
+            "Warlock"
+          ]
+        },
+        {
+          "item": "Collar of Cho'gall",
+          "eligibleClasses": [
+            "Priest",
+            "Mage",
+            "Warlock",
+            "Shaman",
+            "Paladin",
+            "Druid"
+          ]
+        },
+        {
+          "item": "Cowl of Nature's Breath",
+          "eligibleClasses": [
+            "Druid",
+            "Shaman",
+            "Paladin"
+          ]
+        },
+        {
+          "item": "Gronn-Stitched Girdle",
+          "eligibleClasses": [
+            "Druid",
+            "Shaman",
+            "Hunter",
+            "Warrior",
+            "Paladin"
+          ]
+        },
+        {
+          "item": "Gauntlets of the Dragonslayer",
+          "eligibleClasses": [
+            "Shaman",
+            "Hunter",
+            "Paladin",
+            "Warrior"
+          ]
+        },
+        {
+          "item": "Windshear Boots",
+          "eligibleClasses": [
+            "Shaman",
+            "Paladin"
+          ]
+        },
+        {
+          "item": "Gauntlets of Martial Perfection",
+          "eligibleClasses": [
+            "Warrior",
+            "Paladin"
+          ]
+        },
+        {
+          "item": "Teeth of Gruul",
+          "eligibleClasses": [
+            "Paladin",
+            "Shaman",
+            "Druid",
+            "Priest"
+          ]
+        },
+        {
+          "item": "Bloodmaw Magus-Blade",
+          "eligibleClasses": [
+            "Paladin",
+            "Warlock",
+            "Mage"
+          ]
+        },
+        {
+          "item": "Axe of the Gronn Lords",
+          "eligibleClasses": [
+            "Paladin",
+            "Shaman",
+            "Warrior"
+          ]
+        },
+        {
+          "item": "Aldori Legacy Defender",
+          "eligibleClasses": [
+            "Paladin",
+            "Warrior"
+          ]
+        },
+        {
+          "item": "Eye of Gruul",
+          "eligibleClasses": [
+            "Paladin",
+            "Shaman",
+            "Druid",
+            "Priest"
+          ]
+        },
+        {
+          "item": "Dragonspine Trophy",
+          "eligibleClasses": [
+            "Rogue",
+            "Hunter",
+            "Shaman",
+            "Paladin",
+            "Warrior",
+            "Druid"
+          ]
+        },
+        {
+          "item": "Shuriken of Negation",
+          "eligibleClasses": [
+            "Rogue",
+            "Warrior"
+          ]
+        }
+      ]
+    },
+    "Magtheridon's Lair": {
+      "Magtheridon": [
+        {
+          "item": "Chestguard of the Fallen Defender",
+          "eligibleClasses": [
+            "Warrior",
+            "Priest",
+            "Druid"
+          ]
+        },
+        {
+          "item": "Chestguard of the Fallen Champion",
+          "eligibleClasses": [
+            "Paladin",
+            "Rogue",
+            "Shaman"
+          ]
+        },
+        {
+          "item": "Chestguard of the Fallen Hero",
+          "eligibleClasses": [
+            "Hunter",
+            "Mage",
+            "Warlock"
+          ]
+        },
+        {
+          "item": "Magtheridon's Head",
+          "eligibleClasses": [
+            "Warrior",
+            "Paladin",
+            "Druid",
+            "Warlock",
+            "Mage",
+            "Hunter",
+            "Priest",
+            "Shaman",
+            "Rogue"
+          ]
+        },
+        {
+          "item": "Crystalheart Pulse-Staff",
+          "eligibleClasses": [
+            "Priest",
+            "Druid",
+            "Shaman"
+          ]
+        },
+        {
+          "item": "Soul-Eater's Handwraps",
+          "eligibleClasses": [
+            "Shaman",
+            "Warlock",
+            "Mage",
+            "Priest",
+            "Paladin",
+            "Druid"
+          ]
+        },
+        {
+          "item": "Girdle of the Endless Pit",
+          "eligibleClasses": [
+            "Warrior",
+            "Paladin"
+          ]
+        },
+        {
+          "item": "Cloak of the Pit Stalker",
+          "eligibleClasses": [
+            "Warrior",
+            "Paladin",
+            "Rogue",
+            "Hunter",
+            "Shaman",
+            "Druid"
+          ]
+        },
+        {
+          "item": "Karaborian Talisman",
+          "eligibleClasses": [
+            "Priest",
+            "Mage",
+            "Warlock",
+            "Shaman",
+            "Paladin",
+            "Druid"
+          ]
+        },
+        {
+          "item": "Liar's Tongue Gloves",
+          "eligibleClasses": [
+            "Hunter",
+            "Shaman",
+            "Druid",
+            "Rogue",
+            "Warrior",
+            "Paladin"
+          ]
+        },
+        {
+          "item": "Aegis of the Vindicator",
+          "eligibleClasses": [
+            "Paladin",
+            "Shaman"
+          ]
+        },
+        {
+          "item": "Eredar Wand of Obliteration",
+          "eligibleClasses": [
+            "Warlock",
+            "Mage",
+            "Priest"
+          ]
+        },
+        {
+          "item": "Terror Pit Girdle",
+          "eligibleClasses": [
+            "Shaman",
+            "Hunter",
+            "Paladin"
+          ]
+        },
+        {
+          "item": "Thundering Greathelm",
+          "eligibleClasses": [
+            "Warrior",
+            "Paladin"
+          ]
+        },
+        {
+          "item": "Eye of Magtheridon",
+          "eligibleClasses": [
+            "Paladin",
+            "Priest",
+            "Shaman",
+            "Druid",
+            "Warlock",
+            "Mage"
+          ]
+        },
+        {
+          "item": "Glaive of the Pit",
+          "eligibleClasses": [
+            "Warrior",
+            "Paladin",
+            "Hunter"
+          ]
+        }
+      ]
+    },
+    "Serpentshrine Cavern": {
+      "Hydross the Unstable": [
+        {
+          "item": "Brighthelm of Justice",
+          "eligibleClasses": [
+            "Paladin"
+          ]
+        },
+        {
+          "item": "Ring of Lethality",
+          "eligibleClasses": [
+            "Druid",
+            "Hunter",
+            "Paladin",
+            "Rogue",
+            "Shaman",
+            "Warrior"
+          ]
+        },
+        {
+          "item": "Scarab of Displacement",
+          "eligibleClasses": [
+            "Druid",
+            "Hunter",
+            "Mage",
+            "Paladin",
+            "Priest",
+            "Rogue",
+            "Shaman",
+            "Warlock",
+            "Warrior"
+          ]
+        },
+        {
+          "item": "Fathomstone",
+          "eligibleClasses": [
+            "Druid",
+            "Mage",
+            "Priest",
+            "Shaman",
+            "Warlock"
+          ]
+        },
+        {
+          "item": "Band of Vile Aggression",
+          "eligibleClasses": [
+            "Druid",
+            "Hunter",
+            "Paladin",
+            "Rogue",
+            "Shaman",
+            "Warrior"
+          ]
+        },
+        {
+          "item": "Boots of the Shifting Nightmare",
+          "eligibleClasses": [
+            "Priest",
+            "Warlock"
+          ]
+        },
+        {
+          "item": "Living Root of the Wildheart",
+          "eligibleClasses": [
+            "Paladin",
+            "Shaman"
+          ]
+        },
+        {
+          "item": "Pauldrons of the Wardancer",
+          "eligibleClasses": [
+            "Paladin",
+            "Warrior"
+          ]
+        },
+        {
+          "item": "Ranger-General's Chestguard",
+          "eligibleClasses": [
+            "Hunter",
+            "Paladin",
+            "Shaman",
+            "Warrior"
+          ]
+        },
+        {
+          "item": "Robe of Hateful Echoes",
+          "eligibleClasses": [
+            "Druid",
+            "Mage",
+            "Priest",
+            "Shaman",
+            "Warlock"
+          ]
+        },
+        {
+          "item": "Shoulderpads of the Stranger",
+          "eligibleClasses": [
+            "Druid",
+            "Hunter",
+            "Paladin",
+            "Rogue",
+            "Shaman",
+            "Warrior"
+          ]
+        },
+        {
+          "item": "Wraps of Purification",
+          "eligibleClasses": [
+            "Druid",
+            "Paladin",
+            "Shaman"
+          ]
+        },
+        {
+          "item": "Idol of the Crescent Goddess",
+          "eligibleClasses": [
+            "Druid",
+            "Mage",
+            "Priest",
+            "Shaman",
+            "Warlock"
+          ]
+        },
+        {
+          "item": "Blackfathom Warbands",
+          "eligibleClasses": [
+            "Paladin",
+            "Shaman"
+          ]
+        }
+      ],
+      "The Lurker Below": [
+        {
+          "item": "Choker of Animalistic Fury",
+          "eligibleClasses": [
+            "Druid",
+            "Hunter",
+            "Paladin",
+            "Rogue",
+            "Shaman",
+            "Warrior"
+          ]
+        },
+        {
+          "item": "Velvet Boots of the Guardian",
+          "eligibleClasses": [
+            "Druid",
+            "Mage",
+            "Paladin",
+            "Priest",
+            "Shaman",
+            "Warlock"
+          ]
+        },
+        {
+          "item": "Cord of Screaming Terrors",
+          "eligibleClasses": [
+            "Druid",
+            "Mage",
+            "Priest",
+            "Shaman",
+            "Warlock"
+          ]
+        },
+        {
+          "item": "Boots of Effortless Striking",
+          "eligibleClasses": [
+            "Druid",
+            "Hunter",
+            "Paladin",
+            "Rogue",
+            "Shaman"
+          ]
+        },
+        {
+          "item": "Grove-Bands of Remulos",
+          "eligibleClasses": [
+            "Druid",
+            "Paladin",
+            "Shaman"
+          ]
+        },
+        {
+          "item": "Tempest-Strider Boots",
+          "eligibleClasses": [
+            "Shaman"
+          ]
+        },
+        {
+          "item": "Mallet of the Tides",
+          "eligibleClasses": [
+            "Paladin",
+            "Rogue",
+            "Shaman",
+            "Warrior"
+          ]
+        },
+        {
+          "item": "Glowing Breastplate of Truth",
+          "eligibleClasses": [
+            "Druid",
+            "Mage",
+            "Priest",
+            "Shaman",
+            "Warlock"
+          ]
+        },
+        {
+          "item": "Bracers of Eradication",
+          "eligibleClasses": [
+            "Paladin",
+            "Warrior"
+          ]
+        },
+        {
+          "item": "Ancestral Ring of Conquest",
+          "eligibleClasses": [
+            "Druid",
+            "Paladin",
+            "Shaman",
+            "Warrior"
+          ]
+        },
+        {
+          "item": "The Seal of Danzalar",
+          "eligibleClasses": [
+            "Paladin"
+          ]
+        },
+        {
+          "item": "Earring of Soulful Meditation",
+          "eligibleClasses": [
+            "Paladin"
+          ]
+        },
+        {
+          "item": "Libram of Absolute Truth",
+          "eligibleClasses": [
+            "Paladin"
+          ]
+        }
+      ],
+      "Leotheras the Blind": [
+        {
+          "item": "Gloves of the Vanquished Champion",
+          "eligibleClasses": [
+            "Paladin",
+            "Rogue",
+            "Shaman"
+          ]
+        },
+        {
+          "item": "Gloves of the Vanquished Defender",
+          "eligibleClasses": [
+            "Druid",
+            "Priest",
+            "Warrior"
+          ]
+        },
+        {
+          "item": "Gloves of the Vanquished Hero",
+          "eligibleClasses": [
+            "Hunter",
+            "Mage",
+            "Warlock"
+          ]
+        },
+        {
+          "item": "Orca-Hide Boots",
+          "eligibleClasses": [
+            "Druid",
+            "Paladin",
+            "Shaman"
+          ]
+        },
+        {
+          "item": "Coral-Barbed Shoulderpads",
+          "eligibleClasses": [
+            "Paladin",
+            "Shaman"
+          ]
+        },
+        {
+          "item": "True-Aim Stalker Bands",
+          "eligibleClasses": [
+            "Hunter",
+            "Paladin",
+            "Shaman",
+            "Warrior"
+          ]
+        },
+        {
+          "item": "Fang of the Leviathan",
+          "eligibleClasses": [
+            "Mage",
+            "Paladin",
+            "Warlock"
+          ]
+        },
+        {
+          "item": "Girdle of the Invulnerable",
+          "eligibleClasses": [
+            "Paladin",
+            "Warrior"
+          ]
+        },
+        {
+          "item": "Tsunami Talisman",
+          "eligibleClasses": [
+            "Druid",
+            "Hunter",
+            "Paladin",
+            "Rogue",
+            "Shaman",
+            "Warrior"
+          ]
+        }
+      ],
+      "Fathom-Lord Karathress": [
+        {
+          "item": "Leggings of the Vanquished Champion",
+          "eligibleClasses": [
+            "Paladin",
+            "Rogue",
+            "Shaman"
+          ]
+        },
+        {
+          "item": "Leggings of the Vanquished Defender",
+          "eligibleClasses": [
+            "Druid",
+            "Priest",
+            "Warrior"
+          ]
+        },
+        {
+          "item": "Leggings of the Vanquished Hero",
+          "eligibleClasses": [
+            "Hunter",
+            "Mage",
+            "Warlock"
+          ]
+        },
+        {
+          "item": "Frayed Tether of the Drowned",
+          "eligibleClasses": [
+            "Druid",
+            "Paladin",
+            "Warrior"
+          ]
+        },
+        {
+          "item": "Soul-Strider Boots",
+          "eligibleClasses": [
+            "Druid",
+            "Paladin",
+            "Shaman"
+          ]
+        },
+        {
+          "item": "Bloodsea Brigand's Vest",
+          "eligibleClasses": [
+            "Druid",
+            "Hunter",
+            "Paladin",
+            "Rogue",
+            "Shaman",
+            "Warrior"
+          ]
+        },
+        {
+          "item": "Fathom-Brooch of the Tidewalker",
+          "eligibleClasses": [
+            "Druid",
+            "Paladin",
+            "Shaman"
+          ]
+        },
+        {
+          "item": "Sextant of Unstable Currents",
+          "eligibleClasses": [
+            "Druid",
+            "Mage",
+            "Paladin",
+            "Priest",
+            "Shaman",
+            "Warlock"
+          ]
+        },
+        {
+          "item": "World Breaker",
+          "eligibleClasses": [
+            "Druid",
+            "Paladin",
+            "Warrior"
+          ]
+        }
+      ],
+      "Morogrim Tidewalker": [
+        {
+          "item": "Pendant of the Lost Ages",
+          "eligibleClasses": [
+            "Druid",
+            "Mage",
+            "Paladin",
+            "Priest",
+            "Shaman",
+            "Warlock"
+          ]
+        },
+        {
+          "item": "Razor-Scale Battlecloak",
+          "eligibleClasses": [
+            "Druid",
+            "Hunter",
+            "Paladin",
+            "Rogue",
+            "Shaman",
+            "Warrior"
+          ]
+        },
+        {
+          "item": "Illidari Shoulderpads",
+          "eligibleClasses": [
+            "Druid",
+            "Mage",
+            "Priest",
+            "Shaman",
+            "Warlock"
+          ]
+        },
+        {
+          "item": "Gnarled Chestpiece of the Ancients",
+          "eligibleClasses": [
+            "Druid",
+            "Paladin",
+            "Shaman"
+          ]
+        },
+        {
+          "item": "Mantle of the Tireless Tracker",
+          "eligibleClasses": [
+            "Hunter",
+            "Paladin",
+            "Shaman",
+            "Warrior"
+          ]
+        },
+        {
+          "item": "Girdle of the Tidal Call",
+          "eligibleClasses": [
+            "Paladin",
+            "Shaman",
+            "Warrior"
+          ]
+        },
+        {
+          "item": "Talon of Azshara",
+          "eligibleClasses": [
+            "Hunter",
+            "Rogue",
+            "Warrior"
+          ]
+        },
+        {
+          "item": "Warboots of Obliteration",
+          "eligibleClasses": [
+            "Paladin",
+            "Warrior"
+          ]
+        },
+        {
+          "item": "Pauldrons of the Argent Sentinel",
+          "eligibleClasses": [
+            "Paladin"
+          ]
+        },
+        {
+          "item": "Band of the Vigilant",
+          "eligibleClasses": [
+            "Druid",
+            "Mage",
+            "Paladin",
+            "Priest",
+            "Shaman",
+            "Warlock"
+          ]
+        },
+        {
+          "item": "Ring of Sundered Souls",
+          "eligibleClasses": [
+            "Paladin"
+          ]
+        },
+        {
+          "item": "Serpent-Coil Braid",
+          "eligibleClasses": [
+            "Mage"
+          ]
+        },
+        {
+          "item": "Luminescent Rod of the Naaru",
+          "eligibleClasses": [
+            "Paladin"
+          ]
+        }
+      ],
+      "Lady Vashj": [
+        {
+          "item": "Helm of the Vanquished Champion",
+          "eligibleClasses": [
+            "Paladin",
+            "Rogue",
+            "Shaman"
+          ]
+        },
+        {
+          "item": "Helm of the Vanquished Defender",
+          "eligibleClasses": [
+            "Druid",
+            "Priest",
+            "Warrior"
+          ]
+        },
+        {
+          "item": "Helm of the Vanquished Hero",
+          "eligibleClasses": [
+            "Hunter",
+            "Mage",
+            "Warlock"
+          ]
+        },
+        {
+          "item": "Serpent Spine Longbow",
+          "eligibleClasses": [
+            "Hunter",
+            "Rogue",
+            "Warrior"
+          ]
+        },
+        {
+          "item": "Vestments of the Sea-Witch",
+          "eligibleClasses": [
+            "Druid",
+            "Mage",
+            "Priest",
+            "Shaman",
+            "Warlock"
+          ]
+        },
+        {
+          "item": "Fang of Vashj",
+          "eligibleClasses": [
+            "Rogue",
+            "Warrior"
+          ]
+        },
+        {
+          "item": "Runetotem's Mantle",
+          "eligibleClasses": [
+            "Druid",
+            "Paladin",
+            "Shaman"
+          ]
+        },
+        {
+          "item": "Belt of One-Hundred Deaths",
+          "eligibleClasses": [
+            "Druid",
+            "Hunter",
+            "Paladin",
+            "Rogue",
+            "Shaman",
+            "Warrior"
+          ]
+        },
+        {
+          "item": "Cobra-Lash Boots",
+          "eligibleClasses": [
+            "Hunter",
+            "Paladin",
+            "Shaman",
+            "Warrior"
+          ]
+        },
+        {
+          "item": "Lightfathom Scepter",
+          "eligibleClasses": [
+            "Druid",
+            "Paladin",
+            "Shaman"
+          ]
+        },
+        {
+          "item": "Krakken-Heart Breastplate",
+          "eligibleClasses": [
+            "Paladin",
+            "Warrior"
+          ]
+        },
+        {
+          "item": "Glorious Gauntlets of Crestfall",
+          "eligibleClasses": [
+            "Paladin"
+          ]
+        },
+        {
+          "item": "Coral Band of the Revived",
+          "eligibleClasses": [
+            "Druid",
+            "Paladin",
+            "Shaman"
+          ]
+        },
+        {
+          "item": "Ring of Endless Coils",
+          "eligibleClasses": [
+            "Druid",
+            "Mage",
+            "Paladin",
+            "Priest",
+            "Shaman",
+            "Warlock"
+          ]
+        },
+        {
+          "item": "Prism of Inner Calm",
+          "eligibleClasses": [
+            "Druid",
+            "Paladin",
+            "Shaman"
+          ]
+        }
+      ],
+      "Trash": [
+        {
+          "item": "Pendant of the Perilous",
+          "eligibleClasses": [
+            "Druid",
+            "Paladin",
+            "Shaman",
+            "Warrior"
+          ]
+        },
+        {
+          "item": "Boots of Courage Unending",
+          "eligibleClasses": [
+            "Paladin"
+          ]
+        },
+        {
+          "item": "Totem of the Maelstrom",
+          "eligibleClasses": [
+            "Hunter",
+            "Paladin",
+            "Shaman",
+            "Warrior"
+          ]
+        },
+        {
+          "item": "Wildfury Greatstaff",
+          "eligibleClasses": [
+            "Druid"
+          ]
+        },
+        {
+          "item": "Spyglass of the Hidden Fleet",
+          "eligibleClasses": [
+            "Druid",
+            "Paladin",
+            "Warrior"
+          ]
+        }
+      ]
+    },
+    "Tempest Keep": {
+      "Al'ar": [
+        {
+          "item": "Phoenix-Wing Cloak",
+          "eligibleClasses": [
+            "Paladin",
+            "Warrior"
+          ]
+        },
+        {
+          "item": "Mindstorm Wristbands",
+          "eligibleClasses": [
+            "Druid",
+            "Mage",
+            "Priest",
+            "Shaman",
+            "Warlock"
+          ]
+        },
+        {
+          "item": "Claw of the Phoenix",
+          "eligibleClasses": [
+            "Hunter",
+            "Rogue",
+            "Shaman"
+          ]
+        },
+        {
+          "item": "Talon of the Phoenix",
+          "eligibleClasses": [
+            "Hunter",
+            "Rogue",
+            "Shaman",
+            "Warrior"
+          ]
+        },
+        {
+          "item": "Arcanite Steam-Pistol",
+          "eligibleClasses": [
+            "Hunter",
+            "Rogue",
+            "Warrior"
+          ]
+        },
+        {
+          "item": "Gloves of the Searing Grip",
+          "eligibleClasses": [
+            "Druid",
+            "Hunter",
+            "Paladin",
+            "Rogue",
+            "Shaman",
+            "Warrior"
+          ]
+        },
+        {
+          "item": "Fire Crest Breastplate",
+          "eligibleClasses": [
+            "Druid",
+            "Mage",
+            "Priest",
+            "Shaman",
+            "Warlock"
+          ]
+        },
+        {
+          "item": "Talisman of the Sun King",
+          "eligibleClasses": [
+            "Druid",
+            "Paladin",
+            "Shaman"
+          ]
+        },
+        {
+          "item": "Netherbane",
+          "eligibleClasses": [
+            "Hunter",
+            "Paladin",
+            "Shaman",
+            "Warrior"
+          ]
+        },
+        {
+          "item": "Band of Al'ar",
+          "eligibleClasses": [
+            "Druid",
+            "Mage",
+            "Paladin",
+            "Priest",
+            "Shaman",
+            "Warlock"
+          ]
+        },
+        {
+          "item": "Phoenix-Ring of Rebirth",
+          "eligibleClasses": [
+            "Druid",
+            "Paladin",
+            "Shaman"
+          ]
+        },
+        {
+          "item": "Talon of Al'ar",
+          "eligibleClasses": [
+            "Hunter"
+          ]
+        },
+        {
+          "item": "Tome of Fiery Redemption",
+          "eligibleClasses": [
+            "Paladin"
+          ]
+        }
+      ],
+      "Void Reaver": [
+        {
+          "item": "Pauldrons of the Vanquished Champion",
+          "eligibleClasses": [
+            "Paladin",
+            "Rogue",
+            "Shaman"
+          ]
+        },
+        {
+          "item": "Pauldrons of the Vanquished Defender",
+          "eligibleClasses": [
+            "Druid",
+            "Priest",
+            "Warrior"
+          ]
+        },
+        {
+          "item": "Pauldrons of the Vanquished Hero",
+          "eligibleClasses": [
+            "Hunter",
+            "Mage",
+            "Warlock"
+          ]
+        },
+        {
+          "item": "Cowl of the Grand Engineer",
+          "eligibleClasses": [
+            "Druid",
+            "Mage",
+            "Priest",
+            "Shaman",
+            "Warlock"
+          ]
+        },
+        {
+          "item": "Girdle of Zaetar",
+          "eligibleClasses": [
+            "Druid",
+            "Paladin",
+            "Shaman"
+          ]
+        },
+        {
+          "item": "Void Reaver Greaves",
+          "eligibleClasses": [
+            "Hunter",
+            "Paladin",
+            "Shaman",
+            "Warrior"
+          ]
+        },
+        {
+          "item": "Fel-Steel Warhelm",
+          "eligibleClasses": [
+            "Paladin",
+            "Warrior"
+          ]
+        },
+        {
+          "item": "Wristguards of Determination",
+          "eligibleClasses": [
+            "Paladin",
+            "Warrior"
+          ]
+        },
+        {
+          "item": "Warp-Spring Coil",
+          "eligibleClasses": [
+            "Rogue"
+          ]
+        },
+        {
+          "item": "Fel Reaver's Piston",
+          "eligibleClasses": [
+            "Paladin"
+          ]
+        }
+      ],
+      "High Astromancer Solarian": [
+        {
+          "item": "Trousers of the Astromancer",
+          "eligibleClasses": [
+            "Druid",
+            "Mage",
+            "Paladin",
+            "Priest",
+            "Shaman",
+            "Warlock"
+          ]
+        },
+        {
+          "item": "Star-Soul Breeches",
+          "eligibleClasses": [
+            "Druid",
+            "Paladin",
+            "Shaman"
+          ]
+        },
+        {
+          "item": "Heartrazor",
+          "eligibleClasses": [
+            "Rogue",
+            "Warrior"
+          ]
+        },
+        {
+          "item": "Vambraces of Ending",
+          "eligibleClasses": [
+            "Druid",
+            "Hunter",
+            "Paladin",
+            "Rogue",
+            "Shaman",
+            "Warrior"
+          ]
+        },
+        {
+          "item": "Star-Strider Boots",
+          "eligibleClasses": [
+            "Hunter",
+            "Paladin",
+            "Shaman",
+            "Warrior"
+          ]
+        },
+        {
+          "item": "Worldstorm Gauntlets",
+          "eligibleClasses": [
+            "Paladin",
+            "Shaman"
+          ]
+        },
+        {
+          "item": "Boots of the Resilient",
+          "eligibleClasses": [
+            "Paladin",
+            "Warrior"
+          ]
+        },
+        {
+          "item": "Greaves of the Bloodwarder",
+          "eligibleClasses": [
+            "Paladin",
+            "Warrior"
+          ]
+        },
+        {
+          "item": "Girdle of the Righteous Path",
+          "eligibleClasses": [
+            "Paladin"
+          ]
+        },
+        {
+          "item": "Ethereum Life-Staff",
+          "eligibleClasses": [
+            "Druid",
+            "Paladin",
+            "Shaman"
+          ]
+        },
+        {
+          "item": "Solarian's Sapphire",
+          "eligibleClasses": [
+            "Warrior"
+          ]
+        },
+        {
+          "item": "Void Star Talisman",
+          "eligibleClasses": [
+            "Warlock"
+          ]
+        },
+        {
+          "item": "Wand of the Forgotten Star",
+          "eligibleClasses": [
+            "Mage",
+            "Priest",
+            "Warlock"
+          ]
+        }
+      ],
+      "Kael'thas Sunstrider": [
+        {
+          "item": "Chestguard of the Vanquished Champion",
+          "eligibleClasses": [
+            "Paladin",
+            "Rogue",
+            "Shaman"
+          ]
+        },
+        {
+          "item": "Chestguard of the Vanquished Defender",
+          "eligibleClasses": [
+            "Druid",
+            "Priest",
+            "Warrior"
+          ]
+        },
+        {
+          "item": "Chestguard of the Vanquished Hero",
+          "eligibleClasses": [
+            "Hunter",
+            "Mage",
+            "Warlock"
+          ]
+        },
+        {
+          "item": "Sunshower Light Cloak",
+          "eligibleClasses": [
+            "Druid",
+            "Paladin",
+            "Shaman"
+          ]
+        },
+        {
+          "item": "Royal Cloak of the Sunstriders",
+          "eligibleClasses": [
+            "Druid",
+            "Mage",
+            "Paladin",
+            "Priest",
+            "Shaman",
+            "Warlock"
+          ]
+        },
+        {
+          "item": "Thalassian Wildercloak",
+          "eligibleClasses": [
+            "Druid",
+            "Hunter",
+            "Paladin",
+            "Rogue",
+            "Shaman",
+            "Warrior"
+          ]
+        },
+        {
+          "item": "Gauntlets of the Sun King",
+          "eligibleClasses": [
+            "Druid",
+            "Mage",
+            "Paladin",
+            "Priest",
+            "Shaman",
+            "Warlock"
+          ]
+        },
+        {
+          "item": "Crown of the Sun",
+          "eligibleClasses": [
+            "Druid",
+            "Paladin",
+            "Shaman"
+          ]
+        },
+        {
+          "item": "Leggings of Murderous Intent",
+          "eligibleClasses": [
+            "Druid",
+            "Hunter",
+            "Paladin",
+            "Rogue",
+            "Shaman",
+            "Warrior"
+          ]
+        },
+        {
+          "item": "Sunhawk Leggings",
+          "eligibleClasses": [
+            "Paladin",
+            "Shaman"
+          ]
+        },
+        {
+          "item": "Rod of the Sun King",
+          "eligibleClasses": [
+            "Rogue",
+            "Shaman",
+            "Warrior"
+          ]
+        },
+        {
+          "item": "Royal Gauntlets of Silvermoon",
+          "eligibleClasses": [
+            "Paladin",
+            "Warrior"
+          ]
+        },
+        {
+          "item": "Band of the Ranger-General",
+          "eligibleClasses": [
+            "Druid",
+            "Hunter",
+            "Paladin",
+            "Rogue",
+            "Shaman",
+            "Warrior"
+          ]
+        },
+        {
+          "item": "The Nexus Key",
+          "eligibleClasses": [
+            "Druid",
+            "Mage",
+            "Priest",
+            "Shaman",
+            "Warlock"
+          ]
+        },
+        {
+          "item": "Twinblade of the Phoenix",
+          "eligibleClasses": [
+            "Hunter",
+            "Paladin",
+            "Warrior"
+          ]
+        },
+        {
+          "item": "The Verdant Sphere",
+          "eligibleClasses": [
+            "Paladin"
+          ]
+        }
+      ],
+      "Trash": [
+        {
+          "item": "Seventh Ring of the Tirisfalen",
+          "eligibleClasses": [
+            "Paladin",
+            "Warrior"
+          ]
+        },
+        {
+          "item": "Mantle of the Elven Kings",
+          "eligibleClasses": [
+            "Druid",
+            "Mage",
+            "Priest",
+            "Shaman",
+            "Warlock"
+          ]
+        },
+        {
+          "item": "Fire-Cord of the Magus",
+          "eligibleClasses": [
+            "Mage",
+            "Warlock"
+          ]
+        },
+        {
+          "item": "Bark-Gloves of Ancient Wisdom",
+          "eligibleClasses": [
+            "Druid",
+            "Paladin",
+            "Shaman"
+          ]
+        },
+        {
+          "item": "Girdle of Fallen Stars",
+          "eligibleClasses": [
+            "Paladin",
+            "Shaman"
+          ]
+        },
+        {
+          "item": "Bands of the Celestial Archer",
+          "eligibleClasses": [
+            "Hunter",
+            "Paladin",
+            "Shaman",
+            "Warrior"
+          ]
+        }
+      ]
+    },
+    "Mount Hyjal": {
+      "Rage Winterchill": [
+        {
+          "item": "Cuffs of Devastation",
+          "eligibleClasses": [
+            "Druid",
+            "Mage",
+            "Paladin",
+            "Priest",
+            "Shaman",
+            "Warlock"
+          ]
+        },
+        {
+          "item": "Bracers of Martyrdom",
+          "eligibleClasses": [
+            "Druid",
+            "Paladin",
+            "Shaman"
+          ]
+        },
+        {
+          "item": "Rejuvenating Bracers",
+          "eligibleClasses": [
+            "Druid",
+            "Paladin",
+            "Shaman"
+          ]
+        },
+        {
+          "item": "Deadly Cuffs",
+          "eligibleClasses": [
+            "Druid",
+            "Hunter",
+            "Paladin",
+            "Rogue",
+            "Shaman",
+            "Warrior"
+          ]
+        },
+        {
+          "item": "Bracers of the Pathfinder",
+          "eligibleClasses": [
+            "Hunter",
+            "Paladin",
+            "Shaman",
+            "Warrior"
+          ]
+        },
+        {
+          "item": "Howling Wind Bracers",
+          "eligibleClasses": [
+            "Paladin",
+            "Shaman"
+          ]
+        },
+        {
+          "item": "Stillwater Boots",
+          "eligibleClasses": [
+            "Paladin",
+            "Shaman"
+          ]
+        },
+        {
+          "item": "Blessed Adamantite Bracers",
+          "eligibleClasses": [
+            "Paladin"
+          ]
+        },
+        {
+          "item": "Furious Shackles",
+          "eligibleClasses": [
+            "Paladin",
+            "Warrior"
+          ]
+        },
+        {
+          "item": "Blood-Stained Pauldrons",
+          "eligibleClasses": [
+            "Paladin",
+            "Warrior"
+          ]
+        },
+        {
+          "item": "Chronicle of Dark Secrets",
+          "eligibleClasses": [
+            "Druid",
+            "Mage",
+            "Priest",
+            "Shaman",
+            "Warlock"
+          ]
+        },
+        {
+          "item": "Tracker's Blade",
+          "eligibleClasses": [
+            "Hunter",
+            "Rogue"
+          ]
+        }
+      ],
+      "Anetheron": [
+        {
+          "item": "Anetheron's Noose",
+          "eligibleClasses": [
+            "Druid",
+            "Mage",
+            "Priest",
+            "Shaman",
+            "Warlock"
+          ]
+        },
+        {
+          "item": "Archbishop's Slippers",
+          "eligibleClasses": [
+            "Druid",
+            "Paladin",
+            "Shaman"
+          ]
+        },
+        {
+          "item": "Hatefury Mantle",
+          "eligibleClasses": [
+            "Druid",
+            "Mage",
+            "Priest",
+            "Shaman",
+            "Warlock"
+          ]
+        },
+        {
+          "item": "Don Alejandro's Money Belt",
+          "eligibleClasses": [
+            "Druid",
+            "Hunter",
+            "Paladin",
+            "Rogue",
+            "Shaman",
+            "Warrior"
+          ]
+        },
+        {
+          "item": "Enchanted Leather Sandals",
+          "eligibleClasses": [
+            "Druid",
+            "Paladin",
+            "Shaman"
+          ]
+        },
+        {
+          "item": "Golden Links of Restoration",
+          "eligibleClasses": [
+            "Paladin",
+            "Shaman"
+          ]
+        },
+        {
+          "item": "Quickstrider Moccasins",
+          "eligibleClasses": [
+            "Hunter",
+            "Paladin",
+            "Shaman",
+            "Warrior"
+          ]
+        },
+        {
+          "item": "Glimmering Steel Mantle",
+          "eligibleClasses": [
+            "Paladin"
+          ]
+        },
+        {
+          "item": "Bastion of Light",
+          "eligibleClasses": [
+            "Paladin",
+            "Shaman",
+            "Warrior"
+          ]
+        },
+        {
+          "item": "The Unbreakable Will",
+          "eligibleClasses": [
+            "Paladin",
+            "Warrior"
+          ]
+        },
+        {
+          "item": "Blade of Infamy",
+          "eligibleClasses": [
+            "Hunter",
+            "Rogue",
+            "Warrior"
+          ]
+        },
+        {
+          "item": "Pillar of Ferocity",
+          "eligibleClasses": [
+            "Druid"
+          ]
+        }
+      ],
+      "Kaz'Rogal": [
+        {
+          "item": "Leggings of Channeled Elements",
+          "eligibleClasses": [
+            "Druid",
+            "Mage",
+            "Paladin",
+            "Priest",
+            "Shaman",
+            "Warlock"
+          ]
+        },
+        {
+          "item": "Angelista's Sash",
+          "eligibleClasses": [
+            "Druid",
+            "Mage",
+            "Paladin",
+            "Shaman"
+          ]
+        },
+        {
+          "item": "Blue Suede Shoes",
+          "eligibleClasses": [
+            "Druid",
+            "Mage",
+            "Priest",
+            "Shaman",
+            "Warlock"
+          ]
+        },
+        {
+          "item": "Razorfury Mantle",
+          "eligibleClasses": [
+            "Druid",
+            "Hunter",
+            "Paladin",
+            "Rogue",
+            "Shaman",
+            "Warrior"
+          ]
+        },
+        {
+          "item": "Black Featherlight Boots",
+          "eligibleClasses": [
+            "Druid",
+            "Hunter",
+            "Rogue",
+            "Shaman",
+            "Warrior"
+          ]
+        },
+        {
+          "item": "Belt of the Crescent Moon",
+          "eligibleClasses": [
+            "Druid",
+            "Shaman"
+          ]
+        },
+        {
+          "item": "Valestalker Girdle",
+          "eligibleClasses": [
+            "Hunter",
+            "Paladin",
+            "Shaman",
+            "Warrior"
+          ]
+        },
+        {
+          "item": "Beast-tamer's Shoulders",
+          "eligibleClasses": [
+            "Hunter",
+            "Shaman"
+          ]
+        },
+        {
+          "item": "Sun-touched Chain Leggings",
+          "eligibleClasses": [
+            "Paladin",
+            "Shaman"
+          ]
+        },
+        {
+          "item": "Belt of Seething Fury",
+          "eligibleClasses": [
+            "Paladin",
+            "Warrior"
+          ]
+        },
+        {
+          "item": "Kaz'rogal's Hardened Heart",
+          "eligibleClasses": [
+            "Paladin",
+            "Warrior"
+          ]
+        },
+        {
+          "item": "Hammer of Atonement",
+          "eligibleClasses": [
+            "Druid",
+            "Paladin",
+            "Shaman"
+          ]
+        }
+      ],
+      "Azgalor": [
+        {
+          "item": "Gloves of the Forgotten Conqueror",
+          "eligibleClasses": [
+            "Paladin",
+            "Priest",
+            "Warlock"
+          ]
+        },
+        {
+          "item": "Gloves of the Forgotten Vanquisher",
+          "eligibleClasses": [
+            "Druid",
+            "Mage",
+            "Rogue"
+          ]
+        },
+        {
+          "item": "Gloves of the Forgotten Protector",
+          "eligibleClasses": [
+            "Hunter",
+            "Shaman",
+            "Warrior"
+          ]
+        },
+        {
+          "item": "Don Rodrigo's Poncho",
+          "eligibleClasses": [
+            "Druid",
+            "Paladin",
+            "Shaman"
+          ]
+        },
+        {
+          "item": "Shady Dealer's Pantaloons",
+          "eligibleClasses": [
+            "Druid",
+            "Hunter",
+            "Paladin",
+            "Rogue",
+            "Shaman",
+            "Warrior"
+          ]
+        },
+        {
+          "item": "Bow-stitched Leggings",
+          "eligibleClasses": [
+            "Hunter",
+            "Paladin",
+            "Shaman",
+            "Warrior"
+          ]
+        },
+        {
+          "item": "Girdle of Hope",
+          "eligibleClasses": [
+            "Paladin"
+          ]
+        },
+        {
+          "item": "Glory of the Defender",
+          "eligibleClasses": [
+            "Paladin",
+            "Warrior"
+          ]
+        },
+        {
+          "item": "Boundless Agony",
+          "eligibleClasses": [
+            "Hunter",
+            "Rogue"
+          ]
+        }
+      ],
+      "Archimonde": [
+        {
+          "item": "Helm of the Forgotten Protector",
+          "eligibleClasses": [
+            "Hunter",
+            "Shaman",
+            "Warrior"
+          ]
+        },
+        {
+          "item": "Helm of the Forgotten Vanquisher",
+          "eligibleClasses": [
+            "Druid",
+            "Mage",
+            "Rogue"
+          ]
+        },
+        {
+          "item": "Helm of the Forgotten Conqueror",
+          "eligibleClasses": [
+            "Paladin",
+            "Priest",
+            "Warlock"
+          ]
+        },
+        {
+          "item": "Robes of Rhonin",
+          "eligibleClasses": [
+            "Druid",
+            "Mage",
+            "Priest",
+            "Shaman",
+            "Warlock"
+          ]
+        },
+        {
+          "item": "Leggings of Eternity",
+          "eligibleClasses": [
+            "Druid",
+            "Paladin",
+            "Shaman"
+          ]
+        },
+        {
+          "item": "Midnight Chestguard",
+          "eligibleClasses": [
+            "Druid",
+            "Hunter",
+            "Paladin",
+            "Rogue",
+            "Shaman",
+            "Warrior"
+          ]
+        },
+        {
+          "item": "Mail of Fevered Pursuit",
+          "eligibleClasses": [
+            "Hunter",
+            "Paladin",
+            "Shaman",
+            "Warrior"
+          ]
+        },
+        {
+          "item": "Savior's Grasp",
+          "eligibleClasses": [
+            "Paladin"
+          ]
+        },
+        {
+          "item": "Legguards of Endless Rage",
+          "eligibleClasses": [
+            "Paladin",
+            "Warrior"
+          ]
+        },
+        {
+          "item": "Tempest of Chaos",
+          "eligibleClasses": [
+            "Mage",
+            "Paladin",
+            "Warlock"
+          ]
+        },
+        {
+          "item": "Apostle of Argus",
+          "eligibleClasses": [
+            "Druid",
+            "Paladin",
+            "Shaman"
+          ]
+        },
+        {
+          "item": "Cataclysm's Edge",
+          "eligibleClasses": [
+            "Paladin",
+            "Warrior"
+          ]
+        },
+        {
+          "item": "Antonidas's Aegis of Rapt Concentration",
+          "eligibleClasses": [
+            "Paladin",
+            "Shaman",
+            "Warrior"
+          ]
+        },
+        {
+          "item": "Bristleblitz Striker",
+          "eligibleClasses": [
+            "Hunter",
+            "Warrior"
+          ]
+        },
+        {
+          "item": "Scepter of Purification",
+          "eligibleClasses": [
+            "Druid",
+            "Paladin",
+            "Shaman"
+          ]
+        }
+      ],
+      "Trash": [
+        {
+          "item": "Claw of Molten Fury",
+          "eligibleClasses": [
+            "Hunter",
+            "Rogue",
+            "Shaman",
+            "Warrior"
+          ]
+        },
+        {
+          "item": "Fist of Molten Fury",
+          "eligibleClasses": [
+            "Hunter",
+            "Rogue",
+            "Shaman"
+          ]
+        },
+        {
+          "item": "Hammer of Judgement",
+          "eligibleClasses": [
+            "Druid",
+            "Paladin",
+            "Priest",
+            "Shaman"
+          ]
+        },
+        {
+          "item": "Boots of the Divine Light",
+          "eligibleClasses": [
+            "Druid",
+            "Paladin",
+            "Shaman"
+          ]
+        },
+        {
+          "item": "Chestguard of Relentless Storms",
+          "eligibleClasses": [
+            "Shaman"
+          ]
+        },
+        {
+          "item": "Nethervoid Cloak",
+          "eligibleClasses": [
+            "Priest",
+            "Warlock"
+          ]
+        },
+        {
+          "item": "Pepe's Shroud of Pacification",
+          "eligibleClasses": [
+            "Druid",
+            "Paladin",
+            "Warrior"
+          ]
+        },
+        {
+          "item": "Choker of Serrated Blades",
+          "eligibleClasses": [
+            "Druid",
+            "Hunter",
+            "Paladin",
+            "Rogue",
+            "Shaman",
+            "Warrior"
+          ]
+        },
+        {
+          "item": "Hellfire-Encased Pendant",
+          "eligibleClasses": [
+            "Mage",
+            "Warlock"
+          ]
+        }
+      ]
+    },
+    "Black Temple": {
+      "High Warlord Naj'entus": [
+        {
+          "item": "Slippers of the Seacaller",
+          "eligibleClasses": [
+            "Druid",
+            "Mage",
+            "Paladin",
+            "Priest",
+            "Shaman",
+            "Warlock"
+          ]
+        },
+        {
+          "item": "Mantle of Darkness",
+          "eligibleClasses": [
+            "Druid",
+            "Hunter",
+            "Paladin",
+            "Rogue",
+            "Shaman",
+            "Warrior"
+          ]
+        },
+        {
+          "item": "Guise of the Tidal Lurker",
+          "eligibleClasses": [
+            "Druid",
+            "Paladin",
+            "Shaman"
+          ]
+        },
+        {
+          "item": "Fists of Mukoa",
+          "eligibleClasses": [
+            "Hunter",
+            "Paladin",
+            "Shaman",
+            "Warrior"
+          ]
+        },
+        {
+          "item": "Helm of Soothing Currents",
+          "eligibleClasses": [
+            "Paladin",
+            "Shaman"
+          ]
+        },
+        {
+          "item": "Boots of Oceanic Fury",
+          "eligibleClasses": [
+            "Shaman"
+          ]
+        },
+        {
+          "item": "Eternium Shell Bracers",
+          "eligibleClasses": [
+            "Paladin",
+            "Warrior"
+          ]
+        },
+        {
+          "item": "Pearl Inlaid Boots",
+          "eligibleClasses": [
+            "Paladin"
+          ]
+        },
+        {
+          "item": "Tide-stomper's Greaves",
+          "eligibleClasses": [
+            "Paladin",
+            "Warrior"
+          ]
+        },
+        {
+          "item": "Ring of Captured Storms",
+          "eligibleClasses": [
+            "Druid",
+            "Mage",
+            "Priest",
+            "Shaman",
+            "Warlock"
+          ]
+        },
+        {
+          "item": "Ring of Calming Waves",
+          "eligibleClasses": [
+            "Druid",
+            "Paladin",
+            "Shaman"
+          ]
+        },
+        {
+          "item": "The Maelstrom's Fury",
+          "eligibleClasses": [
+            "Druid",
+            "Mage",
+            "Priest",
+            "Shaman",
+            "Warlock"
+          ]
+        },
+        {
+          "item": "Rising Tide",
+          "eligibleClasses": [
+            "Paladin",
+            "Shaman",
+            "Warrior"
+          ]
+        },
+        {
+          "item": "Halberd of Desolation",
+          "eligibleClasses": [
+            "Hunter",
+            "Paladin",
+            "Warrior"
+          ]
+        }
+      ],
+      "Supremus": [
+        {
+          "item": "Waistwrap of Infinity",
+          "eligibleClasses": [
+            "Druid",
+            "Mage",
+            "Priest",
+            "Shaman",
+            "Warlock"
+          ]
+        },
+        {
+          "item": "Nether Shadow Tunic",
+          "eligibleClasses": [
+            "Druid",
+            "Hunter",
+            "Paladin",
+            "Rogue",
+            "Shaman",
+            "Warrior"
+          ]
+        },
+        {
+          "item": "Wraps of Precise Flight",
+          "eligibleClasses": [
+            "Hunter",
+            "Paladin",
+            "Shaman",
+            "Warrior"
+          ]
+        },
+        {
+          "item": "Naturalist's Preserving Cinch",
+          "eligibleClasses": [
+            "Paladin",
+            "Shaman"
+          ]
+        },
+        {
+          "item": "Bands of the Coming Storm",
+          "eligibleClasses": [
+            "Shaman"
+          ]
+        },
+        {
+          "item": "Pauldrons of Abyssal Fury",
+          "eligibleClasses": [
+            "Paladin",
+            "Warrior"
+          ]
+        },
+        {
+          "item": "Band of the Abyssal Lord",
+          "eligibleClasses": [
+            "Druid",
+            "Paladin",
+            "Warrior"
+          ]
+        },
+        {
+          "item": "Choker of Endless Nightmares",
+          "eligibleClasses": [
+            "Druid",
+            "Hunter",
+            "Paladin",
+            "Rogue",
+            "Shaman",
+            "Warrior"
+          ]
+        },
+        {
+          "item": "The Brutalizer",
+          "eligibleClasses": [
+            "Paladin",
+            "Shaman",
+            "Warrior"
+          ]
+        },
+        {
+          "item": "Syphon of the Nathrezim",
+          "eligibleClasses": [
+            "Rogue",
+            "Shaman",
+            "Warrior"
+          ]
+        },
+        {
+          "item": "Legionkiller",
+          "eligibleClasses": [
+            "Hunter",
+            "Warrior"
+          ]
+        },
+        {
+          "item": "Felstone Bulwark",
+          "eligibleClasses": [
+            "Paladin",
+            "Shaman",
+            "Warrior"
+          ]
+        },
+        {
+          "item": "Idol of the White Stag",
+          "eligibleClasses": [
+            "Druid"
+          ]
+        }
+      ],
+      "Shade of Akama": [
+        {
+          "item": "Amice of Brilliant Light",
+          "eligibleClasses": [
+            "Druid",
+            "Paladin",
+            "Shaman"
+          ]
+        },
+        {
+          "item": "Focused Mana Bindings",
+          "eligibleClasses": [
+            "Druid",
+            "Mage",
+            "Priest",
+            "Shaman",
+            "Warlock"
+          ]
+        },
+        {
+          "item": "Wristbands of Divine Influence",
+          "eligibleClasses": [
+            "Druid",
+            "Paladin",
+            "Shaman"
+          ]
+        },
+        {
+          "item": "Kilt of Immortal Nature",
+          "eligibleClasses": [
+            "Druid",
+            "Paladin",
+            "Shaman"
+          ]
+        },
+        {
+          "item": "Shadow-walker's Cord",
+          "eligibleClasses": [
+            "Druid",
+            "Hunter",
+            "Paladin",
+            "Rogue",
+            "Shaman",
+            "Warrior"
+          ]
+        },
+        {
+          "item": "Shoulders of the Hidden Predator",
+          "eligibleClasses": [
+            "Hunter",
+            "Paladin",
+            "Shaman",
+            "Warrior"
+          ]
+        },
+        {
+          "item": "Spiritwalker Gauntlets",
+          "eligibleClasses": [
+            "Paladin",
+            "Shaman"
+          ]
+        },
+        {
+          "item": "Flashfire Girdle",
+          "eligibleClasses": [
+            "Shaman"
+          ]
+        },
+        {
+          "item": "Grips of Silent Justice",
+          "eligibleClasses": [
+            "Paladin",
+            "Warrior"
+          ]
+        },
+        {
+          "item": "Praetorian's Legguards",
+          "eligibleClasses": [
+            "Paladin",
+            "Warrior"
+          ]
+        },
+        {
+          "item": "Myrmidon's Treads",
+          "eligibleClasses": [
+            "Paladin",
+            "Warrior"
+          ]
+        },
+        {
+          "item": "The Seeker's Wristguards",
+          "eligibleClasses": [
+            "Paladin",
+            "Warrior"
+          ]
+        },
+        {
+          "item": "Ring of Deceitful Intent",
+          "eligibleClasses": [
+            "Druid",
+            "Hunter",
+            "Paladin",
+            "Rogue",
+            "Shaman",
+            "Warrior"
+          ]
+        },
+        {
+          "item": "Blind-Seers Icon",
+          "eligibleClasses": [
+            "Druid",
+            "Mage",
+            "Priest",
+            "Shaman",
+            "Warlock"
+          ]
+        }
+      ],
+      "Teron Gorefiend": [
+        {
+          "item": "Cowl of Benevolence",
+          "eligibleClasses": [
+            "Druid",
+            "Paladin",
+            "Shaman"
+          ]
+        },
+        {
+          "item": "Robe of the Shadow Council",
+          "eligibleClasses": [
+            "Druid",
+            "Mage",
+            "Priest",
+            "Shaman",
+            "Warlock"
+          ]
+        },
+        {
+          "item": "Botanist's Gloves of Growth",
+          "eligibleClasses": [
+            "Druid",
+            "Paladin",
+            "Shaman"
+          ]
+        },
+        {
+          "item": "Insidious Bands",
+          "eligibleClasses": [
+            "Druid",
+            "Hunter",
+            "Paladin",
+            "Rogue",
+            "Shaman",
+            "Warrior"
+          ]
+        },
+        {
+          "item": "Softstep Boots of Tracking",
+          "eligibleClasses": [
+            "Hunter",
+            "Paladin",
+            "Shaman",
+            "Warrior"
+          ]
+        },
+        {
+          "item": "Girdle of Lordaeron's Fallen",
+          "eligibleClasses": [
+            "Paladin"
+          ]
+        },
+        {
+          "item": "Gauntlets of Enforcement",
+          "eligibleClasses": [
+            "Paladin",
+            "Warrior"
+          ]
+        },
+        {
+          "item": "Shadowmoon Destroyer's Drape",
+          "eligibleClasses": [
+            "Druid",
+            "Hunter",
+            "Paladin",
+            "Rogue",
+            "Shaman",
+            "Warrior"
+          ]
+        },
+        {
+          "item": "Rifle of the Stoic Guardian",
+          "eligibleClasses": [
+            "Hunter",
+            "Warrior"
+          ]
+        },
+        {
+          "item": "Twisted Blades of Zarak",
+          "eligibleClasses": [
+            "Rogue"
+          ]
+        },
+        {
+          "item": "Totem of Ancestral Guidance",
+          "eligibleClasses": [
+            "Shaman"
+          ]
+        },
+        {
+          "item": "Soul Cleaver",
+          "eligibleClasses": [
+            "Paladin",
+            "Warrior"
+          ]
+        }
+      ],
+      "Gurtogg Bloodboil": [
+        {
+          "item": "Garments of Temperance",
+          "eligibleClasses": [
+            "Druid",
+            "Paladin",
+            "Shaman"
+          ]
+        },
+        {
+          "item": "Blood-cursed Shoulderpads",
+          "eligibleClasses": [
+            "Druid",
+            "Mage",
+            "Priest",
+            "Shaman",
+            "Warlock"
+          ]
+        },
+        {
+          "item": "Belt of Primal Majesty",
+          "eligibleClasses": [
+            "Druid",
+            "Paladin",
+            "Shaman"
+          ]
+        },
+        {
+          "item": "Vest of Mounting Assault",
+          "eligibleClasses": [
+            "Hunter",
+            "Shaman"
+          ]
+        },
+        {
+          "item": "Girdle of Stability",
+          "eligibleClasses": [
+            "Paladin",
+            "Warrior"
+          ]
+        },
+        {
+          "item": "Leggings of Divine Retribution",
+          "eligibleClasses": [
+            "Paladin",
+            "Warrior"
+          ]
+        },
+        {
+          "item": "Girdle of Mighty Resolve",
+          "eligibleClasses": [
+            "Paladin",
+            "Warrior"
+          ]
+        },
+        {
+          "item": "Shroud of Forgiveness",
+          "eligibleClasses": [
+            "Druid",
+            "Paladin",
+            "Shaman"
+          ]
+        },
+        {
+          "item": "Messenger of Fate",
+          "eligibleClasses": [
+            "Hunter",
+            "Rogue",
+            "Warrior"
+          ]
+        },
+        {
+          "item": "Staff of Immaculate Recovery",
+          "eligibleClasses": [
+            "Druid",
+            "Paladin",
+            "Shaman"
+          ]
+        },
+        {
+          "item": "Unstoppable Aggressor's Ring",
+          "eligibleClasses": [
+            "Druid",
+            "Paladin",
+            "Shaman",
+            "Warrior"
+          ]
+        },
+        {
+          "item": "Shadowmoon Insignia",
+          "eligibleClasses": [
+            "Druid",
+            "Mage",
+            "Priest",
+            "Shaman",
+            "Warlock"
+          ]
+        },
+        {
+          "item": "Wand of Prismatic Focus",
+          "eligibleClasses": [
+            "Mage",
+            "Priest",
+            "Warlock"
+          ]
+        }
+      ],
+      "Reliquary of Souls": [
+        {
+          "item": "Gloves of Unfailing Faith",
+          "eligibleClasses": [
+            "Druid",
+            "Paladin",
+            "Shaman"
+          ]
+        },
+        {
+          "item": "Elunite Empowered Bracers",
+          "eligibleClasses": [
+            "Druid",
+            "Shaman"
+          ]
+        },
+        {
+          "item": "Grips of Damnation",
+          "eligibleClasses": [
+            "Druid",
+            "Hunter",
+            "Paladin",
+            "Rogue",
+            "Shaman",
+            "Warrior"
+          ]
+        },
+        {
+          "item": "Naturewarden's Treads",
+          "eligibleClasses": [
+            "Druid",
+            "Shaman"
+          ]
+        },
+        {
+          "item": "Boneweave Girdle",
+          "eligibleClasses": [
+            "Hunter",
+            "Paladin",
+            "Shaman",
+            "Warrior"
+          ]
+        },
+        {
+          "item": "The Wavemender's Mantle",
+          "eligibleClasses": [
+            "Paladin",
+            "Shaman"
+          ]
+        },
+        {
+          "item": "Crown of Empowered Fate",
+          "eligibleClasses": [
+            "Paladin"
+          ]
+        },
+        {
+          "item": "Dreadboots of the Legion",
+          "eligibleClasses": [
+            "Paladin",
+            "Warrior"
+          ]
+        },
+        {
+          "item": "Naaru-Blessed Life Rod",
+          "eligibleClasses": [
+            "Paladin"
+          ]
+        },
+        {
+          "item": "Touch of Inspiration",
+          "eligibleClasses": [
+            "Druid",
+            "Paladin",
+            "Shaman"
+          ]
+        },
+        {
+          "item": "Torch of the Damned",
+          "eligibleClasses": [
+            "Druid",
+            "Paladin",
+            "Warrior"
+          ]
+        },
+        {
+          "item": "Pendant of Titans",
+          "eligibleClasses": [
+            "Druid",
+            "Paladin",
+            "Warrior"
+          ]
+        },
+        {
+          "item": "Translucent Spellthread Necklace",
+          "eligibleClasses": [
+            "Druid",
+            "Mage",
+            "Priest",
+            "Shaman",
+            "Warlock"
+          ]
+        }
+      ],
+      "Mother Shahraz": [
+        {
+          "item": "Pauldrons of the Forgotten Conqueror",
+          "eligibleClasses": [
+            "Paladin",
+            "Priest",
+            "Warlock"
+          ]
+        },
+        {
+          "item": "Pauldrons of the Forgotten Protector",
+          "eligibleClasses": [
+            "Hunter",
+            "Shaman",
+            "Warrior"
+          ]
+        },
+        {
+          "item": "Pauldrons of the Forgotten Vanquisher",
+          "eligibleClasses": [
+            "Druid",
+            "Mage",
+            "Rogue"
+          ]
+        },
+        {
+          "item": "Leggings of Devastation",
+          "eligibleClasses": [
+            "Druid",
+            "Mage",
+            "Priest",
+            "Shaman",
+            "Warlock"
+          ]
+        },
+        {
+          "item": "Shadowmaster's Boots",
+          "eligibleClasses": [
+            "Druid",
+            "Hunter",
+            "Paladin",
+            "Rogue",
+            "Shaman",
+            "Warrior"
+          ]
+        },
+        {
+          "item": "Heartshatter Breastplate",
+          "eligibleClasses": [
+            "Paladin",
+            "Warrior"
+          ]
+        },
+        {
+          "item": "Blade of Savagery",
+          "eligibleClasses": [
+            "Hunter",
+            "Rogue",
+            "Warrior"
+          ]
+        },
+        {
+          "item": "Nadina's Pendant of Purity",
+          "eligibleClasses": [
+            "Druid",
+            "Paladin",
+            "Shaman"
+          ]
+        },
+        {
+          "item": "Tome of the Lightbringer",
+          "eligibleClasses": [
+            "Druid",
+            "Hunter",
+            "Paladin",
+            "Rogue",
+            "Shaman",
+            "Warrior"
+          ]
+        }
+      ],
+      "The Illidari Council": [
+        {
+          "item": "Leggings of the Forgotten Conqueror",
+          "eligibleClasses": [
+            "Paladin",
+            "Priest",
+            "Warlock"
+          ]
+        },
+        {
+          "item": "Leggings of the Forgotten Vanquisher",
+          "eligibleClasses": [
+            "Druid",
+            "Mage",
+            "Rogue"
+          ]
+        },
+        {
+          "item": "Leggings of the Forgotten Protector",
+          "eligibleClasses": [
+            "Hunter",
+            "Shaman",
+            "Warrior"
+          ]
+        },
+        {
+          "item": "Belt of Divine Guidance",
+          "eligibleClasses": [
+            "Druid",
+            "Paladin",
+            "Shaman"
+          ]
+        },
+        {
+          "item": "Veil of Turning Leaves",
+          "eligibleClasses": [
+            "Druid",
+            "Shaman"
+          ]
+        },
+        {
+          "item": "Forest Prowler's Helm",
+          "eligibleClasses": [
+            "Hunter",
+            "Paladin",
+            "Shaman",
+            "Warrior"
+          ]
+        },
+        {
+          "item": "Helm of the Illidari Shatterer",
+          "eligibleClasses": [
+            "Paladin",
+            "Warrior"
+          ]
+        },
+        {
+          "item": "Madness of the Betrayer",
+          "eligibleClasses": [
+            "Druid",
+            "Hunter",
+            "Paladin",
+            "Rogue",
+            "Shaman",
+            "Warrior"
+          ]
+        },
+        {
+          "item": "Cloak of the Illidari Council",
+          "eligibleClasses": [
+            "Druid",
+            "Mage",
+            "Paladin",
+            "Priest",
+            "Shaman",
+            "Warlock"
+          ]
+        }
+      ],
+      "Illidan Stormrage": [
+        {
+          "item": "Chestguard of the Forgotten Conqueror",
+          "eligibleClasses": [
+            "Paladin",
+            "Priest",
+            "Warlock"
+          ]
+        },
+        {
+          "item": "Chestguard of the Forgotten Vanquisher",
+          "eligibleClasses": [
+            "Druid",
+            "Mage",
+            "Rogue"
+          ]
+        },
+        {
+          "item": "Chestguard of the Forgotten Protector",
+          "eligibleClasses": [
+            "Hunter",
+            "Shaman",
+            "Warrior"
+          ]
+        },
+        {
+          "item": "Cowl of the Illidari High Lord",
+          "eligibleClasses": [
+            "Druid",
+            "Mage",
+            "Priest",
+            "Shaman",
+            "Warlock"
+          ]
+        },
+        {
+          "item": "Cursed Vision of Sargeras",
+          "eligibleClasses": [
+            "Druid",
+            "Hunter",
+            "Paladin",
+            "Rogue",
+            "Shaman",
+            "Warrior"
+          ]
+        },
+        {
+          "item": "Faceplate of the Impenetrable",
+          "eligibleClasses": [
+            "Paladin",
+            "Warrior"
+          ]
+        },
+        {
+          "item": "The Skull of Gul'dan",
+          "eligibleClasses": [
+            "Druid",
+            "Mage",
+            "Priest",
+            "Shaman",
+            "Warlock"
+          ]
+        },
+        {
+          "item": "Memento of Tyrande",
+          "eligibleClasses": [
+            "Druid",
+            "Paladin",
+            "Shaman"
+          ]
+        },
+        {
+          "item": "Shroud of the Highborne",
+          "eligibleClasses": [
+            "Druid",
+            "Mage",
+            "Paladin",
+            "Priest",
+            "Shaman",
+            "Warlock"
+          ]
+        },
+        {
+          "item": "Bulwark of Azzinoth",
+          "eligibleClasses": [
+            "Paladin",
+            "Warrior"
+          ]
+        },
+        {
+          "item": "Stormrage Signet Ring",
+          "eligibleClasses": [
+            "Druid",
+            "Hunter",
+            "Paladin",
+            "Rogue",
+            "Shaman",
+            "Warrior"
+          ]
+        },
+        {
+          "item": "Crystal Spire of Karabor",
+          "eligibleClasses": [
+            "Druid",
+            "Paladin",
+            "Shaman"
+          ]
+        },
+        {
+          "item": "Zhar'doom, Greatstaff of the Devourer",
+          "eligibleClasses": [
+            "Druid",
+            "Mage",
+            "Priest",
+            "Shaman",
+            "Warlock"
+          ]
+        },
+        {
+          "item": "Shard of Azzinoth",
+          "eligibleClasses": [
+            "Rogue"
+          ]
+        },
+        {
+          "item": "Black Bow of the Betrayer",
+          "eligibleClasses": [
+            "Hunter"
+          ]
+        },
+        {
+          "item": "Warglaive of Azzinoth",
+          "eligibleClasses": [
+            "Rogue"
+          ]
+        },
+        {
+          "item": "Off-Hand Warglaive of Azzinoth",
+          "eligibleClasses": [
+            "Rogue",
+            "Warrior"
+          ]
+        }
+      ],
+      "Trash": [
+        {
+          "item": "Illidari Runeshield",
+          "eligibleClasses": [
+            "Paladin",
+            "Shaman",
+            "Warrior"
+          ]
+        },
+        {
+          "item": "Swiftsteel Bludgeon",
+          "eligibleClasses": [
+            "Rogue",
+            "Shaman"
+          ]
+        },
+        {
+          "item": "Hammer of Judgement",
+          "eligibleClasses": [
+            "Druid",
+            "Paladin",
+            "Priest",
+            "Shaman"
+          ]
+        },
+        {
+          "item": "Boots of the Divine Light",
+          "eligibleClasses": [
+            "Druid",
+            "Paladin",
+            "Shaman"
+          ]
+        },
+        {
+          "item": "Treads of the Den Mother",
+          "eligibleClasses": [
+            "Druid",
+            "Paladin",
+            "Shaman"
+          ]
+        },
+        {
+          "item": "Chestguard of Relentless Storms",
+          "eligibleClasses": [
+            "Shaman"
+          ]
+        },
+        {
+          "item": "Girdle of the Lightbearer",
+          "eligibleClasses": [
+            "Paladin",
+            "Warrior"
+          ]
+        },
+        {
+          "item": "Pillager's Gauntlets",
+          "eligibleClasses": [
+            "Paladin",
+            "Warrior"
+          ]
+        },
+        {
+          "item": "Nethervoid Cloak",
+          "eligibleClasses": [
+            "Priest",
+            "Warlock"
+          ]
+        },
+        {
+          "item": "Shroud of the Final Stand",
+          "eligibleClasses": [
+            "Druid",
+            "Paladin",
+            "Shaman"
+          ]
+        },
+        {
+          "item": "Band of Devastation",
+          "eligibleClasses": [
+            "Druid",
+            "Hunter",
+            "Paladin",
+            "Rogue",
+            "Shaman",
+            "Warrior"
+          ]
+        },
+        {
+          "item": "Blessed Band of Karabor",
+          "eligibleClasses": [
+            "Druid",
+            "Mage",
+            "Paladin",
+            "Priest",
+            "Shaman",
+            "Warlock"
+          ]
+        },
+        {
+          "item": "Choker of Serrated Blades",
+          "eligibleClasses": [
+            "Druid",
+            "Hunter",
+            "Paladin",
+            "Rogue",
+            "Shaman",
+            "Warrior"
+          ]
+        },
+        {
+          "item": "Hellfire-Encased Pendant",
+          "eligibleClasses": [
+            "Mage",
+            "Warlock"
+          ]
+        },
+        {
+          "item": "Ring of Ancient Knowledge",
+          "eligibleClasses": [
+            "Druid",
+            "Mage",
+            "Paladin",
+            "Priest",
+            "Shaman",
+            "Warlock"
+          ]
+        }
+      ]
+    }
+  },
+  "valueOverrides": {}
+}

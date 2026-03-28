@@ -4246,9 +4246,15 @@ function addCla() {
     if (csvGearListing) {
       try {
         const gearData = parseGearListing(csvGearListing);
+        const thisIdx = claSheets.length; // entry not pushed yet, so length = its future index
+        const thisDate = claSheetDates[label] || null;
         Object.entries(gearData).forEach(([playerName, slots]) => {
           const key = normalizeName(playerName);
-          gearListingByPlayer[key] = { label, slots };
+          const existingLabel = gearListingByPlayer[key]?.label;
+          const existingDate = existingLabel ? (claSheetDates[existingLabel] || null) : null;
+          const existingIdx = existingLabel ? claSheets.findIndex(s => s.label === existingLabel) : -1;
+          const isNewer = (thisDate && existingDate) ? thisDate >= existingDate : thisIdx >= existingIdx;
+          if (isNewer) gearListingByPlayer[key] = { label, slots };
         });
       } catch(e) { console.warn('Gear listing parse error:', e); }
     }
@@ -4341,6 +4347,7 @@ function _applyClaStoredParsed() {
     }
 
     // gearListing — only apply if this sheet had entries (skip empty/older sheets)
+    console.log(`[apply] label="${label}" stored gearListing players: ${Object.keys(pd.gearListing||{}).length}`);
     if (pd.gearListing && Object.keys(pd.gearListing).length > 0) {
       for (const [key, slots] of Object.entries(pd.gearListing)) {
         const existingLabel = gearListingByPlayer[key]?.label;
@@ -4418,6 +4425,7 @@ function _storeParsedClaData() {
     for (const [key, data] of Object.entries(gearListingByPlayer)) {
       if (data.label === label) gearListing[key] = data.slots;
     }
+    console.log(`[store] label="${label}" gearListing players: ${Object.keys(gearListing).length} / gearListingByPlayer total: ${Object.keys(gearListingByPlayer).length}`);
 
     // CLA presence
     const claPresence = [...(claPlayersByLabel[label] || [])];
@@ -4455,24 +4463,38 @@ async function fetchAllClaData() {
   const allHandled = claSheets.length > 0 && claSheets.every(s =>
     _claStoredParsed[s.label] || s.csvGear
   );
+  console.log('[fetchAllClaData] allHandled:', allHandled, '| fetchSheets:', fetchSheets.length, '| pasteSheets:', pasteSheets.length, '| cached:', claSheets.filter(s => _claStoredParsed[s.label]).length);
   if (allHandled) {
     console.log('Loading CLA data from cache/paste (' + claSheets.length + ' sheets)');
     // Apply paste-mode entries directly
+    // Collect paste gear listings and run through recency-ordered processing alongside cached data
+    const _pasteGearListingResults = [];
     pasteSheets.forEach(s => {
       if (!_claStoredParsed[s.label]) {
         try { parseGearIssues(normalizeClaPaste(s.csvGear||''), s.label); } catch(e) {}
         try { parseBuffConsumables(normalizeClaPaste(s.csvBuff||''), s.label); } catch(e) {}
         if (s.csvGearListing) {
-          try {
-            const gd = parseGearListing(normalizeClaPaste(s.csvGearListing));
-            Object.entries(gd).forEach(([n, slots]) => {
-              gearListingByPlayer[normalizeName(n)] = { label: s.label, slots };
-            });
-          } catch(e) {}
+          _pasteGearListingResults.push({ label: s.label, text: normalizeClaPaste(s.csvGearListing), sheetIdx: claSheets.indexOf(s) });
         }
       }
     });
     _applyClaStoredParsed();
+    // Apply paste gear listings after cache restore, with recency checks
+    _pasteGearListingResults.sort((a, b) => a.sheetIdx - b.sheetIdx);
+    for (const { label, text, sheetIdx } of _pasteGearListingResults) {
+      try {
+        const data = parseGearListing(text);
+        const thisDate = claSheetDates[label] || null;
+        Object.entries(data).forEach(([playerName, slots]) => {
+          const key = normalizeName(playerName);
+          const existingLabel = gearListingByPlayer[key]?.label;
+          const existingDate = existingLabel ? (claSheetDates[existingLabel] || null) : null;
+          const existingIdx = existingLabel ? claSheets.findIndex(s => s.label === existingLabel) : -1;
+          const isNewer = (thisDate && existingDate) ? thisDate >= existingDate : sheetIdx >= existingIdx;
+          if (isNewer) gearListingByPlayer[key] = { label, slots };
+        });
+      } catch(e) {}
+    }
     return;
   }
 
@@ -4488,6 +4510,7 @@ async function fetchAllClaData() {
     try { parseGearIssues(csvGear, sheet.label); } catch(e) {}
     try { parseBuffConsumables(csvBuff, sheet.label); } catch(e) {}
     if (csvGearListing) {
+      // Push into gearListingResults so it goes through the same recency-ordered processing as URL sheets
       gearListingResults.push({ label: sheet.label, text: csvGearListing, sheetIdx: claSheets.indexOf(sheet) });
     }
   });

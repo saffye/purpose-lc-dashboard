@@ -75,7 +75,8 @@ Skip this section and set `"enable_wcl": false` in `config.json` if you don't wa
    - **Name**: anything (e.g. "My LC Dashboard")
    - **Redirect URL**: your GitHub Pages URL exactly, e.g. `https://yourusername.github.io/your-repo/`  
      *(Must match exactly — no trailing slash issues)*
-4. Click **Create** and copy the **Client ID**
+4. Check the Public Client box
+5. Click **Create** and copy the **Client ID**
 
 ### Configure Your Apps Script for WCL
 

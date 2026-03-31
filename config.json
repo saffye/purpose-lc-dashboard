@@ -1,8 +1,8 @@
 {
-  "guild_name": "Your Guild Here",
+  "guild_name": "Purpose",
   "guild_subtitle": "Loot Council Summary",
-  "page_title": "Your Guild LC",
-  "cf_worker_url": "https://YOURCLOUDFLAREWORKER.workers.dev",
+  "page_title": "Purpose LC",
+  "cf_worker_url": "purpose-lc-worker.saffyewow.workers.dev",
   "enable_apps_script": false,
   "apps_script": "https://script.google.com/macros/s/YOURAPPSSCRIPT/exec",
   "formula": {

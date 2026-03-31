@@ -77,15 +77,7 @@ Raid overview screen allows you to track overall raider status by role and tier 
 
 ---
 
-## 2. Set Up the Google Apps Script Proxy *(Optional)*
-
-The Apps Script proxy enables fetching CLA data directly from Google Sheets by URL, loading item icons from Wowhead, and fetching Warcraftlogs player data. **This step is optional** and requires a non-trivial amount of work. — if you leave `"enable_apps_script": false` in `config.json`, you can skip it entirely and paste CLA CSV data manually in the dashboard instead.
-
-If you want to enable Apps Script, see **[APPS-SCRIPT.md](/scripts/apps-script.md)** for full setup instructions.
-
----
-
-## 3. Set Up Cloudflare KV
+## 2. Set Up Cloudflare KV
 
 ### Create the KV Namespace
 
@@ -120,6 +112,14 @@ Your Worker URL is shown on the Worker overview page:
 ```
 https://your-worker-name.your-subdomain.workers.dev
 ```
+
+---
+
+## 3. Set Up the Google Apps Script Proxy *(Optional)*
+
+The Apps Script proxy enables fetching CLA data directly from Google Sheets by URL, loading item icons from Wowhead, and fetching Warcraftlogs player data. **This step is optional** and requires a non-trivial amount of work. — if you leave `"enable_apps_script": false` in `config.json`, you can skip it entirely and paste CLA CSV data manually in the dashboard instead.
+
+If you want to enable Apps Script, see **[APPS-SCRIPT.md](/scripts/apps-script.md)** for full setup instructions.
 
 ---
 

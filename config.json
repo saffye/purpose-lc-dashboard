@@ -2,7 +2,7 @@
   "guild_name": "Purpose",
   "guild_subtitle": "Loot Council Summary",
   "page_title": "Purpose LC",
-  "cf_worker_url": "purpose-lc-worker.saffyewow.workers.dev",
+  "cf_worker_url": "https://purpose-lc-worker.saffyewow.workers.dev",
   "enable_apps_script": true,
   "apps_script": "https://script.google.com/macros/s/AKfycbzrjD2vN5i1HBc5T4VU_3WkeVLLlP4LkGVliUgrpssHgAWr10jVCPI2jPqQJPNa2uco/exec",
   "formula": {

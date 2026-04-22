@@ -2038,9 +2038,36 @@ function formatAttendanceDate(date) {
   return `${y}-${String(m + 1).padStart(2, '0')}-${String(d).padStart(2, '0')}`;
 }
 
+function phaseOneLockoutEpoch() {
+  // Phase 1 released on Feb 19, 2026 (a Thursday). The Lockout started on Tuesday Feb 17.
+  // Note that month is 0-indexed.
+  return new Date(2026, 1, 17);
+}
+
+function phaseTwoLockoutEpoch() {
+  // Phase 2 will release on May 14, 2026 (a Thursday). The Lockout started on Tuesday Feb 17.
+  // Note that month is 0-indexed.
+  return new Date(2026, 4, 12);
+}  
+  
 function todayMST() {
   // Return today's date as YYYY-MM-DD in MST (UTC-7, no DST adjustment)
   return formatAttendanceDate(new Date());
+}
+
+function getDaysBetween(date1, date2) {
+  const oneDay = 24 * 60 * 60 * 1000; // hours * minutes * seconds * milliseconds
+  const firstDate = new Date(date1);
+  const secondDate = new Date(date2);
+
+  // Calculate difference in milliseconds
+  const diffDays = Math.round(Math.abs((firstDate - secondDate) / oneDay));
+    
+  return diffDays;
+}
+
+function getDateLockoutNum(date) {
+  return Math.floor(getDaysBetween(date, phaseOneLockoutEpoch()) / 7)
 }
 
 function formatRaidLabel(date) {
@@ -2055,6 +2082,9 @@ function formatRaidLabel(date) {
 function buildAttendanceRenderData() {
   const raids = attendanceData.raids;
   if (!raids.length || !rosterData.players.length) return null;
+  
+  const lastRaidDate = new Date(raids.at(-1));
+  const lastRaidLockout = getDateLockoutNum(lastRaidDate);
 
   const dates = raids.map(r => r.label);
   const n = raids.length;
@@ -2080,7 +2110,12 @@ function buildAttendanceRenderData() {
       const windowEnd = inactive ? last : (n - 1);
       const window = windowEnd - first + 1;
       const attended = flags.slice(first, windowEnd + 1).filter(Boolean).length;
-      const pct = (attended / window) * 100;
+
+      const playerFirstLockout = getDateLockoutNum(raids[first].date);
+      const playerLastLockout = getDateLockoutNum(raids[last].date);
+      const eligibleLockouts = (lastRaidLockout - playerFirstLockout) + 1;
+      const pct = (attended / eligibleLockouts) * 100;
+      // const pct = (attended / window) * 100;
       return { name: p.name, attended, window, pct, flags, n, first, last, inactive };
     });
     return { name: roleName, players };

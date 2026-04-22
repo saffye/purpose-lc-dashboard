@@ -2083,7 +2083,7 @@ function buildAttendanceRenderData() {
   const raids = attendanceData.raids;
   if (!raids.length || !rosterData.players.length) return null;
   
-  const lastRaidDate = new Date(raids.at(-1));
+  const lastRaidDate = new Date(raids.at(-1).date);
   const lastRaidLockout = getDateLockoutNum(lastRaidDate);
 
   const dates = raids.map(r => r.label);

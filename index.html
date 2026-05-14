@@ -2113,9 +2113,9 @@ function buildAttendanceRenderData() {
       const attended = flags.slice(first, windowEnd + 1).filter(Boolean).length;
 
       // Calculation for number of raids attended in phase 1 (based on number of lockouts attended)
-      const playerRaidsPhase1 = raids.slice(0, numPhase1Raids);
+      const playerRaidsPhase1 = raids.slice(0, numRaidsPhase1);
       const playerFirstLockoutPhase1 = getDateLockoutNum(playerPhase[first].date);
-      const eligibleLockoutsPhase1 = numPhase1Lockouts - playerFirstLockout;      
+      const eligibleLockoutsPhase1 = numLockoutsPhase1 - playerFirstLockout;      
       
       const totalEligibleRaids = eligibleLockoutsPhase1 + numRaidsPhase2;
       const pct = (attended / totalEligibleRaids) * 100;

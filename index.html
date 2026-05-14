@@ -2083,12 +2083,13 @@ function buildAttendanceRenderData() {
   const raids = attendanceData.raids;
   if (!raids.length || !rosterData.players.length) return null;
   
-  const lastRaidDate = new Date(raids.at(-1).date);
-  const lastRaidLockout = getDateLockoutNum(lastRaidDate);
-
   const dates = raids.map(r => r.label);
   const n = raids.length;
 
+  const numPhase1Raids = 25; // all raids before May 14
+  const numPhase1Lockouts = 13;
+  const numPhase2Raids = n - numPhase1Raids;
+  
   const ROLE_ORDER = ['Tanks', 'Physical DPS', 'Ranged DPS', 'Healers'];
   const roleMap = {};
   for (const p of rosterData.players) {
@@ -2096,7 +2097,7 @@ function buildAttendanceRenderData() {
     if (!roleMap[p.role]) roleMap[p.role] = [];
     roleMap[p.role].push(p);
   }
-
+  
   const roles = ROLE_ORDER.filter(r => roleMap[r]).map(roleName => {
     const players = roleMap[roleName].map(p => {
       const flags = raids.map(r => getPlayerAttendance(p.name, r.date));
@@ -2111,11 +2112,17 @@ function buildAttendanceRenderData() {
       const window = windowEnd - first + 1;
       const attended = flags.slice(first, windowEnd + 1).filter(Boolean).length;
 
-      const playerFirstLockout = getDateLockoutNum(raids[first].date);
-      const playerLastLockout = getDateLockoutNum(raids[last].date);
-      const eligibleLockouts = (lastRaidLockout - playerFirstLockout) + 1;
-      const pct = (attended / eligibleLockouts) * 100;
-      // const pct = (attended / window) * 100;
+      // Calculation for number of raids attended in phase 1 (based on number of lockouts attended)
+      const playerRaidsPhase1 = raids.slice(0, numPhase1Raids);
+      const playerFirstLockoutPhase1 = getDateLockoutNum(playerPhase[first].date);
+      const eligibleLockoutsPhase1 = numPhase1Lockouts - playerFirstLockout;
+      
+      // Calculation for number of raids attended in phase 2 (based on number of total raids)
+      
+      
+      const totalEligibleRaids = eligibleLockoutsPhase1 + numRaidsPhase2
+      const pct = (attended / totalEligibleRaids) * 100;
+      
       return { name: p.name, attended, window, pct, flags, n, first, last, inactive };
     });
     return { name: roleName, players };

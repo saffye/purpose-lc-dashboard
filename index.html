@@ -2081,7 +2081,7 @@ function formatRaidLabel(date) {
 // from attendanceData + rosterData — replaces parseCSV output
 function buildAttendanceRenderData() {
   const raids = attendanceData.raids;
-  if (!raids.length || !rosterData.players.length) return null'
+  if (!raids.length || !rosterData.players.length) return null;
 
   const dates = raids.map(r => r.label);
   const n = raids.length;

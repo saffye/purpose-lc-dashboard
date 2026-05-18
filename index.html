@@ -2085,7 +2085,7 @@ function buildAttendanceRenderData() {
 
   const dates = raids.map(r => r.label);
   const n = raids.length;
-
+  
   const lastRaidDate = new Date(raids.at(-1).date);
   const lastRaidLockout = getDateLockoutNum(lastRaidDate);
 
@@ -2110,12 +2110,18 @@ function buildAttendanceRenderData() {
       const windowEnd = inactive ? last : (n - 1);
       const window = windowEnd - first + 1;
       const attended = flags.slice(first, windowEnd + 1).filter(Boolean).length;
+
       
       const playerFirstLockout = getDateLockoutNum(raids[first].date);
       const playerLastLockout = getDateLockoutNum(raids[last].date);
-      const eligibleLockouts = (lastRaidLockout - playerFirstLockout) + 1;
-      const pct = (attended / eligibleLockouts) * 100;
+      let eligibleLockouts = (lastRaidLockout - playerFirstLockout) + 1;
+      if (playerFirstLockout < 12) {
+        // Phase 2 released on a Thursday and we did Phase 1 raids on Tuesday, so double count that lockout for attendance purposes.
+        eligibleLockouts += 1;
+      }  
       
+      const pct = (attended / eligibleLockouts) * 100;
+
       return { name: p.name, attended, window, pct, flags, n, first, last, inactive };
     });
     return { name: roleName, players };

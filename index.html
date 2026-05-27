@@ -3425,7 +3425,7 @@ function calculatePriority(p, bottom20threshold, top20threshold, pointValues) {
   const isAlt = playerInfo && playerInfo.isAlt === true;
 
   if (isAlt) {
-    score = score * 0.5; // Apply the 50% penalty
+    score = score * 0.9; // Apply the 90% penalty
   }
 
   const tooltipParts = [
@@ -3438,7 +3438,7 @@ function calculatePriority(p, bottom20threshold, top20threshold, pointValues) {
   
   // Add a line to the tooltip so you know why the score is lower
   if (isAlt) {
-    tooltipParts.push(`Alt Penalty: ×0.500`);
+    tooltipParts.push(`Alt Penalty: ×0.900`);
   }
 
   return { score, tooltip: tooltipParts.join('&#10;') };

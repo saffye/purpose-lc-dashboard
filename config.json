@@ -4,7 +4,7 @@
   "page_title": "Purpose LC",
   "cf_worker_url": "https://purpose-lc-worker.saffyewow.workers.dev",
   "enable_apps_script": true,
-  "apps_script": "https://script.google.com/macros/s/AKfycbz4wlsDm127LiC4HEAzS5v2NiN7glBJIdQPkjTQ1rJEYiaz4zsfdczQPI4UhzHhpQayjQ/exec",
+  "apps_script": "https://script.google.com/macros/s/AKfycbzrjD2vN5i1HBc5T4VU_3WkeVLLlP4LkGVliUgrpssHgAWr10jVCPI2jPqQJPNa2uco/exec",
   "formula": {
     "use_effective_attendance": true,
     "tenure_forgiveness_halflife": 8,

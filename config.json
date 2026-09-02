@@ -17,7 +17,7 @@
     "loot_mod_floor": 0.33,
     "loot_mod_ceiling": 1.0
   },
-  "enable_wcl": true,
+  "enable_wcl": false,
   "wcl_client_id": "a16f685a-daed-4a33-9883-481ecc94552f",
   "wcl_realm": "dreamscythe",
   "wcl_zone_id": 1005,
